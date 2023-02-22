@@ -4,6 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {}, // Extend Tailwind's default colors
+      fontFamily: {
+        sans: 'Ubuntu, sans-serif',
+      },
     },
   },
   plugins: [],

@@ -46,7 +46,7 @@ export default async (app) => {
      * URI of the `public` directory
      * @see {@link https://bud.js.org/docs/bud.setPublicPath/}
      */
-    .setPublicPath('/app/themes/sage/public/')
+    .setPublicPath('/app/themes/snazzy/public/')
 
     /**
      * Generate WordPress `theme.json`
@@ -56,7 +56,13 @@ export default async (app) => {
      * @see {@link https://bud.js.org/extensions/sage/theme.json/}
      * @see {@link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/}
      */
-    .wpjson.settings({
+    .wpjson
+    .setOption('styles', {
+      typography: {
+        fontFamily: 'var(--wp--preset--font-family--sans)',
+      },
+    })
+    .settings({
       color: {
         custom: false,
         customDuotone: false,
@@ -81,6 +87,7 @@ export default async (app) => {
         customFontSize: false,
       },
     })
+
     .useTailwindColors()
     .useTailwindFontFamily()
     .useTailwindFontSize()
