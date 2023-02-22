@@ -11,6 +11,10 @@
   "scripts": {
     "dev": "bud dev",
     "build": "bud build",
+    "lint": "yarn lint:js && yarn lint:css",
+    "lint:js": "eslint resources/scripts",
+    "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
+    "test": "yarn lint",
     "translate": "yarn translate:pot && yarn translate:update",
     "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"app,resources\"",
     "translate:update": "for filename in ./resources/lang/*.po; do msgmerge -U $filename ./resources/lang/sage.pot; done; rm -f ./resources/lang/*.po~",
@@ -19,9 +23,13 @@
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
   },
   "devDependencies": {
-    "@roots/bud": "6.9.0",
-    "@roots/bud-tailwindcss": "6.9.0",
-    "@roots/sage": "6.9.0"
+    "@roots/bud": "^6.9.1",
+    "@roots/bud-eslint": "^6.9.1",
+    "@roots/bud-prettier": "^6.9.1",
+    "@roots/bud-stylelint": "^6.9.1",
+    "@roots/bud-tailwindcss": "^6.9.1",
+    "@roots/eslint-config": "^6.9.1",
+    "@roots/sage": "^6.9.1"
   },
   "dependencies": {}
 }
