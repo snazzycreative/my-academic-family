@@ -1,0 +1,35 @@
+.breadcrumbs {
+  font-size: 0.8em;
+  padding: 1em 0;
+
+  ul {
+    li {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 15em;
+      color: $grey-lighter;
+
+      &::after {
+        content: "/";
+        display: inline-block;
+        margin: 0 0.5em 0 0.875em;
+      }
+
+      &:last-of-type {
+        a {
+          color: $grey-light;
+        }
+
+        &::after {
+          content: none;
+        }
+      }
+    } // li
+  } // ul
+
+  @media (min-width: $screen-md) {
+    font-size: 1em;
+  }
+} // breadcrumbs

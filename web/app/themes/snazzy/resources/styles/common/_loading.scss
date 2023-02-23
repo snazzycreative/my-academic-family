@@ -1,0 +1,44 @@
+.loading {
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $white;
+    z-index: -10;
+    zoom: 1;
+    opacity: 0;
+
+    @include transition;
+  }
+
+  .loader {
+    z-index: -10;
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    background: $white;
+    border-radius: 50%;
+    box-shadow: 0 0 0.2em $grey-lightest;
+    color: $grey-lighter;
+
+    @include transition;
+  } // .loader
+
+  .show-loader & {
+    .overlay {
+      z-index: 22000;
+      opacity: 0.8;
+    }
+
+    .loader {
+      opacity: 1;
+      z-index: 22222;
+      top: 50%;
+    }
+  } // .show-loader &
+} // .loading

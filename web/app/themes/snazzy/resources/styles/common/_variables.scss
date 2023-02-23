@@ -1,0 +1,199 @@
+@use "sass:math";
+@use "sass:color";
+
+$offCanvasWidth:      17.5em;
+$font:                "Ubuntu", sans-serif;
+
+$tileAspectRatio:     math.div(400, 640) * 100%;
+$heroAspectRatio:     math.div(593, 1920) * 100vw;
+$slideAspectRatio:    math.div(733, 1920) * 100vw;
+
+$sectionSmall: 1.5em;
+$sectionMedium: 3em;
+$sectionLarge: 5em;
+
+$containerLarge:   73.125em;
+$containerMedium:  60em;
+$containerSmall:   50em;
+$containerNarrow:  34em;
+
+$innerLarge: 2em;
+$innerMedium: 1.5em;
+$innerSmall: 1em;
+
+$borderRadius: 0.5em;
+$borderWidth: 0.125em;
+$borderThin: 0.0625em;
+$borderThick:  0.25em;
+$borderThicker: 0.5em;
+
+//== Snazzy Colors
+$snazzy: #f47920;
+$snazzy-alt: #5fcbe7;
+
+//== Status
+$success: #39b54a;
+$error: #be1e2d;
+$alert: #eed202;
+
+//== Brand Colours
+$primary: #337ab7;
+$secondary: #5bc0de;
+$tertiary: invert($primary);
+$quartary: invert($secondary);
+
+//== Primary Tints
+$primary-darkest: color.adjust($primary, $lightness: -30%);
+$primary-darker: color.adjust($primary, $lightness: -20%);
+$primary-dark: color.adjust($primary, $lightness: -10%);
+$primary-light: color.adjust($primary, $lightness: 10%);
+$primary-lighter: color.adjust($primary, $lightness: 20%);
+$primary-lightest: color.adjust($primary, $lightness: 30%);
+
+//== Secondary Tints
+$secondary-darkest: color.adjust($secondary, $lightness: -30%);
+$secondary-darker: color.adjust($secondary, $lightness: -20%);
+$secondary-dark: color.adjust($secondary, $lightness: -10%);
+$secondary-light: color.adjust($secondary, $lightness: 10%);
+$secondary-lighter: color.adjust($secondary, $lightness: 20%);
+$secondary-lightest: color.adjust($secondary, $lightness: 30%);
+
+//== Tertiary Tints
+$tertiary-darkest: color.adjust($tertiary, $lightness: -30%);
+$tertiary-darker: color.adjust($tertiary, $lightness: -20%);
+$tertiary-dark: color.adjust($tertiary, $lightness: -10%);
+$tertiary-light: color.adjust($tertiary, $lightness: 10%);
+$tertiary-lighter: color.adjust($tertiary, $lightness: 20%);
+$tertiary-lightest: color.adjust($tertiary, $lightness: 30%);
+
+//== Quartary Tints
+$quartary-darkest: color.adjust($quartary, $lightness: -30%);
+$quartary-darker: color.adjust($quartary, $lightness: -20%);
+$quartary-dark: color.adjust($quartary, $lightness: -10%);
+$quartary-light: color.adjust($quartary, $lightness: 10%);
+$quartary-lighter: color.adjust($quartary, $lightness: 20%);
+$quartary-lightest: color.adjust($quartary, $lightness: 30%);
+
+//== Shades
+$white:               white;
+$grey-lightest:       color.adjust(black, $lightness: 95%);
+$grey-lighter:        color.adjust(black, $lightness: 80%);
+$grey-light:          color.adjust(black, $lightness: 70%);
+$grey:                color.adjust(black, $lightness: 50%);
+$grey-dark:           color.adjust(black, $lightness: 40%);
+$grey-darker:         color.adjust(black, $lightness: 20%);
+$grey-darkest:        color.adjust(black, $lightness: 05%);
+$black:               black;
+
+//## Social Media Colors.
+$facebook:            #3b5998;
+$messenger:           #4080ff;
+$twitter:             #00aced;
+$linkedin:            #007bb6;
+$googleplus:          #dd4b39;
+$youtube:             #c4302b;
+$vimeo:               #1ab7ea;
+$instagram:           #517fa4;
+$pinterest:           #cb2027;
+$behance:             #1769ff;
+$tripadvisor:         #589442;
+
+//## Colour Array (used in generating colour classes).
+$colors: (
+  // shades
+  "black":     $black,
+  "grey-darkest": $grey-darkest,
+  "grey-darker": $grey-darker,
+  "grey-dark": $grey-dark,
+  "grey-light": $grey-light,
+  "grey-lighter": $grey-lighter,
+  "grey-lightest": $grey-lightest,
+  "white":     $white,
+  // snazzy
+  "snazzy":     $snazzy,
+  "snazzy-alt": $snazzy-alt,
+  // status
+  "error":      $error,
+  "success":    $success,
+  "alert":      $alert,
+  // brand
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "tertiary":   $tertiary,
+  "quartary":   $quartary,
+  // primary tints
+  "primary-darkest":  $primary-darkest,
+  "primary-darker":   $primary-darker,
+  "primary-dark":     $primary-dark,
+  "primary-light":    $primary-light,
+  "primary-lighter":  $primary-lighter,
+  "primary-lightest": $primary-lightest,
+  // secondary tints
+  "secondary-darkest":  $secondary-darkest,
+  "secondary-darker":   $secondary-darker,
+  "secondary-dark":     $secondary-dark,
+  "secondary-light":    $secondary-light,
+  "secondary-lighter":  $secondary-lighter,
+  "secondary-lightest": $secondary-lightest,
+  // tertiary tints
+  "tertiary-darkest":  $tertiary-darkest,
+  "tertiary-darker":   $tertiary-darker,
+  "tertiary-dark":     $tertiary-dark,
+  "tertiary-light":    $tertiary-light,
+  "tertiary-lighter":  $tertiary-lighter,
+  "tertiary-lightest": $tertiary-lightest,
+  // quartary tints
+  "quartary-darkest":  $quartary-darkest,
+  "quartary-darker":   $quartary-darker,
+  "quartary-dark":     $quartary-dark,
+  "quartary-light":    $quartary-light,
+  "quartary-lighter":  $quartary-lighter,
+  "quartary-lightest": $quartary-lightest,
+);
+
+/*
+ * Media queries breakpoints
+ *
+ * Define the breakpoints at which your layout will change,
+ * adapting to different screen sizes.
+ */
+
+$screen-xxs: 22.5em !default;
+
+// Extra small screen / phone
+$screen-xs: 30em !default;
+
+// Small screen / tablet
+$screen-sm: 48em !default;
+$screen-sm-min: $screen-sm !default;
+
+// Medium screen / desktop
+$screen-md: 62em !default;
+$screen-md-min: $screen-md !default;
+
+// Large screen / wide desktop
+$screen-lg: 75em !default;
+$screen-lg-min: $screen-lg !default;
+
+// Extra Large screen / wide desktop
+$screen-xl: 87.5em !default;
+$screen-xl-min: $screen-xl !default;
+
+// So media queries don"t overlap when required, $lightness: provide a maximum
+$screen-xs-max: ($screen-sm-min - 0.0625) !default;
+$screen-sm-max: ($screen-md-min - 0.0625) !default;
+$screen-md-max: ($screen-lg-min - 0.0625) !default;
+$screen-lg-max: ($screen-xl-min - 0.0625) !default;
+
+// Breakpoints
+$breakpoints: (
+  "screen-xs": $screen-xs,
+  // "screen-xs-max": $screen-xs-max,
+  "screen-sm": $screen-sm,
+  // "screen-sm-max": $screen-sm-max,
+  "screen-md": $screen-md,
+  // "screen-md-max": $screen-md-max,
+  "screen-lg": $screen-lg,
+  // "screen-lg-max": $screen-lg-max,
+  "screen-xl": $screen-xl,
+);

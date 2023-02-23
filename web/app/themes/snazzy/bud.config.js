@@ -58,38 +58,35 @@ export default async (app) => {
      */
     .wpjson
     .setOption('styles', {
-      typography: {
-        fontFamily: 'var(--wp--preset--font-family--sans)',
-      },
+      // typography: {
+      //   fontFamily: 'var(--wp--preset--font-family--sans)',
+      // },
     })
     .settings({
-      color: {
-        custom: false,
-        customDuotone: false,
-        customGradient: false,
-        defaultDuotone: false,
-        defaultGradients: false,
-        defaultPalette: false,
-        duotone: [],
-      },
-      custom: {
-        spacing: {},
-        typography: {
-          'font-size': {},
-          'line-height': {},
-        },
-      },
-      spacing: {
-        padding: true,
-        units: ['px', '%', 'em', 'rem', 'vw', 'vh'],
-      },
-      typography: {
-        customFontSize: false,
-      },
+      // color: {
+      //   custom: false,
+      //   customDuotone: false,
+      //   customGradient: false,
+      //   defaultDuotone: false,
+      //   defaultGradients: false,
+      //   defaultPalette: false,
+      //   duotone: [],
+      // },
+      // custom: {
+      //   spacing: {},
+      //   typography: {
+      //     'font-size': {},
+      //     'line-height': {},
+      //   },
+      // },
+      // spacing: {
+      //   padding: true,
+      //   units: ['px', '%', 'em', 'rem', 'vw', 'vh'],
+      // },
+      // typography: {
+      //   customFontSize: false,
+      // },
     })
 
-    .useTailwindColors()
-    .useTailwindFontFamily()
-    .useTailwindFontSize()
     .enable();
 };

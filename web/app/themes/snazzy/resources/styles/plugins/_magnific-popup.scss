@@ -1,0 +1,43 @@
+.mfp-bg,
+.mfp-wrap {
+  z-index: 100001;
+}
+
+.mfp-bg {
+  background: $black;
+  opacity: 0;
+
+  @include transition;
+
+  &.mfp-ready {
+    opacity: 0.8;
+  }
+}
+
+.mfp-container {
+  .mfp-close,
+  .mfp-arrow {
+    background: transparent;
+  }
+}
+
+.mfp-content {
+  @include transition;
+
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+.mfp-ready {
+  .mfp-content {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.mfp-removing {
+  .mfp-content {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

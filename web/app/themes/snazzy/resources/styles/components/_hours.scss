@@ -1,0 +1,22 @@
+.hours {
+  span,
+  strong {
+    display: block;
+  }
+
+  li {
+    display: flex;
+  }
+
+  strong {
+    @include flex-width(6.5em);
+  }
+
+  span {
+    flex: 1 1 5em;
+  }
+
+  .alert {
+    margin: 1em 0 0;
+  }
+} // .hours

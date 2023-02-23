@@ -1,0 +1,159 @@
+/* stylelint-disable max-line-length */
+
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+@use "sass:list";
+
+/*
+define as many $color-stops as needed
+*/
+@mixin linear-gradient($direction, $color-stops...) {
+  background: list.nth(list.nth($color-stops, 1), 1);
+  background: linear-gradient($direction, $color-stops);
+}
+
+/*
+Use this when you need a flex child to keep a specific
+width while other child items are flexible
+works well with percentages and specific em values
+*/
+@mixin flex-width($value) {
+  flex: 0 0 $value;
+  max-width: $value;
+  width: $value;
+}
+
+@mixin transition($property: all, $duration: 300ms, $animation: ease, $delay: null) {
+  transition: $property $duration $animation $delay;
+}
+
+/* mixin that calculates if text needs to be light or dark
+   depending on the background color passed.
+
+  From this W3C document: http://www.webmasterworld.com/r.cgi?f=88&d=9769&url=http://www.w3.org/TR/AERT#color-contrast
+
+  Color brightness is determined by the following formula:
+  ((Red value X 299) + (Green value X 587) + (Blue value X 114)) / 1000
+*/
+
+@mixin text-contrast($n, $cutoff: 1.667) {
+  $brightness: math.round((color.red($n) * 299) + (color.green($n) * 587) + math.div((color.blue($n) * 114), 1000));
+  $light-color: math.round((color.red($white) * 299) + (color.green($white) * 587) + math.div((color.blue($white) * 114), 1000));
+
+  @if abs($brightness) < (math.div($light-color, $cutoff)) {
+    color: $white;
+  }
+
+  @else {
+    color: $grey-darkest;
+  }
+}
+
+/*
+  MIXIN: color_classes
+  Loop through color array to build basic color and background-color classes.
+*/
+
+@mixin color_classes($name, $hex) {
+  .#{$name} {
+    color: $hex;
+  }
+
+  .fill-#{$name} {
+    fill: $hex;
+  }
+
+  @media screen {
+    .bg-#{$name} {
+      background-color: $hex;
+    }
+  }
+}
+
+/*
+  MIXIN: generate_button_colors
+  Loop through color array to build basic button color classes
+  for both solid and ghost button styles.
+*/
+
+@mixin generate_button_colors($name, $hex) {
+
+  $buttons: (
+    ".button",
+    "button",
+    "input[type=submit]",
+  );
+
+  @each $button in $buttons {
+    #{$button}.#{$name} {
+      color: $white;
+      background: $hex;
+      border-color: $hex;
+
+      &:hover,
+      &:focus {
+        color: $white;
+        background: color.adjust($hex, $lightness: 10%);
+        border-color: color.adjust($hex, $lightness: 10%);
+      }
+    } // default (solid)
+
+    #{$button}.#{$name}.inverted {
+      color: $hex;
+      background: transparent;
+      border-color: $hex;
+
+      &:hover,
+      &:focus {
+        color: white;
+        background: #{$hex};
+        border-color: #{$hex};
+      }
+    } // inverted
+
+    @media screen {
+      *:not(.bg-#{$name}) #{$button}.#{$name} {
+        color: white;
+        background-color: $hex;
+        border-color: $hex;
+
+        &:hover,
+        &:focus {
+          color: white;
+          background-color: color.adjust($hex, $lightness: 10%);
+          border-color: color.adjust($hex, $lightness: 10%);
+        }
+      }
+
+      .bg-#{$name} #{$button}.#{$name} {
+        color: $hex;
+        background: white;
+        border-color: white;
+
+        &:hover,
+        &:focus {
+          color: white;
+          background: transparent;
+          border-color: white;
+        }
+      }
+    } // @media screen
+  } // each button
+} // mixin generate_button_colors
+
+/*
+  $position: string (absolute/fixed/sticky)
+  $z-index: integrer
+  $top, $right, $bottom, $left: sides are listed clockwise, like padding and margin shorthand
+  leaving values empty will follow the same shorthand rules as padding and margin
+*/
+
+@mixin position($position, $z-index: 1, $top: 0, $right: $top, $bottom: $top, $left: $right ) {
+  bottom: $bottom;
+  left: $left;
+  position: $position;
+  right: $right;
+  top: $top;
+  z-index: $z-index;
+}
