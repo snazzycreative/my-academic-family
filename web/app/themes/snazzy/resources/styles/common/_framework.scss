@@ -23,6 +23,10 @@
 ::selection {
   color: $white;
   background: $primary;
+
+  .bg-primary & {
+    background: $secondary;
+  }
 }
 
 @each $color, $hex in $colors {
@@ -68,19 +72,19 @@ iframe {
 }
 
 .section {
-  padding: $sectionSmall;
+  padding: $sectionSmall 0;
 
   @media (min-width: $screen-md) {
-    padding: $sectionMedium;
+    padding: $sectionMedium 0;
   }
 
   @media (min-width: $screen-lg) {
-    padding: $sectionLarge;
+    padding: $sectionLarge 0;
   }
 
-  &-small { padding: $sectionSmall; }
-  &-medium { padding: $sectionMedium; }
-  &-large { padding: $sectionLarge; }
+  &-small { padding: $sectionSmall 0; }
+  &-medium { padding: $sectionMedium 0; }
+  &-large { padding: $sectionLarge 0; }
 
   &-zero-top { padding-top: 0; }
   &-zero-bottom { padding-bottom: 0; }
