@@ -16,6 +16,9 @@ add_action( 'init', function() {
         ],
         'menu_position' => 20,
         'menu_icon' => 'dashicons-calendar-alt',
+        'taxonomies' => [
+            'post_tag',
+        ],
         'rewrite' => [
             'slug' => 'events',
         ],
@@ -48,13 +51,13 @@ add_action( 'init', function() {
 
                 },
             ],
-            'resource_type' => [
+            'event_type' => [
                 'title' => __('Types', $td),
-                'taxonomy' => 'resource_type',
+                'taxonomy' => 'event_type',
             ],
-            'resource_tag' => [
+            'event_tag' => [
                 'title' => __('Tags', $td),
-                'taxonomy' => 'resource_tag',
+                'taxonomy' => 'post_tag',
             ],
         ],
     ];
@@ -71,19 +74,6 @@ add_action( 'init', function() {
             'singular' => __('Type', $td),
             'plural' => __('Types', $td),
             'slug' => 'event-types',
-        ]
-    );
-
-    register_extended_taxonomy(
-        'event_tag',
-        $postType,
-        [
-            // 'meta_box' => 'simple',
-        ],
-        [
-            'singular' => __('Tag', $td),
-            'plural' => __('Tags', $td),
-            'slug' => 'event-tags',
         ]
     );
 } );

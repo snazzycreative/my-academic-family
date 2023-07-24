@@ -3,9 +3,12 @@
 add_action( 'init', function() {
     $td = SNAZZY_PREFIX;
 
-    $postType = 'service';
+    $postType = 'term';
 
     $options = [
+        'labels' => [
+            'menu_name' => __('Encyclopedia', $td),
+        ],
         'supports' => [
             'title',
             'editor',
@@ -13,22 +16,22 @@ add_action( 'init', function() {
             'thumbnail',
         ],
         'menu_position' => 20,
-        'menu_icon' => 'dashicons-editor-table',
+        'menu_icon' => 'dashicons-book-alt',
         'taxonomies' => [
             'post_tag',
         ],
         'rewrite' => [
-            'slug' => 'services',
+            'slug' => 'student-resources/encyclopedia',
         ],
-        'has_archive' => false,
+        'has_archive' => true,
         'capability_type' => 'post',
         'admin_cols' => [
-            'service_tag' => [
+            'term_tag' => [
                 'title' => __('Tags', $td),
                 'taxonomy' => 'post_tag',
             ],
-        ]
+        ],
     ];
 
-	register_extended_post_type( $postType, $options );
+	register_extended_post_type($postType, $options);
 } );

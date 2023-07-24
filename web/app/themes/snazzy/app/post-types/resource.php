@@ -14,8 +14,11 @@ add_action( 'init', function() {
         ],
         'menu_position' => 20,
         'menu_icon' => 'dashicons-share-alt',
+        'taxonomies' => [
+            'post_tag',
+        ],
         'rewrite' => [
-            'slug' => 'student-resources',
+            'slug' => 'student-resources/resources',
         ],
         'has_archive' => true,
         'capability_type' => 'post',
@@ -41,7 +44,7 @@ add_action( 'init', function() {
             ],
             'resource_tag' => [
                 'title' => __('Tags', $td),
-                'taxonomy' => 'resource_tag',
+                'taxonomy' => 'post_tag',
             ],
         ],
     ];
@@ -57,20 +60,7 @@ add_action( 'init', function() {
         [
             'singular' => __('Type', $td),
             'plural' => __('Types', $td),
-            'slug' => 'student-resource-types',
-        ]
-    );
-
-    register_extended_taxonomy(
-        'resource_tag',
-        $postType,
-        [
-            // 'meta_box' => 'simple',
-        ],
-        [
-            'singular' => __('Tag', $td),
-            'plural' => __('Tags', $td),
-            'slug' => 'student-resource-tags',
+            'slug' => 'student-resources/types',
         ]
     );
 } );

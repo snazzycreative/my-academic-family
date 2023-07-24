@@ -19,6 +19,10 @@ add_action( 'init', function() {
         ],
         'has_archive' => false,
         'capability_type' => 'post',
+        'labels' => [
+            'menu_name' => __('Team', $td),
+            'all_items' => __('All Members', $td),
+        ],
     ];
 
 	register_extended_post_type(
