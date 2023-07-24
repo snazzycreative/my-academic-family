@@ -17,6 +17,8 @@ if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
 
 require $composer;
 
+if(!defined('SNAZZY_PREFIX')) define('SNAZZY_PREFIX', 'snazzy');
+
 /*
 |--------------------------------------------------------------------------
 | Register The Bootloader
@@ -57,6 +59,7 @@ if (! function_exists('\Roots\bootloader')) {
 collect([
         'setup',
         'filters',
+        'post-types',
     ])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
