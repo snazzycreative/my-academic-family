@@ -17,6 +17,7 @@ foreach([
     'team',
     'mentor',
     'term',
+    'organisations',
 ] as $postType):
     require_once($themedir . '/app/post-types/' . $postType . '.php');
 endforeach;

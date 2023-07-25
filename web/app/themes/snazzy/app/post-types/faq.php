@@ -18,10 +18,17 @@ add_action( 'init', function() {
         'publicly_queryable' => false,
         'exclude_from_search' => true,
         'capability_type' => 'post',
+        'taxonomies' => [
+            'post_tag',
+        ],
         'admin_cols' => [
             'faq_audience' => [
                 'title' => __('Audience', $td),
                 'taxonomy' => 'faq_audience',
+            ],
+            'faq_tag' => [
+                'title' => __('Tags', $td),
+                'taxonomy' => 'post_tag',
             ],
         ],
     ];

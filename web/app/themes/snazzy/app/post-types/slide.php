@@ -2,11 +2,16 @@
 
 add_action( 'init', function() {
     $postType = 'slide';
+    $td = SNAZZY_PREFIX;
 
     $options = [
+        'labels' => [
+            'featured_image' => __('Banner Image', $td),
+        ],
         'supports' => [
             'title',
             'excerpt',
+            'thumbnail',
             'color-controls',
             'link',
         ],

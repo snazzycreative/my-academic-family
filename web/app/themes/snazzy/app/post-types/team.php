@@ -2,32 +2,32 @@
 
 add_action( 'init', function() {
     $td = SNAZZY_PREFIX;
-
     $postType = 'team';
-
-    $options = [
-        'supports' => [
-            'title',
-            'editor',
-            'thumbnail',
-            'excerpt',
-        ],
-        'menu_position' => 20,
-        'menu_icon' => 'dashicons-admin-users',
-        'rewrite' => [
-            'slug' => 'about',
-        ],
-        'has_archive' => false,
-        'capability_type' => 'post',
-        'labels' => [
-            'menu_name' => __('Team', $td),
-            'all_items' => __('All Members', $td),
-        ],
-    ];
 
 	register_extended_post_type(
         $postType,
-        $options,
+        [
+            'labels' => [
+                'featured_image' => __('Portrait', $td),
+                'menu_name' => __('Team', $td),
+                'all_items' => __('All Members', $td),
+            ],
+            'supports' => [
+                'title',
+                'editor',
+                'thumbnail',
+                'excerpt',
+                'page-attributes',
+                'social-channels',
+            ],
+            'menu_position' => 20,
+            'menu_icon' => 'dashicons-admin-users',
+            'rewrite' => [
+                'slug' => 'about/team',
+            ],
+            'has_archive' => false,
+            'capability_type' => 'post',
+        ],
         [
             'plural' => __('Team Members', $td),
             'singular' => __('Team Member', $td),
