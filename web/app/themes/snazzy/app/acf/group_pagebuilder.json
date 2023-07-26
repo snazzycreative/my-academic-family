@@ -1,0 +1,173 @@
+{
+    "key": "group_pagebuilder",
+    "title": "Page Builder",
+    "fields": [
+        {
+            "key": "field_64c0e8e37bad7",
+            "label": "Page Sections",
+            "name": "snazzy_pagebuilder",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_64c0e9d15c983": {
+                    "key": "layout_64c0e9d15c983",
+                    "name": "wysiwyg_editor",
+                    "label": "WYSIWYG Editor",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c0ee2416983",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_wysiwyg"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64c183c0ba92b": {
+                    "key": "layout_64c183c0ba92b",
+                    "name": "toggle",
+                    "label": "Toggle",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c183c7ba92e",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_toggle"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64c18a7eed535": {
+                    "key": "layout_64c18a7eed535",
+                    "name": "alternating",
+                    "label": "Alternating Image & Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c18a90ed538",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_alternating"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64c19bd71f5f2": {
+                    "key": "layout_64c19bd71f5f2",
+                    "name": "cardgrid",
+                    "label": "Card Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c19bdf1f5f5",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_cardgrid"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "template-pagebuilder.blade.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1690409965
+}
