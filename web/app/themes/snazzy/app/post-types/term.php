@@ -7,6 +7,7 @@ add_action( 'init', function() {
 	register_extended_post_type(
         $postType,
         [
+            'menu_position' => 24,
             'labels' => [
                 'menu_name' => __('Encyclopedia', $td),
                 'all_items' => __('All Terms', $td),
@@ -19,13 +20,12 @@ add_action( 'init', function() {
                 'thumbnail',
                 'color-controls',
             ],
-            'menu_position' => 20,
             'menu_icon' => 'dashicons-book-alt',
             'taxonomies' => [
                 'post_tag',
             ],
             'rewrite' => [
-                'slug' => 'student-resources/encyclopedia',
+                'slug' => 'student-resources/encyclopedia-of-university',
             ],
             'has_archive' => true,
             'capability_type' => 'post',

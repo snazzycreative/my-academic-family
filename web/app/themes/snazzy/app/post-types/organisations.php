@@ -7,6 +7,7 @@ add_action( 'init', function() {
 	register_extended_post_type(
         $postType,
         [
+            'menu_position' => 28,
             'labels' => [
                 'featured_image' => __('Logo', $td),
             ],
@@ -14,10 +15,9 @@ add_action( 'init', function() {
                 'title',
                 'page-attributes',
                 'thumbnail',
-                'social-channels',#
+                'social-channels',
                 'link',
             ],
-            'menu_position' => 20,
             'menu_icon' => 'dashicons-building',
             'rewrite' => false,
             'has_archive' => false,

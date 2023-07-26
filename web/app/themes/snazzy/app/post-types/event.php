@@ -6,6 +6,7 @@ add_action( 'init', function() {
     $postType = 'event';
 
     $options = [
+        'menu_position' => 22,
         'supports' => [
             'title',
             'editor',
@@ -14,7 +15,6 @@ add_action( 'init', function() {
             'link',
             'social-channels',
         ],
-        'menu_position' => 20,
         'menu_icon' => 'dashicons-calendar-alt',
         'taxonomies' => [
             'post_tag',

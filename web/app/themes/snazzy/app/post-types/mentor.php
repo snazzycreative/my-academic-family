@@ -7,6 +7,7 @@ add_action( 'init', function() {
 	register_extended_post_type(
         $postType,
         [
+            'menu_position' => 27,
             'labels' => [
                 'featured_image' => __('Portrait', $td),
             ],
@@ -18,10 +19,9 @@ add_action( 'init', function() {
                 'page-attributes',
                 'social-channels',
             ],
-            'menu_position' => 20,
             'menu_icon' => 'dashicons-groups',
             'rewrite' => [
-                'slug' => 'about/mentors',
+                'slug' => 'mentorship-programme/volunteer-mentors',
             ],
             'has_archive' => true,
             'capability_type' => 'post',

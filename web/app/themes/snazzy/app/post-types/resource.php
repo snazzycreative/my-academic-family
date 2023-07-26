@@ -6,13 +6,13 @@ add_action( 'init', function() {
     $postType = 'resource';
 
     $options = [
+        'menu_position' => 23,
         'supports' => [
             'title',
             'editor',
             'excerpt',
             'thumbnail',
         ],
-        'menu_position' => 20,
         'menu_icon' => 'dashicons-share-alt',
         'taxonomies' => [
             'post_tag',

@@ -7,6 +7,7 @@ add_action( 'init', function() {
 	register_extended_post_type(
         $postType,
         [
+            'menu_position' => 26,
             'labels' => [
                 'featured_image' => __('Portrait', $td),
                 'menu_name' => __('Team', $td),
@@ -20,7 +21,6 @@ add_action( 'init', function() {
                 'page-attributes',
                 'social-channels',
             ],
-            'menu_position' => 20,
             'menu_icon' => 'dashicons-admin-users',
             'rewrite' => [
                 'slug' => 'about/team',

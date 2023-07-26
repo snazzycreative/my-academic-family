@@ -6,12 +6,12 @@ add_action( 'init', function() {
     $postType = 'faq';
 
     $options = [
+        'menu_position' => 25,
         'supports' => [
             'title',
             'editor',
             'page-attributes',
         ],
-        'menu_position' => 20,
         'menu_icon' => 'dashicons-admin-comments',
         'rewrite' => false,
         'has_archive' => false,

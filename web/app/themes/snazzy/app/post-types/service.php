@@ -2,23 +2,27 @@
 
 add_action( 'init', function() {
     $td = SNAZZY_PREFIX;
-
     $postType = 'service';
 
     $options = [
+        'menu_position' => 21,
         'supports' => [
             'title',
             'editor',
             'excerpt',
             'thumbnail',
+            'page-attributes',
+            'color-controls',
         ],
-        'menu_position' => 20,
         'menu_icon' => 'dashicons-editor-table',
         'taxonomies' => [
             'post_tag',
         ],
+        'labels' => [
+            'featured_image' => __('Social Preview', $td),
+        ],
         'rewrite' => [
-            'slug' => 'services',
+            'slug' => 'coaching-services',
         ],
         'has_archive' => false,
         'capability_type' => 'post',
