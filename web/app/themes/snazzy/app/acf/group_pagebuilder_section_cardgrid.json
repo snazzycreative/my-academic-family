@@ -27,7 +27,7 @@
         {
             "key": "field_64c1989d09ed0",
             "label": "Cards",
-            "name": "alternating",
+            "name": "cards",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -269,7 +269,7 @@
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "layout": "vertical",
+            "layout": "horizontal",
             "save_other_choice": 0
         },
         {
@@ -335,5 +335,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690410212
+    "modified": 1690493858
 }

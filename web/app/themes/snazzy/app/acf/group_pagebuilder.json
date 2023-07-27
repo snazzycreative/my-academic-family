@@ -144,11 +144,43 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_64c2e6c9994c2": {
+                    "key": "layout_64c2e6c9994c2",
+                    "name": "postgrid",
+                    "label": "Post Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c2e6cf994c5",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_postgrid"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row"
+            "button_label": "Add Page Section"
         }
     ],
     "location": [
@@ -160,7 +192,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": -1,
     "position": "normal",
     "style": "seamless",
     "label_placement": "top",
@@ -169,5 +201,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690409965
+    "modified": 1690495142
 }
