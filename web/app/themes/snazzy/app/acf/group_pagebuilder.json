@@ -84,7 +84,7 @@
                 "layout_64c18a7eed535": {
                     "key": "layout_64c18a7eed535",
                     "name": "alternating",
-                    "label": "Alternating Image & Text",
+                    "label": "Alternating",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -176,6 +176,102 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_64c50326fa343": {
+                    "key": "layout_64c50326fa343",
+                    "name": "icongrid",
+                    "label": "Icon Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c50336fa346",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_icongrid"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64c506485aa63": {
+                    "key": "layout_64c506485aa63",
+                    "name": "form",
+                    "label": "Form",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c5064d5aa66",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_form"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64c593952b2de": {
+                    "key": "layout_64c593952b2de",
+                    "name": "tooltips",
+                    "label": "Tooltip Tiles",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c5939f2b2e1",
+                            "label": "Clone",
+                            "name": "clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_pagebuilder_section_tooltips"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -197,9 +293,11 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690495142
+    "modified": 1690670303
 }

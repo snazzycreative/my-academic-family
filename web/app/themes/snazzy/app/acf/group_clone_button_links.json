@@ -29,7 +29,7 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "25",
-                "class": "",
+                "class": "js-snazzy-select2-color",
                 "id": ""
             },
             "choices": {
@@ -89,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690405864
+    "modified": 1690633471
 }
