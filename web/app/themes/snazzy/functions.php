@@ -61,6 +61,7 @@ collect([
         'filters',
         'post-types',
         'acf',
+        'admin',
     ])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
