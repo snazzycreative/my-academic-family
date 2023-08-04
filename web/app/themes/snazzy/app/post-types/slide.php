@@ -23,6 +23,7 @@ add_action( 'init', function() {
             'has_archive' => false,
             'publicly_queryable' => false,
             'exclude_from_search' => true,
+            'show_in_nav_menus' => false,
         ],
     );
 } );

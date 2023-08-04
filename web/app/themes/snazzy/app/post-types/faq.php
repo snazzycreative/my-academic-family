@@ -18,6 +18,7 @@ add_action( 'init', function() {
         'publicly_queryable' => false,
         'exclude_from_search' => true,
         'capability_type' => 'post',
+        'show_in_nav_menus' => false,
         'taxonomies' => [
             'post_tag',
         ],
