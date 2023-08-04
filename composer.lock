@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3ec79ff5cfbc3e3ab27022489a57fd2",
+    "content-hash": "691a94811b8be47448862e57a2d869fb",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -3526,20 +3526,11 @@
         },
         {
             "name": "snazzycreative/snazzy-creative-control-panel",
-            "version": "v1.5.5",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:snazzycreative/snazzy-creative-control-panel.git",
-                "reference": "6891720b365fd54fffac2841cc4130af9b145438"
-            },
-            "dist": {
-                "type": "tar",
-                "url": "https://packagist.snazzy.page/dist/snazzycreative/snazzy-creative-control-panel/snazzycreative-snazzy-creative-control-panel-v1.5.5-4f792d.tar",
-                "reference": "6891720b365fd54fffac2841cc4130af9b145438",
-                "shasum": "6bd4cd4c08216cde964996f7256b3d3779dffb04"
-            },
-            "require": {
-                "composer/installers": "~2.5"
+                "reference": "c89307d3100d0c4f3aaa7a565c38a4b9d656d5bb"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "4.5"
@@ -3553,7 +3544,7 @@
             ],
             "description": "Snazzy Creative's Wordpress Control Panel",
             "homepage": "https://snazzycreative.com/",
-            "time": "2023-03-04T15:58:46+00:00"
+            "time": "2023-07-08T20:16:09+00:00"
         },
         {
             "name": "symfony/console",
@@ -5740,6 +5731,24 @@
             "homepage": "https://wordpress.org/plugins/mailgun/"
         },
         {
+            "name": "wpackagist-plugin/multiple-post-thumbnails",
+            "version": "1.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/multiple-post-thumbnails/",
+                "reference": "tags/1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/multiple-post-thumbnails.1.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/multiple-post-thumbnails/"
+        },
+        {
             "name": "wpackagist-plugin/post-2-post-for-acf",
             "version": "1.7.0",
             "source": {
@@ -6533,6 +6542,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "snazzycreative/snazzy-creative-control-panel": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
