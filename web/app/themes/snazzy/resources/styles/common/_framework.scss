@@ -154,3 +154,13 @@ iframe {
     border-bottom-width: 0;
   }
 }
+
+.brand {
+  display: block;
+  width: $brandWidth;
+  height: auto;
+
+  &.brand-icon {
+    width: 5em;
+  }
+}

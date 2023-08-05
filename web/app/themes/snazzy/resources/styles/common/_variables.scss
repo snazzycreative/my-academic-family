@@ -4,6 +4,8 @@
 $offCanvasWidth:      17.5em;
 $font:                "Ubuntu", sans-serif;
 
+$brandWidth: 10em;
+
 $tileAspectRatio:     math.div(400, 640) * 100%;
 $heroAspectRatio:     math.div(593, 1920) * 100vw;
 $slideAspectRatio:    math.div(733, 1920) * 100vw;
@@ -37,10 +39,11 @@ $error: #be1e2d;
 $alert: #eed202;
 
 //== Brand Colours
-$primary: #337ab7;
-$secondary: #5bc0de;
-$tertiary: invert($primary);
-$quartary: invert($secondary);
+$primary: #1f325e;
+$secondary: #be5e7f;
+$tertiary: #f38271;
+$quaternary: #fcb865;
+$quinary: #f6ef78;
 
 //== Primary Tints
 $primary-darkest: color.adjust($primary, $lightness: -30%);
@@ -66,13 +69,21 @@ $tertiary-light: color.adjust($tertiary, $lightness: 10%);
 $tertiary-lighter: color.adjust($tertiary, $lightness: 20%);
 $tertiary-lightest: color.adjust($tertiary, $lightness: 30%);
 
-//== Quartary Tints
-$quartary-darkest: color.adjust($quartary, $lightness: -30%);
-$quartary-darker: color.adjust($quartary, $lightness: -20%);
-$quartary-dark: color.adjust($quartary, $lightness: -10%);
-$quartary-light: color.adjust($quartary, $lightness: 10%);
-$quartary-lighter: color.adjust($quartary, $lightness: 20%);
-$quartary-lightest: color.adjust($quartary, $lightness: 30%);
+//== Quaternary Tints
+$quaternary-darkest: color.adjust($quaternary, $lightness: -30%);
+$quaternary-darker: color.adjust($quaternary, $lightness: -20%);
+$quaternary-dark: color.adjust($quaternary, $lightness: -10%);
+$quaternary-light: color.adjust($quaternary, $lightness: 10%);
+$quaternary-lighter: color.adjust($quaternary, $lightness: 20%);
+$quaternary-lightest: color.adjust($quaternary, $lightness: 30%);
+
+//== Quinary Tints
+$quinary-darkest: color.adjust($quinary, $lightness: -30%);
+$quinary-darker: color.adjust($quinary, $lightness: -20%);
+$quinary-dark: color.adjust($quinary, $lightness: -10%);
+$quinary-light: color.adjust($quinary, $lightness: 10%);
+$quinary-lighter: color.adjust($quinary, $lightness: 20%);
+$quinary-lightest: color.adjust($quinary, $lightness: 30%);
 
 //== Shades
 $white:               white;
@@ -120,7 +131,8 @@ $colors: (
   "primary":    $primary,
   "secondary":  $secondary,
   "tertiary":   $tertiary,
-  "quartary":   $quartary,
+  "quaternary":   $quaternary,
+  "quinary": $quinary,
   // primary tints
   "primary-darkest":  $primary-darkest,
   "primary-darker":   $primary-darker,
@@ -142,13 +154,20 @@ $colors: (
   "tertiary-light":    $tertiary-light,
   "tertiary-lighter":  $tertiary-lighter,
   "tertiary-lightest": $tertiary-lightest,
-  // quartary tints
-  "quartary-darkest":  $quartary-darkest,
-  "quartary-darker":   $quartary-darker,
-  "quartary-dark":     $quartary-dark,
-  "quartary-light":    $quartary-light,
-  "quartary-lighter":  $quartary-lighter,
-  "quartary-lightest": $quartary-lightest,
+  // quaternary tints
+  "quaternary-darkest":  $quaternary-darkest,
+  "quaternary-darker":   $quaternary-darker,
+  "quaternary-dark":     $quaternary-dark,
+  "quaternary-light":    $quaternary-light,
+  "quaternary-lighter":  $quaternary-lighter,
+  "quaternary-lightest": $quaternary-lightest,
+  // quinary tints
+  "quinary-darkest":  $quaternary-darkest,
+  "quinary-darker":   $quaternary-darker,
+  "quinary-dark":     $quaternary-dark,
+  "quinary-light":    $quaternary-light,
+  "quinary-lighter":  $quaternary-lighter,
+  "quinary-lightest": $quaternary-lightest,
 );
 
 /*

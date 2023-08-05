@@ -15,6 +15,15 @@
 @import "plugins/recaptcha";
 @import "plugins/slick-slider";
 
+$fa-font-path: "~/fonts";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+// Sections
+@import "sections/footer";
+
 // Components
 @import "components/breadcrumbs";
 @import "components/blockquote";

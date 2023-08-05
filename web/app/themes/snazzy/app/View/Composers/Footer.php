@@ -28,7 +28,6 @@ class Footer extends Composer
     {
         return [
             'privacy' => $this->privacy(),
-            'icon' => asset('images/icon-my-academic-family-knockout-cold.svg')->uri(),
         ];
     }
 }

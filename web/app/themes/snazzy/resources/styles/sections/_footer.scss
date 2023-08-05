@@ -1,0 +1,45 @@
+.content-info {
+  background-image: url("~/images/bg-footer.svg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: auto 25vw;
+
+  .brand {
+    margin: 0 0 1em;
+  }
+}
+
+.subfooter {
+  font-size: 0.8em;
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  .privacy {
+    display: inline-block;
+    padding: 0.75em 0 0;
+    margin: 1em 0 0;
+    border-top: 1px solid rgba($white, 0.3);
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.nav-footer {
+  .menu-divider {
+    display: none;
+  }
+
+  .snazzycp-contact-info {
+    span {
+      display: block;
+    }
+  }
+}

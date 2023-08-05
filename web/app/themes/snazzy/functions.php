@@ -62,6 +62,7 @@ collect([
         'post-types',
         'acf',
         'admin',
+        'menus',
     ])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
