@@ -11,10 +11,9 @@ function footer( $items, $args ){
         ob_start(); ?>
 
         <li class="menu-item menu-contact-details">
-            <?php
-                frontend\contact_info(['hide-labels' => true]);
-                frontend\social();
-            ?>
+            <?php frontend\contact_info(['hide-labels' => true]); ?>
+            <h4><?php _e('Connect with us:', 'sage') ?></h4>
+            <?php frontend\social(); ?>
         </li>
 
         <?php $contact = ob_get_clean();
