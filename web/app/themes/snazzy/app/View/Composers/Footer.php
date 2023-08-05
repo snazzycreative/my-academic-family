@@ -19,7 +19,7 @@ class Footer extends Composer
 
         ob_start(); ?>
 
-        <p><span>|<span> <a href="<?= get_the_permalink($privacyID) ?>"><?= get_the_title($privacyID) ?></a></p>
+        <a href="<?= get_the_permalink($privacyID) ?>"><?= get_the_title($privacyID) ?></a>
 
         <?php return ob_get_clean();
     }

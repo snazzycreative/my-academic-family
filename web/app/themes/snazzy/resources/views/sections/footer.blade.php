@@ -15,7 +15,13 @@
   <div class="subfooter section-small">
     <div class="container">
       {{ \snazzycp\frontend\copyright() }}
-      {!! $privacy !!}
+
+      @if($privacy)
+      <div class="privacy">
+        <p><span>|</span> {!! $privacy !!}</p></p>
+      </div>
+      @endif
+
     </div>
   </div>
 </footer>
