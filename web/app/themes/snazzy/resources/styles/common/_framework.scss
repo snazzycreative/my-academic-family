@@ -160,6 +160,10 @@ iframe {
   width: $brandWidth;
   height: auto;
 
+  img {
+    width: 100%;
+  }
+
   &.brand-icon {
     width: 5em;
   }

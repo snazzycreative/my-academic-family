@@ -63,7 +63,7 @@ label {
 }
 
 a {
-  color: $primary;
+  color: $secondary;
   text-decoration: none;
   outline: none;
 
@@ -71,7 +71,7 @@ a {
 
   &:hover,
   &:focus {
-    color: $primary-dark;
+    color: $secondary-dark;
     text-decoration: none;
   }
 
@@ -81,7 +81,7 @@ a {
 
       &:hover,
       &:focus {
-        color: $primary-light;
+        color: $secondary-light;
       }
     }
   }
@@ -123,6 +123,17 @@ hr {
   @media screen {
     .knockout & {
       border-color: $white;
+    }
+  }
+}
+
+.snazzycp-social {
+  li {
+    display: inline-block;
+
+    a {
+      display: block;
+      padding: 0.125em;
     }
   }
 }
