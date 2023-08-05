@@ -34,7 +34,7 @@ export default async (app) => {
      * Proxy origin (`WP_HOME`)
      * @see {@link https://bud.js.org/docs/bud.proxy/}
      */
-    .proxy('http://myacademicfamily.1fp')
+    .proxy('https://myacademicfamily.1fp')
 
     /**
      * Development origin
