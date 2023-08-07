@@ -60,6 +60,7 @@ add_action('after_setup_theme', function () {
         'primary_navigation' => __('Primary Navigation', 'sage'),
         'secondary_navigation' => __('Secondary Navigation', 'sage'),
         'footer_navigation' => __('Footer Navigation', 'sage'),
+        'legal_navigation' => __('Legal Navigation', 'sage'),
     ]);
 
     /**

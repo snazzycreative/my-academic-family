@@ -53,20 +53,36 @@
       display: inline-block;
     }
   }
+}
 
-  .privacy {
+.nav-legal {
+  display: inline-block;
+  padding: 0.5em 0 0;
+  margin: 0.675em 0 0;
+  border: 0 solid rgba($white, 0.3);
+  border-width: 1px 0 0;
+
+  li {
     display: inline-block;
-    padding: 0.5em 0 0;
-    margin: 0.675em 0 0;
-    border: 0 solid rgba($white, 0.3);
-    border-width: 1px 0 0;
+    margin: 0 0.5em 0 0;
 
-    @media (min-width: $screen-xs) {
-      display: inline-block;
-      padding: 0 0 0 1em;
-      margin: 0 0 0 1em;
-      border-width: 0 0 0 1px;
+    &::before {
+      content: "\2022";
+      margin-right: 0.675em;
     }
+
+    &:first-of-type {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xs) {
+    display: inline-block;
+    padding: 0 0 0 1em;
+    margin: 0 0 0 1em;
+    border-width: 0 0 0 1px;
   }
 }
 

@@ -16,10 +16,8 @@
     <div class="container">
       {{ \snazzycp\frontend\copyright() }}
 
-      @if($privacy)
-      <div class="privacy">
-        <p>{!! $privacy !!}</p></p>
-      </div>
+      @if (has_nav_menu('legal_navigation'))
+        {!! wp_nav_menu(['theme_location' => 'legal_navigation', 'menu_class' => 'nav-legal nolist', 'echo' => false]) !!}
       @endif
 
     </div>
