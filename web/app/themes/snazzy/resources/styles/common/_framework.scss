@@ -93,8 +93,9 @@ iframe {
 .container {
   width: 90%;
   margin: auto;
+  max-width: $containerLarge;
 
-  &-large { max-width: $containerLarge; }
+  // &-large { max-width: $containerLarge; }
   &-medium { max-width: $containerMedium; }
   &-small { max-width: $containerSmall; }
   &-narrow { max-width: $containerNarrow; }
