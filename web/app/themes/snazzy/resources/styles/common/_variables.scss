@@ -5,12 +5,13 @@ $offCanvasWidth:      17.5em;
 $font:                "Advent Pro", sans-serif;
 $font2:               "Square Peg", script;
 
-$brandWidth: 10em;
+$brandWidth: 13.25em;
 
 $tileAspectRatio:     math.div(400, 640) * 100%;
 $heroAspectRatio:     math.div(593, 1920) * 100vw;
 $slideAspectRatio:    math.div(733, 1920) * 100vw;
 
+$sectionSmallest: 0.5em;
 $sectionSmall: 1.5em;
 $sectionMedium: 3em;
 $sectionLarge: 5em;

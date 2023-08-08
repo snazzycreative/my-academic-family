@@ -82,6 +82,7 @@ iframe {
     padding: $sectionLarge 0;
   }
 
+  &-smallest { padding: $sectionSmallest 0; }
   &-small { padding: $sectionSmall 0; }
   &-medium { padding: $sectionMedium 0; }
   &-large { padding: $sectionLarge 0; }

@@ -1,0 +1,85 @@
+button {
+  &.block {
+    background: none;
+    border: none;
+    font-size: 1em;
+    padding: 0;
+  }
+}
+
+button,
+input[type="submit"] {
+  &.button {
+    appearance: none;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1.25em;
+  border: 0.125em solid transparent;
+  border-radius: 1.5em;
+  background: $primary;
+  color: $white;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: normal;
+  cursor: pointer;
+  transition: 300ms ease all;
+
+  &:hover,
+  &:focus {
+    border-color: $grey;
+    background: $grey;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &.outline {
+    border-color: $black;
+    background: transparent;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      background: $black;
+      color: $white;
+    }
+
+    .knockout & {
+      @media screen {
+        border-color: $white;
+        color: $white;
+
+        &:hover,
+        &:focus {
+          background: $white;
+          color: $black;
+        }
+      }
+    }
+  }
+
+  &.wide {
+    padding-right: 3em;
+    padding-left: 3em;
+  }
+
+  &.thin {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  &.full {
+    display: block;
+    width: 100%;
+    padding-right: 0.625em;
+    padding-left: 0.625em;
+    text-align: center;
+  }
+
+  &.small { font-size: 1em; }
+  &.smaller { font-size: 0.875em; }
+  &.big { font-size: 1.25em; }
+  &.bigger { font-size: 1.5em; }
+}

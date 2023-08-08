@@ -21,13 +21,15 @@ $fa-font-path: "~/fonts";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
-// Sections
-@import "sections/footer";
-
 // Components
+@import "components/button";
 @import "components/breadcrumbs";
 @import "components/blockquote";
 @import "components/social";
 @import "components/contact-info";
 @import "components/hours";
 @import "components/pagination";
+
+// Sections
+@import "sections/header";
+@import "sections/footer";
