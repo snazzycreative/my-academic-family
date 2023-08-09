@@ -71,6 +71,10 @@ iframe {
   border: none;
 }
 
+.wrapper {
+  transition: all 300ms ease;
+}
+
 .section {
   padding: $sectionSmall 0;
 

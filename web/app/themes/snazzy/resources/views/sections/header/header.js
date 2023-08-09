@@ -1,10 +1,21 @@
 export function Header() {
   const body = document.querySelector('body');
+  const closeMenu = document.querySelector('.js-close-menu');
   const menuToggle = document.querySelector('.js-menu-toggle');
   const menuFixed = document.querySelector('.menu-fixed');
 
   menuToggle.addEventListener('click', ()=>{
     body.classList.toggle('menu-open');
+  });
+
+  closeMenu.addEventListener('click', ()=>{
+    body.classList.remove('menu-open');
+  });
+
+  document.addEventListener('keyup', function(event) {
+    if (event.key === 'Escape') {
+      body.classList.remove('menu-open');
+    }
   });
 
   document.addEventListener("scroll", () => {

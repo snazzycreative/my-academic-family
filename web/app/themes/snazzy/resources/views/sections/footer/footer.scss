@@ -3,6 +3,8 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: auto 20vw;
+  container-type: inline-size;
+  container-name: extended-nav;
 
   @media (min-width: $screen-xs) {
     background-size: auto 15vw;
@@ -151,7 +153,7 @@
       }
     }
 
-    @media (min-width: $screen-xs) {
+    @container extended-nav (min-width: 30em) {
       display: flex;
       flex-flow: column;
       flex-wrap: wrap;
@@ -172,7 +174,7 @@
       }
     }
 
-    @media (min-width: $screen-sm + 3) {
+    @container extended-nav (min-width: 51em) {
       height: 12em;
 
       > li {
@@ -194,7 +196,7 @@
       }
     }
 
-    @media (min-width: $screen-md) {
+    @container extended-nav (min-width: 62em) {
       > li {
         &.menu-item-has-children {
           padding: 0 3em 0 0;
@@ -202,7 +204,7 @@
       }
     }
 
-    @media (min-width: $screen-lg) {
+    @container (min-width: 75em) {
       padding-top: 1em;
     }
   }
