@@ -31,5 +31,5 @@ $fa-font-path: "~/fonts";
 @import "components/pagination";
 
 // Sections
-@import "sections/header";
-@import "sections/footer";
+@import "~views/sections/header/header";
+@import "~views/sections/footer/footer";

@@ -2,16 +2,20 @@
   {{ __('Skip to content') }}
 </a>
 
-@include('sections.header')
+@include('partials.menu-mobile')
 
-  <main id="main" class="main">
-    @yield('content')
-  </main>
+<div class="wrapper">
+  @include('sections.header.header')
 
-  @hasSection('sidebar')
-    <aside class="sidebar">
-      @yield('sidebar')
-    </aside>
-  @endif
+    <main id="main" class="main">
+      @yield('content')
+    </main>
 
-@include('sections.footer')
+    @hasSection('sidebar')
+      <aside class="sidebar">
+        @yield('sidebar')
+      </aside>
+    @endif
+
+  @include('sections.footer.footer')
+</div>

@@ -7,7 +7,7 @@ domReady(async (err) => {
     console.log(err);
   }
 
-  const { Header } = await import('./sections/header.js');
+  const { Header } = await import('../views/sections/header/header.js');
   new Header()
 });
 
