@@ -1,32 +1,44 @@
-import $ from 'jQuery';
-
 export function Header() {
-  $('.js-menu-toggle').on('click', function(e){
-    e.preventDefault();
-    $('body').toggleClass('activated-nav-side');
+  const body = document.querySelector('body');
+  const menuToggle = document.querySelector('.js-menu-toggle');
+
+  menuToggle.addEventListener('click', ()=>{
+    body.classList.toggle('activated-nav-side');
   });
 
-  let lastScroll = 0;
+  document.addEventListener("scroll", () => {
 
-  $(window).on('scroll', function(){
-    setTimeout(function() {
-      let scroll = $(window).scrollTop();
-      if (scroll > lastScroll) {
-        $('body').addClass('going-down');
-      } else if (scroll < lastScroll) {
-        $('body').removeClass('going-down');
-      }
-      lastScroll = scroll;
-    }, 1000);
-  });
+    var scrolled = document.scrollingElement.scrollTop;
+    var position = body.offsetTop;
 
-  $(window).on('scroll', function () {
-    let scroll = $(window).scrollTop();
-
-    if (scroll >= 20) {
-      $('body').addClass('scrolled');
+    if(scrolled > position + 20){
+      body.classList.add(
+        'scrolled',
+        );
     } else {
-      $('body').removeClass('scrolled');
+      body.classList.remove(
+        'scrolled',
+      );
     }
+
+    window.setTimeout(function(){
+      var oldScrollY = window.scrollY;
+
+      window.onscroll = function() {
+        if(oldScrollY < window.scrollY){
+          body.classList.add(
+            'going-down',
+            );
+
+          } else {
+          body.classList.remove(
+            'going-down',
+          );
+        }
+
+        oldScrollY = window.scrollY;
+      }
+
+    }, 1000);
   });
 }
