@@ -1,26 +1,63 @@
 .menu-fixed {
   position: sticky;
   top: 0;
+  z-index: 2;
   transition: 300ms ease all;
 
   .going-down & {
     transform: translateY(-100%);
   }
 
-  .topbar {
-    height: 0.25em;
-
-    .container {
-      display: none;
+  .menu-open & {
+    @media (max-width: $screen-sm-max) {
+      transform: none;
     }
   }
 
+  .topbar,
   .bottombar {
     .container {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
 
+    .nav-menu {
+      flex: auto;
+      text-align: right;
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .topbar {
+    @media (max-width: $screen-sm-max) {
+      height: 0.25em;
+
+      .container {
+        display: none;
+      }
+    }
+
+    &-social {
+      h4 {
+        font-family: $font2;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .snazzycp-social,
+      h4 {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .bottombar {
     .brand {
       @include flex-width($brandWidth);
 
@@ -28,58 +65,8 @@
     }
 
     .nav-primary {
-      display: none;
-    }
-  }
-}
-
-.menu-toggle {
-  font-size: 1rem;
-  margin: 0;
-
-  @include flex-width(1.5em);
-
-  i {
-    background: $grey-darkest;
-    border-radius: 0.5em;
-    display: block;
-    height: 0.125em;
-    margin-bottom: 0.25em;
-    transition: all 300ms ease;
-
-    &:last-of-type {
-      margin: 0;
-    }
-
-    &:nth-child(1) { margin-left: 50%; }
-    &:nth-child(3) { margin-right: 50%; }
-  }
-
-  &:hover {
-    i {
-      background: $primary;
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-
-  .menu-open & {
-    i {
-      background: $grey-darkest;
-      margin-left: 0;
-      margin-right: 0;
-
-      &:nth-child(2) {
-        opacity: 0;
-        transform: rotateY(90deg);
-      }
-
-      &:nth-child(1) {
-        transform: rotate(45deg) translate(0.2em, 0.45em);
-      }
-
-      &:nth-child(3) {
-        transform: rotate(-45deg) translate(0.1em, -0.3em);
+      @media (max-width: $screen-sm-max) {
+        display: none;
       }
     }
   }

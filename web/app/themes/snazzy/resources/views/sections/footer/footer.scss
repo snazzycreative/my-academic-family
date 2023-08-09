@@ -141,6 +141,16 @@
       }
     }
 
+    .content-info & {
+      @media (max-width: $screen-xs-max) {
+        height: auto;
+
+        >li:not(.menu-contact-details) {
+          display: none;
+        }
+      }
+    }
+
     @media (min-width: $screen-xs) {
       display: flex;
       flex-flow: column;

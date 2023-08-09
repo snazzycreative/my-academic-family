@@ -7,7 +7,7 @@
 
       @if (has_nav_menu('secondary_navigation'))
         <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
-          {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav-secondary nolist', 'echo' => false]) !!}
+          {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav-menu nav-secondary nolist', 'echo' => false]) !!}
         </nav>
       @endif
     </div>
@@ -20,7 +20,7 @@
 
       @if (has_nav_menu('primary_navigation'))
         <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav-primary nolist', 'echo' => false]) !!}
+          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav-menu nav-primary nolist', 'echo' => false]) !!}
         </nav>
       @endif
 

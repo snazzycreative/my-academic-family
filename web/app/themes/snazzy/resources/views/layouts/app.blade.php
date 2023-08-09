@@ -2,7 +2,7 @@
   {{ __('Skip to content') }}
 </a>
 
-@include('partials.menu-mobile')
+@include('sections.menu-mobile.menu-mobile')
 
 <div class="wrapper">
   @include('sections.header.header')
