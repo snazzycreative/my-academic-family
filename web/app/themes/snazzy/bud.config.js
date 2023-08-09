@@ -18,6 +18,10 @@ export default async (app) => {
       editor: ['@scripts/editor', '@styles/editor'],
     })
 
+    .provide({
+        jquery: ["jQuery", "$"],
+    })
+
     /**
      * Directory contents to be included in the compilation
      * @see {@link https://bud.js.org/docs/bud.assets/}
