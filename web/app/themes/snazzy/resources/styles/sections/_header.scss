@@ -1,6 +1,11 @@
 .menu-fixed {
   position: sticky;
   top: 0;
+  transition: 300ms ease all;
+
+  .going-down & {
+    transform: translateY(-100%);
+  }
 
   .topbar {
     height: 0.25em;

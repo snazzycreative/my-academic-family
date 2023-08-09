@@ -1,10 +1,14 @@
 import domReady from '@roots/sage/client/dom-ready';
-
 /**
  * Application entrypoint
  */
-domReady(async () => {
-  // ...
+domReady(async (err) => {
+  if (err) {
+    console.log(err);
+  }
+
+  const { Header } = await import('./sections/header.js');
+  new Header()
 });
 
 /**
