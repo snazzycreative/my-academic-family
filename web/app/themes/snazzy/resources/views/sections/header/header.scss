@@ -1,3 +1,82 @@
+/* stylelint-disable no-descending-specificity */
+
+.nav-secondary {
+  li {
+    margin-left: 0.5em;
+
+    @media screen {
+      a {
+        color: rgba($white, 0.7);
+      }
+    }
+
+    &:hover,
+    &.active {
+      a {
+        @media screen {
+          color: $white;
+        }
+      }
+    }
+
+    &.active {
+      a {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.nav-primary {
+  li {
+    margin-right: 0.5em;
+
+    a {
+      color: $primary;
+      font-weight: 700;
+      font-size: 1.25em;
+    }
+
+    &:hover,
+    &.active {
+      a {
+        color: $secondary;
+      }
+    }
+
+    &::before {
+      content: "\2022";
+      margin-right: 0.675em;
+      color: $secondary;
+    }
+
+    &:first-of-type {
+      &::before {
+        content: none;
+      }
+    }
+
+    &:last-of-type {
+      margin: 0 0 0 0.5em;
+
+      &::before {
+        content: none;
+      }
+
+      a {
+        @extend %button;
+        @extend %secondary;
+      }
+
+      &.active {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
 .menu-fixed {
   position: sticky;
   top: 0;
@@ -62,6 +141,10 @@
       @include flex-width($brandWidth);
 
       font-size: 0.5em;
+
+      @media (min-width: $screen-md) {
+        font-size: 0.75em;
+      }
     }
 
     .nav-primary {

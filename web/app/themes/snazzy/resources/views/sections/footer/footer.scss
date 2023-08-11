@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .content-info {
   background-image: url("~/images/bg-footer.svg");
   background-repeat: no-repeat;
@@ -37,6 +39,14 @@
       gap: 5em;
     }
   }
+
+  li {
+    &.active {
+      > a {
+        color: $secondary-light;
+      }
+    }
+  }
 }
 
 .nav-legal {
@@ -52,7 +62,7 @@
 
     &::before {
       content: "\2022";
-      margin-right: 0.675em;
+      margin-right: 0.75em;
     }
 
     &:first-of-type {

@@ -6,20 +6,20 @@
       </div>
 
       @if (has_nav_menu('secondary_navigation'))
-        <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
+        <nav class="nav-seconary-wrap" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
           {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav-menu nav-secondary nolist', 'echo' => false]) !!}
         </nav>
       @endif
     </div>
   </div>
-  <div class="bottombar bg-white section-smallest">
+  <div class="bottombar bg-white section-smaller">
     <div class="container">
       <a class="brand" href="{{ home_url('/') }}">
         {!! $logo !!}
       </a>
 
       @if (has_nav_menu('primary_navigation'))
-        <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+        <nav class="nav-primary-wrap" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
           {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav-menu nav-primary nolist', 'echo' => false]) !!}
         </nav>
       @endif

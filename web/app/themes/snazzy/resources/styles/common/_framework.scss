@@ -22,10 +22,10 @@
 
 ::selection {
   color: $white;
-  background: $primary;
+  background: $secondary;
 
-  .bg-primary & {
-    background: $secondary;
+  .bg-secondary & {
+    background: $primary;
   }
 }
 
@@ -87,6 +87,7 @@ iframe {
   }
 
   &-smallest { padding: $sectionSmallest 0; }
+  &-smaller { padding: $sectionSmaller 0; }
   &-small { padding: $sectionSmall 0; }
   &-medium { padding: $sectionMedium 0; }
   &-large { padding: $sectionLarge 0; }

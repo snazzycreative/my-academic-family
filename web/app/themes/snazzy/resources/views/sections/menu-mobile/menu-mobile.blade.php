@@ -2,8 +2,8 @@
   <div class="menu-inner">
     <div class="inner">
 
-      <a class="brand brand-icon" href="{!! home_url() !!}">
-        <img src="@asset('images/icon-my-academic-family-knockout-cold.svg')" alt="My Academic Family Icon" width="85" height="58" />
+      <a class="brand" href="{!! home_url() !!}">
+        <img src="@asset('images/logo-my-academic-family-knockout.svg')" alt="My Academic Family Icon" width="85" height="58" />
       </a>
 
       @if (has_nav_menu('footer_navigation'))

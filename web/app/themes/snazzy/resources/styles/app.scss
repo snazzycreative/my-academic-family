@@ -5,6 +5,7 @@
 @import "common/variables";
 @import "common/mixins";
 @import "common/typography";
+@import "components/button";
 @import "common/framework";
 @import "common/loading";
 
@@ -22,7 +23,6 @@ $fa-font-path: "~/fonts";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 // Components
-@import "components/button";
 @import "components/breadcrumbs";
 @import "components/blockquote";
 @import "components/social";
