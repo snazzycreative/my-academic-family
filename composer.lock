@@ -3529,7 +3529,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:snazzycreative/snazzy-creative-control-panel.git",
-                "reference": "9207a3f17956966097c48ea653926286847cec8f"
+                "reference": "b41d1da4de32d1c560cc6154eaf8dbbbd064720a"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "4.5"
@@ -3543,7 +3543,7 @@
             ],
             "description": "Snazzy Creative's Wordpress Control Panel",
             "homepage": "https://snazzycreative.com/",
-            "time": "2023-08-11T11:59:25+00:00"
+            "time": "2023-08-11T12:16:27+00:00"
         },
         {
             "name": "symfony/console",
