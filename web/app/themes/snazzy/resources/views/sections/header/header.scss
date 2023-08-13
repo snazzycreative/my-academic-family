@@ -145,6 +145,12 @@
       @media (min-width: $screen-md) {
         font-size: 0.75em;
       }
+
+      .home & {
+        @media (min-width: $screen-lg) {
+          font-size: 1em;
+        }
+      }
     }
 
     .nav-primary {

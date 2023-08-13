@@ -12,7 +12,7 @@
       @endif
     </div>
   </div>
-  <div class="bottombar bg-white section-smaller">
+  <div class="bottombar bg-white section-small">
     <div class="container">
       <a class="brand" href="{{ home_url('/') }}">
         {!! $logo !!}
