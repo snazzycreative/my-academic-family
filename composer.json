@@ -75,7 +75,8 @@
     "wpackagist-plugin/contact-form-7": "^5.7",
     "wpackagist-plugin/flamingo": "^2.3",
     "snazzycreative/snazzy-creative-control-panel": "dev-dev",
-    "wpackagist-plugin/multiple-post-thumbnails": "^1.7"
+    "wpackagist-plugin/multiple-post-thumbnails": "^1.7",
+    "ourcodeworld/name-that-color": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",

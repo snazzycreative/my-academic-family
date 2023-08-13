@@ -21,7 +21,7 @@
         {
             "key": "field_64c18b8ce343a",
             "label": "Colour",
-            "name": "button_color",
+            "name": "colour",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -33,8 +33,13 @@
                 "id": ""
             },
             "choices": {
-                "0": "Default",
-                "primary": "Navy"
+                "0": "White",
+                "primary": "Cello",
+                "secondary": "Tapestry",
+                "tertiary": "Froly",
+                "quaternary": "Koromiko",
+                "quinary": "Marigold Yellow",
+                "black": "Black"
             },
             "default_value": 0,
             "return_format": "value",
@@ -89,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690633471
+    "modified": 1691955672
 }
