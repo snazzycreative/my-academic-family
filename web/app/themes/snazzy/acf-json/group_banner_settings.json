@@ -3,6 +3,27 @@
     "title": "Banner Settings",
     "fields": [
         {
+            "key": "field_64dbb8660cf37",
+            "label": "Heading Size",
+            "name": "snazzy_banner_heading",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "min": "0.5",
+            "max": 2,
+            "step": "0.125",
+            "prepend": "",
+            "append": "x"
+        },
+        {
             "key": "field_64da6ac4ff23c",
             "label": "Banner Style",
             "name": "snazzy_banner_style",
@@ -12,14 +33,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "choices": {
                 "0": "Solid Colour",
-                "featured": "Featured Image",
-                "custom": "Custom Image"
+                "image": "Background Image"
             },
             "default_value": 0,
             "return_format": "value",
@@ -58,19 +78,19 @@
             "append": ""
         },
         {
-            "key": "field_64da6d12ff240",
-            "label": "Custom Image",
-            "name": "snazzy_banner_image",
+            "key": "field_64dcbae17f8c9",
+            "label": "",
+            "name": "",
             "aria-label": "",
-            "type": "image",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
                         "field": "field_64da6ac4ff23c",
-                        "operator": "==",
-                        "value": "custom"
+                        "operator": "!=",
+                        "value": "0"
                     }
                 ]
             ],
@@ -79,16 +99,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "message": "The banner uses the featured image as its background with this option selected. Look for the <strong>Featured Image<\/strong> box along the right side, somewhere below the publish button.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_64da695f0ec42",
@@ -136,5 +149,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692120958
+    "modified": 1692187490
 }

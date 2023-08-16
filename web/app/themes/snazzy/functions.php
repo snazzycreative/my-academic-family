@@ -63,6 +63,7 @@ collect([
         'acf',
         'admin',
         'menus',
+        'utilities',
     ])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
