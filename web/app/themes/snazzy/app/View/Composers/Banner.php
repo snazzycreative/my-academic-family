@@ -29,8 +29,10 @@ class Banner extends Composer
 
         $image = get_post_thumbnail_id();
         $style = get_field($prefix . '_style');
+        $excerpt = apply_filters('the_content', $post->post_excerpt);
 
         if($image && $style) $classes[] = 'has-image';
+        if(!$excerpt) $classes[] = 'no-excerpt';
 
         if($colour):
             $hex = frontend\snazzycp_info('color_' . $colour);
@@ -66,7 +68,7 @@ class Banner extends Composer
             'opacity' => (int)get_field($prefix . '_opacity') * 0.01 ?: 0.7,
             'image' => $image,
             'title' => get_the_title(),
-            'excerpt' => apply_filters('the_content', $post->post_excerpt),
+            'excerpt' => $excerpt,
         ];
     }
 }

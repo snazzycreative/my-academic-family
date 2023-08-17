@@ -5,6 +5,20 @@
     &::before {
       content: none;
     }
+
+    .overlay {
+      @media (min-width: $screen-md) {
+        @include position(absolute, 0);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .container {
+          flex: auto;
+        }
+      }
+    }
   }
 
   &-image {
@@ -27,20 +41,6 @@
     }
   }
 
-  .overlay {
-    @media (min-width: $screen-md) {
-      @include position(absolute, 0);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .container {
-        flex: auto;
-      }
-    }
-  }
-
   p {
     font-weight: 700;
 
@@ -56,6 +56,12 @@
   h1 {
     @media (min-width: $screen-md) {
       font-size: 4em;
+    }
+  }
+
+  &.no-excerpt {
+    h1 {
+      margin-bottom: 0;
     }
   }
 }
