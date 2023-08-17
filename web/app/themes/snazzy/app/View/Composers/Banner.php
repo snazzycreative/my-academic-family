@@ -18,7 +18,6 @@ class Banner extends Composer
         $prefix = 'snazzy_banner';
 
         $classes = [
-            'section',
             'banner',
         ];
 
@@ -27,6 +26,11 @@ class Banner extends Composer
         $tint = @$props['tint'];
         $pattern = @$props['pattern'];
         $contrast = @$props['contrast'];
+
+        $image = get_post_thumbnail_id();
+        $style = get_field($prefix . '_style');
+
+        if($image && $style) $classes[] = 'has-image';
 
         if($colour):
             $hex = frontend\snazzycp_info('color_' . $colour);
@@ -58,9 +62,9 @@ class Banner extends Composer
         return [
             'classes' => implode(' ', $classes),
             'heading_scale' => get_field($prefix . '_heading'),
-            'style' => get_field($prefix . '_style'),
-            'opacity' => (int)get_field($prefix . '_opacity') * 0.01,
-            'image' => get_post_thumbnail_id(),
+            'style' => $style,
+            'opacity' => (int)get_field($prefix . '_opacity') * 0.01 ?: 0.7,
+            'image' => $image,
             'title' => get_the_title(),
             'excerpt' => apply_filters('the_content', $post->post_excerpt),
         ];

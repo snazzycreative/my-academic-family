@@ -8,6 +8,7 @@ namespace App;
 
 use function Roots\bundle;
 
+
 /**
  * Register the theme assets.
  *
@@ -119,21 +120,25 @@ add_action('after_setup_theme', function () {
  *
  * @return void
  */
-add_action('widgets_init', function () {
-    $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-    ];
+// add_action('widgets_init', function () {
+//     $config = [
+//         'before_widget' => '<section class="widget %1$s %2$s">',
+//         'after_widget' => '</section>',
+//         'before_title' => '<h3>',
+//         'after_title' => '</h3>',
+//     ];
 
-    register_sidebar([
-        'name' => __('Primary', 'sage'),
-        'id' => 'sidebar-primary',
-    ] + $config);
+//     register_sidebar([
+//         'name' => __('Primary', 'sage'),
+//         'id' => 'sidebar-primary',
+//     ] + $config);
 
-    register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
-    ] + $config);
-});
+//     register_sidebar([
+//         'name' => __('Footer', 'sage'),
+//         'id' => 'sidebar-footer',
+//     ] + $config);
+// });
+
+add_image_size('lazy', 20, 20);
+add_image_srcset([ 'height' => 1000 ]);
+add_image_srcset(['name' => 'banner', 'height' => 576]);

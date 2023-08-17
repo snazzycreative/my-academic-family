@@ -175,3 +175,40 @@ iframe {
     width: 5em;
   }
 }
+
+.bg-pattern {
+  position: relative;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    @include position(absolute, 0);
+
+    content: "";
+    background-image: url("~/images/pattern-book-black.png");
+    background-attachment: fixed;
+    background-size: 11.875em;
+    background-position: center;
+    opacity: 0.02;
+  }
+
+  &.knockout {
+    &::before {
+      background-image: url("~/images/pattern-book-white.png");
+      opacity: 0.05;
+    }
+  }
+}
+
+.align {
+  &-centre {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
