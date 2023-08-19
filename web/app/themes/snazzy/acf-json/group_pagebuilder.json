@@ -307,7 +307,7 @@
                 },
                 "layout_64c0e9d15c983": {
                     "key": "layout_64c0e9d15c983",
-                    "name": "wysiwyg_editor",
+                    "name": "wysiwyg",
                     "label": "WYSIWYG Editor",
                     "display": "block",
                     "sub_fields": [
@@ -357,11 +357,9 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690987080
+    "modified": 1692304995
 }

@@ -53,7 +53,7 @@
             "label": "Top Padding",
             "name": "padding_top",
             "aria-label": "",
-            "type": "range",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -62,19 +62,24 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 3,
-            "min": "",
-            "max": 3,
-            "step": "",
-            "prepend": "",
-            "append": "x"
+            "choices": {
+                "0": "Enabled",
+                "none": "None"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_64c183552925a",
             "label": "Bottom Padding",
             "name": "padding_bottom",
             "aria-label": "",
-            "type": "range",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -83,12 +88,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 3,
-            "min": "",
-            "max": 3,
-            "step": "",
-            "prepend": "",
-            "append": "x"
+            "choices": {
+                "0": "Enabled",
+                "none": "None"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_64c11e0ebf440",
@@ -149,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690405680
+    "modified": 1692469886
 }

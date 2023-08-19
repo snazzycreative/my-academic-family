@@ -1,6 +1,42 @@
 <?php
 
 namespace App;
+use snazzycp\frontend;
+use snazzycp\utilities;
+use snazzycp\data;
+
+function knockout_content($layout = null)
+{
+    $layouts = [
+        'wysiwyg',
+    ];
+
+    if(in_array($layout, $layouts)):
+        return true;
+    else:
+        return false;
+    endif;
+}
+
+function colour_name_to_hex($colour = null, $tint = null)
+{
+    if(!$colour) return false;
+
+    if($colour == 'black'):
+        $hex = '#000000';
+    elseif($colour == 'white'):
+        $hex = '#FFFFFF';
+    else:
+        $hex = frontend\snazzycp_info('color_' . $colour);
+    endif;
+
+    if($tint):
+        $tints = data\colour_tints();
+        $hex = utilities\adjustBrightness($hex, $tints[$tint]);
+    endif;
+
+    return $hex;
+}
 
 function background_settings($prefix = null, $id = null)
 {
@@ -10,6 +46,59 @@ function background_settings($prefix = null, $id = null)
     $props = get_field($prefix . 'background', $id);
 
     return $props;
+}
+
+function is_knockout($hex = '#FFFFFF', $contrast = 0)
+{
+    $knockout = utilities\high_contrast($hex);
+
+    if($contrast == 'light'):
+        return true;
+    elseif(!$contrast && $knockout):
+        return true;
+    else:
+        return false;
+    endif;
+}
+
+function bgClasses($args = [], $knockoutContent = false)
+{
+    $defaultArgs = [
+        'color' => 'default',
+        'tint' => null,
+        'pattern' => false,
+        'contrast' => false,
+    ];
+
+    $args = wp_parse_args($args, $defaultArgs);
+
+    $colour = $args['colour'];
+    $tint = $args['tint'];
+    $pattern = $args['pattern'];
+    $contrast = $args['contrast'];
+
+    $classes = [];
+
+    if($colour):
+        $hex = colour_name_to_hex($colour, $tint);
+
+        if($colour && $tint && !in_array($colour, ['white', 'black'])):
+            $classes[] = 'bg-' . $colour . '-' . $tint;
+        elseif($colour):
+            $classes[] = 'bg-' . $colour;
+        endif;
+
+        if($knockoutContent && is_knockout($hex, $contrast)):
+            $classes[] = 'knockout';
+        endif;
+
+    else:
+        $classes[] = 'bg-default';
+    endif;
+
+    if($pattern) $classes[] = 'bg-pattern';
+
+    return $classes;
 }
 
 function add_image_srcset($args = [])
@@ -47,4 +136,41 @@ function add_image_srcset($args = [])
             $args['crop']
         );
     endforeach;
+}
+
+function section_classes($section = [])
+{
+    $classes = [
+        'section',
+        'section-' . @$section['acf_fc_layout'],
+        'section-pagebuilder',
+    ];
+
+    if(@$section['padding_top'] == 'none') $classes[] = 'section-zero-top';
+    if(@$section['padding_bottom'] == 'none') $classes[] = 'section-zero-bottom';
+
+    return $classes;
+}
+
+function section_intro_footer_classes($args = [], $section = null)
+{
+    $default_args = [
+        'alignment' => 'centre',
+        'width' => 'small',
+    ];
+
+    $align = @$args['alignment'] ?: 'centre';
+    $width = @$args['width'] ?: 'small';
+
+    $args = wp_parse_args($args, $default_args);
+
+    $classes = [
+        'section',
+        'section-' . $section,
+        'container',
+        'container-' . $width,
+        'align-' . $align,
+    ];
+
+    return $classes;
 }
