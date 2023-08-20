@@ -1,6 +1,5 @@
 @php
   $heading = @$section['intro']['heading'];
-  $buttons = @$section['footer']['links'] ?: false;
   $classes = array_merge(\App\section_classes($section), \App\bgClasses(@$section['background'], @$section['knockout_content']));
   $knockout = \App\is_knockout(\App\colour_name_to_hex(@$section['background']['colour'], @$section['background']['tint']), @$section['background']['contrast']);
 @endphp
@@ -22,9 +21,9 @@
     </div>
   @endif
 
-  @include('sections.' . $section['acf_fc_layout'] . '.' . $section['acf_fc_layout'], $section)
+  @includeFirst(['sections.' . $section['acf_fc_layout'] . '.' . $section['acf_fc_layout'], 'sections.section.section-default'])
 
-  @if(@$section['footer']['blurb'] || $buttons)
+  @if(@$section['footer']['blurb'] || @$sections['footer']['links'])
     @php
       $footerClasses = \App\section_intro_footer_classes(@$section['footer_settings'], 'footer');
       if($knockout) $footerClasses[] = 'knockout';
@@ -35,11 +34,7 @@
         {!! apply_filters('the_content', @$section['footer']['blurb']) !!}
       @endif
 
-      @if($buttons)
-        @foreach($buttons as $button)
-
-        @endforeach
-      @endif
+      @include('partials.buttons', ['links' => @$section['footer']['links']])
 
     </div>
 

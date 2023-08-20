@@ -6,4 +6,12 @@
   &-footer {
     padding-bottom: 0;
   }
+
+  &-buttons {
+    margin: -0.125em;
+
+    .button {
+      margin: 0.125em;
+    }
+  }
 }

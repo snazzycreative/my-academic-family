@@ -20,8 +20,9 @@ input[type="submit"] {
   padding: 0.5em 1.25em;
   border: 0.125em solid transparent;
   border-radius: 1.5em;
-  background: $primary;
+  background: $black;
   color: $white;
+  font-family: $font;
   font-weight: 700;
   text-decoration: none;
   white-space: normal;
@@ -30,8 +31,6 @@ input[type="submit"] {
 
   &:hover,
   &:focus {
-    border-color: $grey;
-    background: $grey;
     color: $white;
     text-decoration: none;
   }

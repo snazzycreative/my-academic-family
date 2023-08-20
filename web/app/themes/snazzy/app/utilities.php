@@ -72,10 +72,10 @@ function bgClasses($args = [], $knockoutContent = false)
 
     $args = wp_parse_args($args, $defaultArgs);
 
-    $colour = $args['colour'];
-    $tint = $args['tint'];
-    $pattern = $args['pattern'];
-    $contrast = $args['contrast'];
+    $colour = @$args['colour'];
+    $tint = @$args['tint'];
+    $pattern = @$args['pattern'];
+    $contrast = @$args['contrast'];
 
     $classes = [];
 
@@ -97,6 +97,25 @@ function bgClasses($args = [], $knockoutContent = false)
     endif;
 
     if($pattern) $classes[] = 'bg-pattern';
+
+    return $classes;
+}
+
+function buttonClasses($args = [])
+{
+    $default_args = [
+        'colour' => null,
+        'style' => null,
+    ];
+
+    $args = wp_parse_args($args, $default_args);
+
+    $classes = [
+        'button',
+    ];
+
+    if($args['colour']) $classes[] = $args['colour'];
+    if($args['style']) $classes[] = $args['style'];
 
     return $classes;
 }
@@ -167,6 +186,7 @@ function section_intro_footer_classes($args = [], $section = null)
     $classes = [
         'section',
         'section-' . $section,
+        'section-small',
         'container',
         'container-' . $width,
         'align-' . $align,

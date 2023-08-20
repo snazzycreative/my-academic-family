@@ -33,12 +33,13 @@
                 "id": ""
             },
             "choices": {
-                "0": "White",
+                "0": "Default",
                 "primary": "Cello",
                 "secondary": "Tapestry",
                 "tertiary": "Froly",
                 "quaternary": "Koromiko",
                 "quinary": "Marigold Yellow",
+                "white": "White",
                 "black": "Black"
             },
             "default_value": 0,
@@ -65,7 +66,7 @@
             },
             "choices": {
                 "0": "Solid",
-                "inverted": "Outline"
+                "outline": "Outline"
             },
             "default_value": 0,
             "return_format": "value",
@@ -94,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691955672
+    "modified": 1692535293
 }
