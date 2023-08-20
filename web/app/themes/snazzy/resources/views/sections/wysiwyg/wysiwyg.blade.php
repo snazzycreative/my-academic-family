@@ -1,10 +1,6 @@
 @php
-  $classes = [
-    'wysiwyg',
-    'container',
-  ];
-
-  if(@$section['container']) $classes[] = 'container-' . $section['container'];
+  $classes = \App\section_container_classes($section);
+  $classes[] = 'wysiwyg';
 @endphp
 
 <div class="{!! implode(' ', $classes) !!}">

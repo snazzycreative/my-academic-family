@@ -194,3 +194,20 @@ function section_intro_footer_classes($args = [], $section = null)
 
     return $classes;
 }
+
+function section_container_classes($args = [])
+{
+    $default_args = [
+        'container' => null,
+    ];
+
+    $args = wp_parse_args($args, $default_args);
+
+    $classes = [
+        'container',
+    ];
+
+    if($args['container']) $classes[] = 'container-' . $args['container'];
+
+    return $classes;
+}

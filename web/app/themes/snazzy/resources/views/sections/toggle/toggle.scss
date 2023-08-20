@@ -1,0 +1,75 @@
+.section-toggle {
+  a,
+  span,
+  strong {
+    display: block;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  ul {
+    display: flex;
+    font-size: 0.75em;
+    max-width: 35em;
+    margin: auto;
+
+    @media (min-width: $screen-sm) {
+      font-size: 0.875em;
+    }
+
+    @media (min-width: $screen-md) {
+      font-size: 1em;
+    }
+  }
+
+  a {
+    padding: 1em 2em;
+    border: 0.25rem solid $secondary;
+    user-select: none;
+  }
+
+  span {
+    font-size: 1em;
+  }
+
+  strong {
+    font-size: 3em;
+  }
+
+  li {
+    flex: 0 0 50%;
+
+    &:first-of-type {
+      text-align: right;
+
+      a {
+        border-radius: 4em 0 0 4em;
+      }
+    }
+
+    &:last-of-type {
+      a {
+        border-radius: 0 4em 4em 0;
+      }
+    }
+
+    &:hover {
+      a {
+        background: $secondary-light;
+      }
+    }
+
+    &.active {
+      a {
+        background: $secondary;
+      }
+    }
+
+    &.active,
+    &:hover {
+      a {
+        color: $white;
+      }
+    }
+  }
+}
