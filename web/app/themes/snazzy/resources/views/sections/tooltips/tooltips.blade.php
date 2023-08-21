@@ -5,9 +5,9 @@
         <li class="tooltip-tile bg-{!! $tile['icon']['colour'] ?: 'default' !!} knockout">
           <div class="inner">
             <h3 class="section-title">{!! $tile['text']['heading'] !!}</h3>
-            <div class="tooltip">
+            <div class="tooltip wysiwyg">
               @if(@$tile['text']['tooltip'])
-                <a href="#" class="fas fa-info-circle"></a>
+                <i class="fas fa-info-circle"></i>
                 <p>{!! $tile['text']['tooltip'] !!}</p>
               @endif
             </div>
