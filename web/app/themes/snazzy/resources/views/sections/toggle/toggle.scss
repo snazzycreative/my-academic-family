@@ -9,9 +9,13 @@
 
   ul {
     display: flex;
-    font-size: 0.75em;
+    font-size: 0.675em;
     max-width: 35em;
     margin: auto;
+
+    @media (min-width: $screen-xs) {
+      font-size: 0.75em;
+    }
 
     @media (min-width: $screen-sm) {
       font-size: 0.875em;
