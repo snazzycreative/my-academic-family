@@ -12,7 +12,19 @@
           @endif
         </div>
         <div class="section-alternating-col section-alternating-content">
-          <pre>{!! print_r($row['content']) !!}</pre>
+          <div class="content-position">
+            <div class="section container">
+              <div class="wysiwyg">
+                @if(@$row['content']['heading'])
+                  <h3>{!! $row['content']['heading'] !!}</h3>
+                @endif
+
+                {!! apply_filters('the_content', @$row['content']['text']) !!}
+              </div>
+
+              @include('partials.buttons', ['links' => @$row['content']['links']])
+            </div>
+          </div>
         </div>
       </div>
     @endforeach

@@ -9,6 +9,7 @@ function knockout_content($layout = null)
 {
     $layouts = [
         'wysiwyg',
+        'alternating',
     ];
 
     if(in_array($layout, $layouts)):
