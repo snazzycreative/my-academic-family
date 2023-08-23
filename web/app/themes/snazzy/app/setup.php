@@ -140,5 +140,6 @@ add_action('after_setup_theme', function () {
 // });
 
 add_image_size('lazy', 20, 20);
-add_image_srcset([ 'height' => 1000 ]);
-add_image_srcset(['name' => 'banner', 'height' => 576]);
+add_image_srcset(['name' => 'hero',     'width' => 1920, 'height' => 1000]);
+add_image_srcset(['name' => 'banner',   'width' => 1920, 'height' =>  576]);
+add_image_srcset(['name' => 'overview', 'width' =>  960, 'height' =>  960, 'sizes' => 3]);

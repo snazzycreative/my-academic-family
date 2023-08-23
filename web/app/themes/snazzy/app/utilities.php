@@ -127,11 +127,11 @@ function add_image_srcset($args = [])
         'width' => 1920,
         'height' => null,
         'crop' => true,
-        'total' => 5,
+        'sizes' => 5,
     ];
 
     $args = wp_parse_args($args, $default_args);
-    $total = $args['total'];
+    $sizes = $args['sizes'];
     $width = $args['width'];
     $height = $args['height'];
 
@@ -145,7 +145,7 @@ function add_image_srcset($args = [])
         'xs' => 0.20833333,
     ];
 
-    if($total < 5) $multipliers = array_slice($multipliers, $total);
+    if($sizes < 5) $multipliers = array_slice($multipliers, 0, $sizes);
 
     foreach ( $multipliers as $slug => $scale ):
         add_image_size (

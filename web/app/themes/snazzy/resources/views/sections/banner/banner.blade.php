@@ -1,7 +1,7 @@
 <section class="{!! $classes !!}">
   @if($image && $style == 'image')
     <div class="banner-image" style="opacity: {!! $opacity !!}">
-      {!! \App\frontend\hero_srcset(['name' => 'banner', 'lazy' => false]) !!}
+      {!! \App\frontend\img_srcset(['name' => 'banner', 'lazy' => false]) !!}
     </div>
   @endif
 

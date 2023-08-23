@@ -43,7 +43,7 @@
             "min": 1,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Icon",
+            "button_label": "Add Tile",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -268,5 +268,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692554345
+    "modified": 1692643715
 }

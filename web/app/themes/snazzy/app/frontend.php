@@ -2,23 +2,22 @@
 
 namespace App\frontend;
 
-function hero_srcset($args = [])
+function img_srcset($args = [])
 {
     global $_wp_additional_image_sizes;
 
 
     $default_args = [
         'name' => 'hero',
-        'post' => get_post(),
+        'image' => null,
         'lazy' => true,
+        'sizes' => 5,
     ];
 
     $args = wp_parse_args($args, $default_args);
     $name = $args['name'];
-    $post = $args['post'];
 
-    $image = get_post_thumbnail_id($post);
-
+    $image = ($args['image']) ? $args['image'] : get_post_thumbnail_id();
     $properties = @$_wp_additional_image_sizes[$name . '-xl'];
 
     $width = @$properties['width'];
@@ -32,6 +31,8 @@ function hero_srcset($args = [])
       'xs' => 0.20833333,
     ];
 
+    if($args['sizes'] < 5) $sizes = array_slice($sizes, 0, $args['sizes']);
+
     if($image) {
 
       $full = wp_get_attachment_image_src($image, $name . '-xl');
@@ -44,7 +45,7 @@ function hero_srcset($args = [])
       }
 
       $atts = [
-        'class' => 'hero-image hero-' . $name,
+        'class' => $name . '-image',
         'src' => $full[0],
         'srcset' => implode(', ', $srcsets),
         'width' => $width,
@@ -68,35 +69,8 @@ function hero_srcset($args = [])
         endforeach; ?>
       />
 
-      <?php return ob_get_clean();
-
-    } else {
-
-      $path = 'images/defaults/';
-
-      $multipliers = [ 1,  ];
-      $lazy_height = 20 * 0.010416667;
-      end($multipliers);
-
-      $srcsets = [];
-      foreach($sizes as $size => $multiplier) {
-        $srcsets[] = App\asset_path($path.$name.'-default-'.$size.'.jpg') . ' ' . round($width * $multiplier) . 'w';
-      }
-
-      ob_start(); ?>
-
-      <img
-        class="default<?php if($args['lazy']) echo ' lazy'; ?>"
-        src="<?= App\asset_path($path.$name.'-default-lazy.jpg') ?>"
-        data-src="<?= App\asset_path($path.$name.'-default-xl.jpg') ?>"
-        data-srcset="<?= implode(', ', $srcsets) ?>"
-        width="<?= $width ?>"
-        height="<?= $height ?>"
-        alt="<?= $post->post_title; ?>"
-        data-object-fit
-      />
-
-      <?php return ob_get_clean();
-
+      <?php $html = ob_get_clean();
     }
+
+    return $html;
 }
