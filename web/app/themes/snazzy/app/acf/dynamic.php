@@ -40,3 +40,25 @@ function colour_choices()
 
     return $colours;
 }
+
+add_filter('acf/load_field/name=fontawesome_solid', __NAMESPACE__ . '\\load_fontawesome_solid_icons');
+function load_fontawesome_solid_icons( $field )
+{
+    $field['choices'] = [];
+    $field['choices'] = fontawesome_choices('solid');
+
+    return $field;
+}
+
+function fontawesome_choices($set = 'solid')
+{
+    $icons = data\fontawesome($set);
+
+    $choices = [];
+
+    foreach($icons as $slug => $props):
+        $choices[$slug] = (ucwords(str_replace('-', ' ', $slug)));
+    endforeach;
+
+    return $choices;
+}

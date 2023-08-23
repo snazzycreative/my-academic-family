@@ -7,7 +7,7 @@
             <h3 class="section-title">{!! $tile['text']['heading'] !!}</h3>
             <div class="tooltip wysiwyg">
               @if(@$tile['text']['tooltip'])
-                <i class="fas fa-info-circle"></i>
+                <i class="white fas fa-info-circle"></i>
                 <p>{!! $tile['text']['tooltip'] !!}</p>
               @endif
             </div>

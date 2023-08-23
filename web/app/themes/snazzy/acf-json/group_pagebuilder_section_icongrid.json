@@ -65,7 +65,7 @@
                         {
                             "key": "field_64c5038e4447a",
                             "label": "Icon",
-                            "name": "select",
+                            "name": "fontawesome_solid",
                             "aria-label": "",
                             "type": "select",
                             "instructions": "",
@@ -73,7 +73,7 @@
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "js-snazzy-select2-fa",
+                                "class": "js-snazzy-select2-fas",
                                 "id": ""
                             },
                             "choices": [
@@ -90,7 +90,7 @@
                         {
                             "key": "field_64c503db4447b",
                             "label": "Colour",
-                            "name": "color",
+                            "name": "colour",
                             "aria-label": "",
                             "type": "select",
                             "instructions": "",
@@ -101,9 +101,16 @@
                                 "class": "js-snazzy-select2-color",
                                 "id": ""
                             },
-                            "choices": [
-                                "Default"
-                            ],
+                            "choices": {
+                                "0": "Default",
+                                "primary": "Cello",
+                                "secondary": "Tapestry",
+                                "tertiary": "Froly",
+                                "quaternary": "Koromiko",
+                                "quinary": "Marigold Yellow",
+                                "white": "White",
+                                "black": "Black"
+                            },
                             "default_value": 0,
                             "return_format": "value",
                             "multiple": 0,
@@ -286,5 +293,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690670188
+    "modified": 1692803191
 }

@@ -1,58 +1,59 @@
-.tooltip {
-  &-tiles {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -0.5em;
+.grid-icons,
+.tooltip-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5em;
 
-    &.grid-align-left {
-      justify-content: flex-start;
+  &.grid-align-left {
+    justify-content: flex-start;
+  }
+
+  &.grid-align-centre {
+    justify-content: center;
+  }
+
+  &.grid-align-right {
+    justify-content: flex-end;
+  }
+
+  li {
+    position: relative;
+    flex: 0 0 100%;
+    margin: 0.5em;
+
+    @media (min-width: $screen-xs) {
+      @include flex-width(calc(50% - 1em));
     }
 
-    &.grid-align-centre {
-      justify-content: center;
+    @media (min-width: $screen-sm) {
+      @include flex-width(calc(33.33% - 1em));
     }
 
-    &.grid-align-right {
-      justify-content: flex-end;
-    }
+    @media (min-width: $screen-md) {
+      @include flex-width(calc(25% - 1.5em));
 
-    li {
-      position: relative;
-      flex: 0 0 100%;
-      margin: 0.5em;
+      margin: 0.75em;
 
-      @media (min-width: $screen-xs) {
-        @include flex-width(calc(50% - 1em));
+      .grid-3 & {
+        @include flex-width(calc(33.33% - 1.5em));
       }
 
-      @media (min-width: $screen-sm) {
-        @include flex-width(calc(33.33% - 1em));
-      }
-
-      @media (min-width: $screen-md) {
+      .grid-4 & {
         @include flex-width(calc(25% - 1.5em));
+      }
 
-        margin: 0.75em;
+      .grid-5 & {
+        @include flex-width(calc(20% - 1.5em));
+      }
 
-        .grid-3 & {
-          @include flex-width(calc(33.33% - 1.5em));
-        }
-
-        .grid-4 & {
-          @include flex-width(calc(25% - 1.5em));
-        }
-
-        .grid-5 & {
-          @include flex-width(calc(20% - 1.5em));
-        }
-
-        .grid-6 & {
-          @include flex-width(calc(16.667% - 1.5em));
-        }
+      .grid-6 & {
+        @include flex-width(calc(16.667% - 1.5em));
       }
     }
   }
+}
 
+.tooltip {
   &-tile {
     position: relative;
 
