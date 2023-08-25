@@ -14,4 +14,13 @@
       margin: 0.125em;
     }
   }
+
+  &-pagebuilder {
+    border: 0 solid $white;
+    border-width: 0.25em 0 0;
+
+    &:last-of-type {
+      border-width: 0.25em 0;
+    }
+  }
 }

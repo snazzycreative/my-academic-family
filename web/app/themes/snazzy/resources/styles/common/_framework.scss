@@ -221,3 +221,63 @@ iframe {
 .bg-default {
   background-color: $grey-lightest;
 }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5em;
+
+  &-align-left {
+    justify-content: flex-start;
+  }
+
+  &-align-centre {
+    justify-content: center;
+  }
+
+  &-align-right {
+    justify-content: flex-end;
+  }
+
+  &-item {
+    position: relative;
+    flex: 0 0 100%;
+    margin: 0.5em;
+
+    @media (min-width: $screen-xs) {
+      @include flex-width(calc(50% - 1em));
+    }
+
+    @media (min-width: $screen-sm) {
+      .grid-3 &,
+      .grid-6 & {
+        @include flex-width(calc(33.33% - 1em));
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin: 0.75em;
+
+      .grid-2 & {
+        @include flex-width(calc(50% - 1.5em));
+      }
+
+      .grid-3 &,
+      .grid-6 & {
+        @include flex-width(calc(33.33% - 1.5em));
+      }
+
+      .grid-4 & {
+        @include flex-width(calc(25% - 1.5em));
+      }
+
+      .grid-5 & {
+        @include flex-width(calc(20% - 1.5em));
+      }
+
+      .grid-6 & {
+        @include flex-width(calc(16.667% - 1.5em));
+      }
+    }
+  }
+}
