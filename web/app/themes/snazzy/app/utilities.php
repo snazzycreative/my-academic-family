@@ -10,6 +10,7 @@ function knockout_content($layout = null)
     $layouts = [
         'wysiwyg',
         'alternating',
+        'form',
     ];
 
     if(in_array($layout, $layouts)):
@@ -97,7 +98,7 @@ function bgClasses($args = [], $knockoutContent = false)
         $classes[] = 'bg-default';
     endif;
 
-    if($pattern) $classes[] = 'bg-pattern';
+    if($pattern) $classes[] = (is_knockout($hex, $contrast)) ? 'bg-pattern bg-pattern-white' : 'bg-pattern bg-pattern-black';
 
     return $classes;
 }
