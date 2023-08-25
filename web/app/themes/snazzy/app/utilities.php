@@ -66,7 +66,7 @@ function is_knockout($hex = '#FFFFFF', $contrast = 0)
 function bgClasses($args = [], $knockoutContent = false)
 {
     $defaultArgs = [
-        'color' => 'default',
+        'colour' => 'default',
         'tint' => null,
         'pattern' => false,
         'contrast' => false,

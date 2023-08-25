@@ -6,7 +6,6 @@ function img_srcset($args = [])
 {
     global $_wp_additional_image_sizes;
 
-
     $default_args = [
         'name' => 'hero',
         'image' => null,
