@@ -35,9 +35,10 @@
                   @endif
 
                   {!! apply_filters('the_content', @$card['content']['text']) !!}
-
-                  @include('partials.buttons', ['links' => @$card['content']['links']])
                 </div>
+
+                @include('partials.buttons', ['links' => @$card['content']['links']])
+
               </div>
             </div>
           </div>

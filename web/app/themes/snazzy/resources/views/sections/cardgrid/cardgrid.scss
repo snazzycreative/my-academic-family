@@ -35,11 +35,6 @@
   &-content {
     position: relative;
     z-index: 2;
-    // @include position(absolute, 2, 0);
-
-    .section-buttons {
-      margin-top: 1.5em;
-    }
   }
 
   &-numbered {
@@ -47,8 +42,11 @@
       padding-left: 2em;
 
       @media (min-width: $screen-md) {
-        font-size: 1.25em;
-        padding-left: 3em;
+        padding-left: 3.75em;
+
+        p {
+          font-size: 1.25em;
+        }
       }
     }
   }
@@ -65,7 +63,7 @@
     text-align: center;
 
     @media (min-width: $screen-md) {
-      top: -0.125em;
+      top: -0.25em;
       font-size: 2em;
     }
 

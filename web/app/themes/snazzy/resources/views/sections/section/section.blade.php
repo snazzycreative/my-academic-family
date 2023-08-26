@@ -13,11 +13,13 @@
     @endphp
 
     <div class="{!! implode(' ', $introClasses) !!}">
-      <h{!! $h !!} class="section-title">{!! $heading !!}</h{!! $h !!}>
+      <div class="wysiwyg">
+        <h{!! $h !!}>{!! $heading !!}</h{!! $h !!}>
 
-      @if(@$section['intro']['blurb'])
-        {!! apply_filters('the_content', @$section['intro']['blurb']) !!}
-      @endif
+        @if(@$section['intro']['blurb'])
+          {!! apply_filters('the_content', @$section['intro']['blurb']) !!}
+        @endif
+        </div>
     </div>
   @endif
 
@@ -30,9 +32,11 @@
     @endphp
 
     <div class="{!! implode(' ', $footerClasses) !!}">
-      @if(@$section['footer']['blurb'])
-        {!! apply_filters('the_content', @$section['footer']['blurb']) !!}
-      @endif
+      <div class="wysiwyg">
+        @if(@$section['footer']['blurb'])
+          {!! apply_filters('the_content', @$section['footer']['blurb']) !!}
+        @endif
+      </div>
 
       @include('partials.buttons', ['links' => @$section['footer']['links']])
 
