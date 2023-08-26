@@ -3,7 +3,6 @@
 namespace App;
 use snazzycp\frontend;
 use snazzycp\utilities;
-use snazzycp\data;
 
 function knockout_content($layout = null)
 {
@@ -19,26 +18,6 @@ function knockout_content($layout = null)
     else:
         return false;
     endif;
-}
-
-function colour_name_to_hex($colour = null, $tint = null)
-{
-    if(!$colour) return false;
-
-    if($colour == 'black'):
-        $hex = '#000000';
-    elseif($colour == 'white'):
-        $hex = '#FFFFFF';
-    else:
-        $hex = frontend\snazzycp_info('color_' . $colour);
-    endif;
-
-    if($tint):
-        $tints = data\colour_tints();
-        $hex = utilities\adjustBrightness($hex, $tints[$tint]);
-    endif;
-
-    return $hex;
 }
 
 function background_settings($prefix = null, $id = null)
@@ -83,7 +62,7 @@ function bgClasses($args = [], $knockoutContent = false)
     $classes = [];
 
     if($colour):
-        $hex = colour_name_to_hex($colour, $tint);
+        $hex = utilities\colour_name_to_hex($colour, $tint);
 
         if($colour && $tint && !in_array($colour, ['white', 'black'])):
             $classes[] = 'bg-' . $colour . '-' . $tint;

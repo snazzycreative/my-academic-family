@@ -34,19 +34,19 @@
             },
             "choices": {
                 "0": "Default",
-                "primary": "Cello",
-                "secondary": "Tapestry",
-                "tertiary": "Froly",
-                "quaternary": "Koromiko",
-                "quinary": "Marigold Yellow",
-                "white": "White",
-                "black": "Black"
+                "primary": "<i class=\"snazzycp-colour-option fas fa-circle\" style=\"color: #1f325e\"><\/i> <span>Cello<\/span>",
+                "secondary": "<i class=\"snazzycp-colour-option fas fa-circle\" style=\"color: #be5e7f\"><\/i> <span>Tapestry<\/span>",
+                "tertiary": "<i class=\"snazzycp-colour-option fas fa-circle\" style=\"color: #f38271\"><\/i> <span>Froly<\/span>",
+                "quaternary": "<i class=\"snazzycp-colour-option fas fa-circle\" style=\"color: #fcb865\"><\/i> <span>Koromiko<\/span>",
+                "quinary": "<i class=\"snazzycp-colour-option fas fa-circle\" style=\"color: #f6ef78\"><\/i> <span>Marigold Yellow<\/span>",
+                "white": "<i class=\"snazzycp-colour-option fas fa-circle\" style=\"color: #FFF;\"><\/i> <span>White<\/span>",
+                "black": "<i class=\"snazzycp-colour-option fas fa-circle\" style=\"color: #000;\"><\/i> <span>Black<\/span>"
             },
             "default_value": 0,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
-            "ui": 0,
+            "ui": 1,
             "ajax": 0,
             "placeholder": ""
         },
@@ -95,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692535293
+    "modified": 1693082479
 }

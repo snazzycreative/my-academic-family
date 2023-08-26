@@ -2,6 +2,7 @@
 
 namespace App\acf;
 use snazzycp\data;
+use snazzycp\utilities;
 use ourcodeworld\NameThatColor;
 
 add_filter('acf/load_field/name=colour', __NAMESPACE__ . '\\load_colour_choices');
@@ -31,12 +32,12 @@ function colour_choices()
             if(!$value) continue;
 
             $name = ($value) ? @$colorInterpreter->name($value)['name'] : $slug;
-            $colours[$slug] = $name;
+            $colours[$slug] = '<i class="snazzycp-colour-option fas fa-circle" style="color: ' . utilities\colour_name_to_hex($slug) . '"></i> <span>' . $name . '</span>';
         endforeach;
     endif;
 
-    $colours['white'] = __('White', 'sage');
-    $colours['black'] = __('Black', 'sage');
+    $colours['white'] = '<i class="snazzycp-colour-option fas fa-circle" style="color: #FFF;"></i> <span>' . __('White', 'sage') . '</span>';
+    $colours['black'] = '<i class="snazzycp-colour-option fas fa-circle" style="color: #000;"></i> <span>' . __('Black', 'sage') . '</span>';
 
     return $colours;
 }

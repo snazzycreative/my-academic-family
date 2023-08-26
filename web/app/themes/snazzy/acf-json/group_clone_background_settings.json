@@ -29,7 +29,7 @@
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "25",
-                        "class": "",
+                        "class": "js-snazzy-acf-select2-colours",
                         "id": ""
                     },
                     "choices": {
@@ -46,7 +46,7 @@
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
-                    "ui": 0,
+                    "ui": 1,
                     "ajax": 0,
                     "placeholder": ""
                 },
@@ -155,5 +155,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692036753
+    "modified": 1693081797
 }
