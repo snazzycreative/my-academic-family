@@ -76,10 +76,14 @@
 
     @media (min-width: $screen-md) {
       @include flex-width(15em);
+
+      margin-right: 3em;
     }
 
     @media (min-width: $screen-lg) {
       @include flex-width(20em);
+
+      margin-right: 5em;
     }
   }
 
