@@ -11,6 +11,7 @@ function knockout_content($layout = null)
         'wysiwyg',
         'alternating',
         'form',
+        'organisations',
     ];
 
     if(in_array($layout, $layouts)):

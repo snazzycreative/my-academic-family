@@ -1,0 +1,89 @@
+.organisation {
+  &-content {
+    &:nth-child(even) {
+      background: rgba($black, 0.05);
+
+      .knockout & {
+        background: rgba($white, 0.05);
+      }
+    }
+
+    .snazzycp-social {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.5em;
+
+      @media (min-width: $screen-sm) {
+        display: block;
+        text-align: right;
+        flex: 1;
+      }
+    }
+
+    .container {
+      @media (min-width: $screen-sm) {
+        display: flex;
+      }
+
+      @media (min-width: $screen-md) {
+        align-items: center;
+      }
+    }
+  }
+
+  &-footer {
+    margin-top: 1em;
+
+    @media (min-width: $screen-sm) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: $font;
+    font-weight: 700;
+    font-size: 1.25em;
+    margin: 0.5em 1em 0.5em 0;
+
+    @media (min-width: $screen-sm) {
+      display: block;
+      flex: 1;
+    }
+  }
+
+  &-image {
+    margin: 0 0 1em;
+
+    img {
+      width: auto;
+      max-height: 5em;
+      object-fit: contain;
+
+      @media (min-width: $screen-sm) {
+        max-height: 100%;
+      }
+    }
+
+    @media (min-width: $screen-sm) {
+      @include flex-width(10em);
+
+      margin: 0 1.5em 0 0;
+    }
+
+    @media (min-width: $screen-md) {
+      @include flex-width(15em);
+    }
+
+    @media (min-width: $screen-lg) {
+      @include flex-width(20em);
+    }
+  }
+
+  &-details {
+    flex: 1;
+  }
+}

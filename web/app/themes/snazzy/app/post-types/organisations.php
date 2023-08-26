@@ -13,6 +13,7 @@ add_action( 'init', function() {
             ],
             'supports' => [
                 'title',
+                'editor',
                 'page-attributes',
                 'thumbnail',
                 'social-channels',
