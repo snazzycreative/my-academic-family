@@ -58,7 +58,7 @@ function fontawesome_choices($set = 'solid')
     $choices = [];
 
     foreach($icons as $slug => $props):
-        $choices[$slug] = (ucwords(str_replace('-', ' ', $slug)));
+        $choices[$slug] = '<i class="fa-'.$set.' fa-'.$slug.'" style="color: #2271b1;"></i> <span>' . (ucwords(str_replace('-', ' ', $slug))) . '</span>';
     endforeach;
 
     return $choices;

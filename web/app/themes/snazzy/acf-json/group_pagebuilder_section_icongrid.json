@@ -1472,7 +1472,7 @@
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
-                            "ui": 0,
+                            "ui": 1,
                             "ajax": 0,
                             "placeholder": ""
                         },
@@ -1682,5 +1682,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693082539
+    "modified": 1693224819
 }

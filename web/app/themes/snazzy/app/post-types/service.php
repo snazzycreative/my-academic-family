@@ -17,9 +17,6 @@ add_action( 'init', function() {
         'taxonomies' => [
             'post_tag',
         ],
-        'labels' => [
-            'featured_image' => __('Social Preview', $td),
-        ],
         'rewrite' => [
             'slug' => 'coaching-services',
         ],
