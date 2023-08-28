@@ -1,0 +1,61 @@
+{
+    "key": "group_schedule",
+    "title": "Schedule",
+    "fields": [
+        {
+            "key": "field_64ecdbe1d8716",
+            "label": "Start Time",
+            "name": "snazzy_timestamp_start",
+            "aria-label": "",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "j F Y H:i:s",
+            "return_format": "YmdHis",
+            "first_day": 1
+        },
+        {
+            "key": "field_64ecdc60d8717",
+            "label": "End Time",
+            "name": "snazzy_timestamp_end",
+            "aria-label": "",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "j F Y H:i:s",
+            "return_format": "YmdHis",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1693244712
+}

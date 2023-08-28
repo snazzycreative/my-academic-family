@@ -1,59 +1,13 @@
 @php
-  $postType = @$section['post_type'];
-  $IDs = @$section['select_' . $postType];
-  $source = @$section['source'];
-  $status = @$section['status'];
-  $type = @$section['type'];
+  $args = \App\postgrid_args($section);
+  $posts = new WP_Query($args);
 
-  $cardClasses = \App\bgClasses([
+  $section['card_classes'] = \App\bgClasses([
     'colour'   => $section['card_colour'],
     'tint' => @$section['card_tint'],
     'contrast' => @$section['card_contrast'],
   ], true);
-
-  $args = [
-    'post_type' => $postType,
-    'post_status' => 'publish',
-    'numberposts' => 4,
-  ];
-
-  if(!$source && $type && @$taxonomy[$postType]):
-    $args['tax_query'] = [
-      [
-        'taxonomy' => @$taxonomy[$postType],
-        'terms' => $type,
-        'field' => 'term_id',
-        'operator' => 'IN',
-      ],
-    ];
-  endif;
-
-  if(!$source && $status == 'upcoming' && $postType == 'event'):
-    $args['meta_query'] = [
-      [
-        'key' => null,
-        'value' => null,
-        'operator' => '',
-      ],
-    ];
-  endif;
-
-  if(!$source && $status == 'past' && $postType == 'event'):
-    $args['meta_query'] = [
-      [
-        'key' => null,
-        'value' => null,
-        'operator' => '',
-      ],
-    ];
-  endif;
-
-  if($IDs && $source == 'specific') $args['posts__in'] = $IDs;
-
-  $posts = new WP_Query($args);
-
 @endphp
-
 
 <div class="{!! implode(' ', \App\section_container_classes($section)) !!}">
   @if($posts->have_posts())
@@ -66,5 +20,5 @@
   @endif
 </div>
 
-
 <pre>{!! print_r($args) !!}</pre>
+<pre>{!! print_r($section) !!}</pre>

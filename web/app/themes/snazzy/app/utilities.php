@@ -192,3 +192,72 @@ function section_container_classes($args = [])
 
     return $classes;
 }
+
+function postgrid_args($section = null)
+{
+    if(is_null($section)) return false;
+
+    $postType = @$section['post_type'];
+    $IDs = @$section['select_' . $postType];
+    $source = @$section['source'];
+    $status = @$section['status'];
+    $type = @$section['type'];
+
+    $args = [
+        'post_type' => $postType,
+        'post_status' => 'publish',
+        'numberposts' => 4,
+    ];
+
+    $now = date('YmdHis');
+
+    if(!$source && $type && @$taxonomy[$postType]):
+    $args['tax_query'] = [
+        [
+        'taxonomy' => @$taxonomy[$postType],
+        'terms' => $type,
+        'field' => 'term_id',
+        'operator' => 'IN',
+        ],
+    ];
+    endif;
+
+    if(!$source && $status == 'upcoming' && $postType == 'event'):
+    $args['meta_key'] = 'snazzy_date_start';
+    $args['orderby'] = 'meta_value';
+    $args['meta_query'] = [
+        'relation' => 'AND',
+        [
+            'key' => 'snazzy_date_start',
+            'value' => $now,
+            'compare' => '>=',
+            'type' => 'DATE',
+        ],
+        [
+            'key' => 'snazzy_date_end',
+            'value' => $now,
+            'compare' => '<=',
+            'type' => 'DATE',
+        ],
+    ];
+    endif;
+
+    if(!$source && $status == 'past' && $postType == 'event'):
+    $args['meta_key'] = 'snazzy_date_end';
+    $args['orderby'] = 'meta_value';
+    $args['order'] = 'DESC';
+    $args['meta_query'] = [
+        [
+            'key' => 'snazzy_date_end',
+            'value' => $now,
+            'compare' => '>=',
+            'type' => 'DATE',
+        ],
+    ];
+    endif;
+
+    if($IDs && $source == 'specific') $args['posts__in'] = $IDs;
+
+    return $args;
+
+}
