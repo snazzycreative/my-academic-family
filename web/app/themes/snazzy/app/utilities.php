@@ -78,7 +78,7 @@ function bgClasses($args = [], $knockoutContent = false)
         $classes[] = 'bg-default';
     endif;
 
-    if($pattern) $classes[] = (is_knockout($hex, $contrast)) ? 'bg-pattern bg-pattern-white' : 'bg-pattern bg-pattern-black';
+    if($pattern) $classes[] = (is_knockout(@$hex, $contrast)) ? 'bg-pattern bg-pattern-white' : 'bg-pattern bg-pattern-black';
 
     return $classes;
 }

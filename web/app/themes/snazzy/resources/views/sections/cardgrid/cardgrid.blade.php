@@ -14,15 +14,15 @@
       @php($x = 1)
       @foreach($section['cards'] as $card)
         <div class="cardgrid-item grid-item {!! implode(' ', $cardClasses) !!} @if(@$section['numbered']) cardgrid-numbered @endif">
-          @if(@$card['image']['ID'])
-            <div class="cardgrid-image" style="opacity: {!! @$section['image_opacity'] * 0.01 ?: 0.3 !!}">
+          <div class="cardgrid-image" style="opacity: {!! @$section['image_opacity'] * 0.01 ?: 0.3 !!}">
+            @if(@$card['image']['ID'])
               {!! \App\frontend\img_srcset([
                 'name' => 'overview',
                 'image' => $card['image']['ID'],
                 'sizes' => 3,
               ]) !!}
-            </div>
-          @endif
+            @endif
+          </div>
           <div class="cardgrid-content-wrap">
             <div class="inner inner-large">
               <div class="cardgrid-content">

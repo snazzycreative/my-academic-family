@@ -24,5 +24,6 @@
     @while($organisations->have_posts()) @php $organisations->the_post() @endphp
       @includeFirst(['partials.content-organisation', 'partials.content'], $section)
     @endwhile
+    @php(wp_reset_query())
   </div>
 @endif

@@ -15,5 +15,6 @@
     @while($services->have_posts()) @php $services->the_post() @endphp
       @includeFirst(['partials.content-service', 'partials.content'], $section)
     @endwhile
+    @php(wp_reset_query())
   </div>
 @endif
