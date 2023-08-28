@@ -223,41 +223,40 @@ function postgrid_args($section = null)
     endif;
 
     if(!$source && $status == 'upcoming' && $postType == 'event'):
-    $args['meta_key'] = 'snazzy_date_start';
-    $args['orderby'] = 'meta_value';
-    $args['meta_query'] = [
-        'relation' => 'AND',
-        [
-            'key' => 'snazzy_date_start',
-            'value' => $now,
-            'compare' => '>=',
-            'type' => 'DATE',
-        ],
-        [
-            'key' => 'snazzy_date_end',
-            'value' => $now,
-            'compare' => '<=',
-            'type' => 'DATE',
-        ],
-    ];
+        $args['meta_key'] = 'snazzy_date_start';
+        $args['orderby'] = 'meta_value';
+        $args['meta_query'] = [
+            'relation' => 'AND',
+            [
+                'key' => 'snazzy_timestamp_start',
+                'value' => $now,
+                'compare' => '>=',
+                'type' => 'DATE',
+            ],
+            [
+                'key' => 'snazzy_timestamp_end',
+                'value' => $now,
+                'compare' => '<=',
+                'type' => 'DATE',
+            ],
+        ];
     endif;
 
     if(!$source && $status == 'past' && $postType == 'event'):
-    $args['meta_key'] = 'snazzy_date_end';
-    $args['orderby'] = 'meta_value';
-    $args['order'] = 'DESC';
-    $args['meta_query'] = [
-        [
-            'key' => 'snazzy_date_end',
-            'value' => $now,
-            'compare' => '>=',
-            'type' => 'DATE',
-        ],
-    ];
+        $args['meta_key'] = 'snazzy_date_end';
+        $args['orderby'] = 'meta_value';
+        $args['order'] = 'DESC';
+        $args['meta_query'] = [
+            [
+                'key' => 'snazzy_timestamp_end',
+                'value' => $now,
+                'compare' => '>=',
+                'type' => 'DATE',
+            ],
+        ];
     endif;
 
     if($IDs && $source == 'specific') $args['posts__in'] = $IDs;
 
     return $args;
-
 }
