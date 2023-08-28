@@ -71,7 +71,6 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "^6.0",
     "wpackagist-plugin/autodescription": "^4.2",
     "wpackagist-plugin/mailgun": "^1.9",
-    "wpackagist-plugin/post-2-post-for-acf": "^1.7",
     "wpackagist-plugin/contact-form-7": "^5.7",
     "wpackagist-plugin/flamingo": "^2.3",
     "snazzycreative/snazzy-creative-control-panel": "dev-dev",
@@ -107,7 +106,6 @@
         "wpackagist-plugin/ajax-thumbnail-rebuild",
         "wpackagist-plugin/rewrite-rules-inspector",
         "wpackagist-plugin/posts-to-posts",
-        "wpackagist-plugin/post-2-post-for-acf",
         "wpackagist-plugin/multiple-post-thumbnails"
       ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
