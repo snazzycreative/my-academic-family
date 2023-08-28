@@ -202,11 +202,12 @@ function postgrid_args($section = null)
     $source = @$section['source'];
     $status = @$section['status'];
     $type = @$section['type'];
+    $grid = @$section['grid'];
 
     $args = [
         'post_type' => $postType,
         'post_status' => 'publish',
-        'numberposts' => 4,
+        'posts_per_page' => $grid ?: 3,
     ];
 
     $now = date('YmdHis');
@@ -222,11 +223,11 @@ function postgrid_args($section = null)
     ];
     endif;
 
-    if(!$source && $status == 'upcoming' && $postType == 'event'):
+    if(!$source && $status == 'upcomingx' && $postType == 'event'):
         $args['meta_key'] = 'snazzy_date_start';
         $args['orderby'] = 'meta_value';
         $args['meta_query'] = [
-            'relation' => 'AND',
+            'relation' => 'OR',
             [
                 'key' => 'snazzy_timestamp_start',
                 'value' => $now,
@@ -236,13 +237,13 @@ function postgrid_args($section = null)
             [
                 'key' => 'snazzy_timestamp_end',
                 'value' => $now,
-                'compare' => '<=',
+                'compare' => '>=',
                 'type' => 'DATE',
             ],
         ];
     endif;
 
-    if(!$source && $status == 'past' && $postType == 'event'):
+    if(!$source && $status == 'pastx' && $postType == 'event'):
         $args['meta_key'] = 'snazzy_date_end';
         $args['orderby'] = 'meta_value';
         $args['order'] = 'DESC';

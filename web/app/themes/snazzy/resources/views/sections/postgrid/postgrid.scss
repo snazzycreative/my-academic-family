@@ -1,3 +1,15 @@
 .postgrid {
   display: relative;
 }
+
+.grid {
+  &-post {
+    @include flex-width(calc(100% - 1em));
+
+    margin: 0.5em;
+
+    @media (min-width: $screen-sm) {
+      @include flex-width(calc(50% - 1em));
+    }
+  }
+}

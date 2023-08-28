@@ -21,7 +21,7 @@ function colour_choices()
 
     $colorInterpreter = new NameThatColor\ColorInterpreter();
     $colours = [
-        '0' => __('Default', 'sage'),
+        '0' => '<i class="snazzycp-colour-option fas fa-circle" style="color: #f2f2f2;"></i> <span>' . __('Default', 'sage') . '</span>',
     ];
 
     if(function_exists('snazzycp\\data\\latinate') && $colour_amount):

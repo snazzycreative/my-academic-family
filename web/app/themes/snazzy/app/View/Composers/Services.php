@@ -17,7 +17,7 @@ class Services extends Composer
                 'post_type' => 'service',
                 'orderby' => 'menu_order title',
                 'order' => 'ASC',
-                'numberposts' => -1,
+                'posts_per_page' => -1,
             ],
         ];
     }

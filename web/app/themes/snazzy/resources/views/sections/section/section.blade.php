@@ -5,7 +5,7 @@
 @endphp
 
 <section id="pagebuilder-{!! $section['acf_fc_layout'] !!}-{!! $section['row_number'] !!}" class="{!! implode(' ', $classes) !!}">
-  @if($heading)
+  @if($heading && !in_array(@$section['intro_location'], ['left', 'right']))
     @php
       $h = @$section['intro_settings']['heading_size'] ?: 2;
       $introClasses = \App\section_intro_footer_classes(@$section['intro_settings'], 'intro');

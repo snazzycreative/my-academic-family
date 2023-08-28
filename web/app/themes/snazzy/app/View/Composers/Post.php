@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use App;
 
 class Post extends Composer
 {
@@ -24,8 +25,13 @@ class Post extends Composer
      */
     public function override()
     {
+
+        $cardClasses = App\bgClasses(['colour'   =>'white']);
+        $cardClasses[] = 'grid-post';
+
         return [
             'title' => $this->title(),
+            'card_classes' => $cardClasses,
         ];
     }
 

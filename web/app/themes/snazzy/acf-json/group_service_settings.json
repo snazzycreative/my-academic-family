@@ -39,6 +39,7 @@
                         "id": ""
                     },
                     "layout": "block",
+                    "parent_repeater": "field_64ece0ef4ed22",
                     "sub_fields": [
                         {
                             "key": "field_64ece2b74ed25",
@@ -100,8 +101,7 @@
                             "prepend": "",
                             "append": ""
                         }
-                    ],
-                    "parent_repeater": "field_64ece0ef4ed22"
+                    ]
                 },
                 {
                     "key": "field_64ece15f4ed23",
@@ -109,7 +109,7 @@
                     "name": "code",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "Get your embed code from your Stripe Dashboard under <a href=\"https:\/\/dashboard.stripe.com\/products?active=true\" target=\"_blank\">Product Catelog<\/a>. Look for the <strong>Buy Button<\/strong> and use the <strong>Card<\/strong> layout.",
+                    "instructions": "Get your embed code from your Stripe Dashboard under <a href=\"https:\/\/dashboard.stripe.com\/products?active=true\" target=\"_blank\">Product Catalog<\/a>. Look for the <strong>Buy Button<\/strong> and use the <strong>Card<\/strong> layout.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -175,5 +175,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693247234
+    "modified": 1693253383
 }

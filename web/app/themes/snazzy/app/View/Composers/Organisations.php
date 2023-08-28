@@ -17,7 +17,7 @@ class Organisations extends Composer
                 'post_type' => 'organisation',
                 'orderby' => 'menu_order title',
                 'order' => 'ASC',
-                'numberposts' => -1,
+                'posts_per_page' => -1,
             ],
             'tax_query' => [
                 'taxonomy' => 'organisation_relationship',
