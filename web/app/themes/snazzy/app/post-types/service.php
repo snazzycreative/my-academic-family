@@ -12,7 +12,6 @@ add_action( 'init', function() {
             'excerpt',
             'thumbnail',
             'page-attributes',
-            'color-controls',
         ],
         'menu_icon' => 'dashicons-editor-table',
         'taxonomies' => [

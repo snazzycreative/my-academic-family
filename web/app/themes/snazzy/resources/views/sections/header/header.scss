@@ -80,7 +80,7 @@
 .menu-fixed {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 900;
   transition: 300ms ease all;
 
   .going-down & {

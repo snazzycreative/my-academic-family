@@ -1,6 +1,6 @@
 .organisation {
   &-content {
-    &:nth-child(even) {
+    &:nth-child(odd) {
       background: rgba($black, 0.05);
 
       .knockout & {
@@ -52,6 +52,7 @@
     @media (min-width: $screen-sm) {
       display: block;
       flex: 1;
+      margin: auto;
     }
   }
 

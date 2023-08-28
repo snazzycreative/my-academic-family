@@ -32,7 +32,9 @@ function img_srcset($args = [])
 
     if($args['sizes'] < 5) $sizes = array_slice($sizes, 0, $args['sizes']);
 
-    if($image) {
+    ob_start();
+
+    if($image):
 
       $full = wp_get_attachment_image_src($image, $name . '-xl');
       $lazy = wp_get_attachment_image_src($image, 'lazy');
@@ -60,7 +62,7 @@ function img_srcset($args = [])
         $atts['data-srcset'] = implode(', ', $srcsets);
       endif;
 
-      ob_start(); ?>
+      ?>
 
       <img
         <?php foreach($atts as $att => $value):
@@ -68,8 +70,13 @@ function img_srcset($args = [])
         endforeach; ?>
       />
 
-      <?php $html = ob_get_clean();
-    }
+    <?php else: ?>
+
+        <div class="placeholder-img placeholder-<?= $name ?> bg-grey-darkest"></div>
+
+    <?php endif;
+
+    $html = ob_get_clean();
 
     return $html;
 }

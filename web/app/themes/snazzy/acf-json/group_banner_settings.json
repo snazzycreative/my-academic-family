@@ -138,6 +138,13 @@
                 "operator": "!=",
                 "value": "2"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
         ]
     ],
     "menu_order": -10,
@@ -149,5 +156,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692187490
+    "modified": 1693148279
 }

@@ -1,0 +1,80 @@
+.service {
+  &-image,
+  &-details {
+    flex: 1 1 100%;
+
+    @media (min-width: $screen-sm) {
+      flex: 1;
+    }
+  }
+
+  &-details {
+    .inner {
+      flex: 1;
+
+      @media (min-width: $screen-md) {
+        padding: 3em;
+      }
+    }
+
+    @media (min-width: $screen-sm) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-image {
+    position: relative;
+    flex: 1;
+
+    @media (min-width: $screen-md) {
+      @include flex-width(33.33%);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+
+      @media (min-width: $screen-sm) {
+        padding-top: 75%;
+      }
+
+      @media (min-width: $screen-md) {
+        padding-top: 100%;
+      }
+    }
+
+    .placeholder-img,
+    img {
+      @include position(absolute, 1, 0);
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    margin: 0 0 1em;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    &:nth-child(even) {
+      .service-details {
+        @media (min-width: $screen-sm) {
+          order: -1;
+        }
+      }
+    }
+  }
+}

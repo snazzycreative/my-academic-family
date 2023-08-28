@@ -168,7 +168,6 @@ function section_intro_footer_classes($args = [], $section = null)
     $classes = [
         'section',
         'section-' . $section,
-        'section-small',
         'container',
         'container-' . $width,
         'align-' . $align,

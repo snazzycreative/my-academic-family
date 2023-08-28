@@ -7,8 +7,11 @@
     }
 
     .overlay {
+      position: relative;
+      z-index: 2;
+
       @media (min-width: $screen-md) {
-        @include position(absolute, 0);
+        @include position(absolute, 1, 0);
 
         display: flex;
         align-items: center;
@@ -22,7 +25,7 @@
   }
 
   &-image {
-    @include position(absolute, 0);
+    @include position(absolute, 1, 0);
 
     img {
       display: block;
