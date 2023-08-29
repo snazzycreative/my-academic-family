@@ -17,7 +17,7 @@
                 "id": ""
             },
             "display_format": "j F Y H:i:s",
-            "return_format": "YmdHis",
+            "return_format": "Y-m-d H:i:s",
             "first_day": 1
         },
         {
@@ -35,7 +35,7 @@
                 "id": ""
             },
             "display_format": "j F Y H:i:s",
-            "return_format": "YmdHis",
+            "return_format": "Y-m-d H:i:s",
             "first_day": 1
         }
     ],
@@ -57,5 +57,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693244712
+    "modified": 1693297029
 }

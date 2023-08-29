@@ -25,17 +25,6 @@ add_action( 'init', function() {
         'has_archive' => true,
         'capability_type' => 'post',
         'admin_cols' => [
-            // 'start_datetime' => [
-            //     'title' => __('Start Time', $td),
-            //     'meta_key' => 'snazzy_date_start',
-            //     'date_format' => 'F j, Y g:i a',
-            // ],
-            // 'end_datetime' => [
-            //     'title' => __('End Time', $td),
-            //     'meta_key' => 'snazzy_date_end',
-            //     'date_format' => 'F j, Y g:i a',
-            //     'default' => 'ASC',
-            // ],
             'primary_type' => [
                 'title' => __('Primary Type', $td),
                 'meta_key' => '_primary_term_event_type',
@@ -51,14 +40,25 @@ add_action( 'init', function() {
 
                 },
             ],
-            'event_type' => [
-                'title' => __('Types', $td),
-                'taxonomy' => 'event_type',
+            'start_datetime' => [
+                'title' => __('Start Time', $td),
+                'meta_key' => 'snazzy_timestamp_start',
+                'date_format' => 'j F Y g:i a',
+                'default' => 'ASC',
             ],
-            'event_tag' => [
-                'title' => __('Tags', $td),
-                'taxonomy' => 'post_tag',
+            'end_datetime' => [
+                'title' => __('End Time', $td),
+                'meta_key' => 'snazzy_timestamp_end',
+                'date_format' => 'j F Y g:i a',
             ],
+            // 'event_type' => [
+            //     'title' => __('Types', $td),
+            //     'taxonomy' => 'event_type',
+            // ],
+            // 'event_tag' => [
+            //     'title' => __('Tags', $td),
+            //     'taxonomy' => 'post_tag',
+            // ],
         ],
     ];
 

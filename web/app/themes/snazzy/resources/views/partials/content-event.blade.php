@@ -1,10 +1,4 @@
 <article @php(post_class($card_classes))>
-  <header>
-
-
-    @include('partials.entry-meta')
-  </header>
-
   <div class="entry-summary">
     <div class="inner">
       <div class="wysiwyg">
@@ -13,6 +7,11 @@
             {!! $title !!}
           </a>
         </h2>
+        @include('partials.entry-meta')
+
+        start {!! get_post_meta(get_the_ID(), 'snazzy_timestamp_start', true) !!}</br>
+        end {!! get_post_meta(get_the_ID(), 'snazzy_timestamp_end', true) !!}</br>
+
         @php(the_excerpt())
       </div>
     </div>
