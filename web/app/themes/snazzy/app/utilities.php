@@ -202,29 +202,30 @@ function postgrid_args($section = null)
     $source = @$section['source'];
     $status = @$section['status'];
     $type = @$section['type'];
-    $grid = @$section['grid'];
+    $count = @$section['count'];
+    $taxonomy = post_taxonomy($postType);
 
     $args = [
         'post_type' => $postType,
         'post_status' => 'publish',
-        'posts_per_page' => $grid ?: 3,
+        'posts_per_page' => $count,
     ];
 
     $now = wp_date('Y-m-d H:i:s');
 
-    if(!$source && $type && @$taxonomy[$postType]):
+    if(!$source && $type && @$taxonomy):
     $args['tax_query'] = [
         [
-        'taxonomy' => @$taxonomy[$postType],
-        'terms' => $type,
-        'field' => 'term_id',
-        'operator' => 'IN',
+            'taxonomy' => @$taxonomy,
+            'terms' => $type,
+            'field' => 'term_id',
+            'operator' => 'IN',
         ],
     ];
     endif;
 
     if(!$source && $status == 'upcoming' && $postType == 'event'):
-        $args['meta_key'] = 'snazzy_timestamp_start';
+        $args['meta_key'] = 'snazzy_timestamp_end';
         $args['orderby'] = 'meta_value';
         $args['order'] = 'ASC';
 
@@ -270,4 +271,18 @@ function postgrid_args($section = null)
     if($IDs && $source == 'specific') $args['posts__in'] = $IDs;
 
     return $args;
+}
+
+function post_taxonomy($postType)
+{
+    switch($postType):
+        case 'event':
+            $tax = 'event_type';
+            break;
+        default:
+            $tax = null;
+            break;
+    endswitch;
+
+    return $tax;
 }

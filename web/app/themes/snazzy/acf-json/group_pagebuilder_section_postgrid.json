@@ -434,7 +434,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "15",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -452,22 +452,59 @@
             "placeholder": ""
         },
         {
-            "key": "field_64c4fbddc67bb",
-            "label": "Grid Size",
-            "name": "grid",
+            "key": "field_64ee69f8736f6",
+            "label": "Number of Posts",
+            "name": "count",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "Set this to zero to use the site's default posts per page from Settings \/ Reading.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64c4fb78c67ba",
+                        "operator": "==",
+                        "value": "0"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "min": 0,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64ee6a7570a10",
+            "label": "Number of Posts",
+            "name": "count",
             "aria-label": "",
             "type": "range",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64c4fb78c67ba",
+                        "operator": "!=",
+                        "value": "0"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "15",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "default_value": 3,
             "min": 1,
-            "max": 4,
+            "max": 3,
             "step": "",
             "prepend": "",
             "append": ""
@@ -482,7 +519,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "70",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -575,5 +612,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693258612
+    "modified": 1693347223
 }

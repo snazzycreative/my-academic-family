@@ -1,15 +1,45 @@
 .postgrid {
-  display: relative;
-}
+  position: relative;
 
-.grid {
-  &-post {
-    @include flex-width(calc(100% - 1em));
-
-    margin: 0.5em;
-
+  &-intro {
     @media (min-width: $screen-sm) {
-      @include flex-width(calc(50% - 1em));
+      padding: 1.5em 0;
+    }
+  }
+
+  &-intro-left,
+  &-intro-right {
+    @media (min-width: $screen-sm) and (max-width: $screen-md-max) {
+      .grid-post {
+        &:nth-child(4) {
+          display: none;
+        }
+      }
+    }
+
+    @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+      .grid-post {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-intro-left {
+    .postgrid-intro {
+      @media (min-width: $screen-sm) {
+        padding-right: 1.5em;
+      }
+    }
+  }
+
+  &-intro-right {
+    .postgrid-intro {
+      @media (min-width: $screen-sm) {
+        order: 10;
+        padding-left: 1.5em;
+      }
     }
   }
 }
