@@ -9,6 +9,10 @@
   }
 
   &-details {
+    &::before {
+      content: none;
+    }
+
     .inner {
       flex: 1;
 

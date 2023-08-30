@@ -1,4 +1,15 @@
 .section {
+  &-intro,
+  &-footer {
+    @media (min-width: $screen-md) {
+      padding: $sectionSmall 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: $sectionMedium 0;
+    }
+  }
+
   &-intro {
     padding-top: 0;
   }
