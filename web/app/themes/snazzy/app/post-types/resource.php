@@ -18,7 +18,7 @@ add_action( 'init', function() {
             'post_tag',
         ],
         'rewrite' => [
-            'slug' => 'student-resources/resources',
+            'slug' => 'student-resources',
         ],
         'has_archive' => true,
         'capability_type' => 'post',

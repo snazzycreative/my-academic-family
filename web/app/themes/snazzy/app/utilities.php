@@ -286,3 +286,16 @@ function post_taxonomy($postType)
 
     return $tax;
 }
+
+function isPagebuilder($id = null)
+{
+    if(is_null($id)) return false;
+
+    $template = get_post_meta($id, '_wp_page_template', true);
+
+    if($template == 'template-pagebuilder.blade.php'):
+        return true;
+    else:
+        return false;
+    endif;
+}

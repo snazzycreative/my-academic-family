@@ -2,18 +2,20 @@
 
 namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
+use snazzycp\utilities;
 use App;
 
 class Banner extends Composer
 {
     protected static $views = [
         'sections.banner.banner',
+        'sections.banner.banner-*',
     ];
 
     public function with()
     {
         if(is_archive()):
-            $post = $this->archiveObject(get_post_type());
+            $post = utilities\archiveObject(get_post_type());
             setup_postdata($post);
         else:
             $post = get_post();
@@ -27,10 +29,12 @@ class Banner extends Composer
         ];
 
         $props = App\background_settings($prefix, $id);
-        $bgClasses = App\bgClasses($props, true);
+        $bgClasses = App\bgClasses($props);
         $classes = array_merge($classes, $bgClasses);
 
-        $image = get_post_thumbnail_id();
+        $knockout = \App\is_knockout(\snazzycp\utilities\colour_name_to_hex(@$props['colour'], @$props['tint']), @$props['contrast']);
+
+        $image = get_post_meta($id, '_thumbnail_id', true);
         $style = get_field($prefix . '_style', $id);
         $title = $post->post_title;
         $excerpt = apply_filters('the_content', $post->post_excerpt);
@@ -54,13 +58,7 @@ class Banner extends Composer
             'title' => $title,
             'excerpt' => $excerpt,
             'postobject' => $post,
+            'knockout' => $knockout,
         ];
-    }
-
-    public function archiveObject($postType = null)
-    {
-        if(is_null($postType)) return;
-        $page_for_archive = get_option('page_for_' . $postType);
-        return ($page_for_archive) ? get_post($page_for_archive) : null;
     }
 }

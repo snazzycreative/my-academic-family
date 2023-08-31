@@ -2,34 +2,30 @@
 
 @section('content')
 
-  @include('sections.banner.banner', ['post' => $post])
+  @include('sections.banner.banner')
+  @includeFirst(['partials.archive-before-' . get_post_type(), 'partials.archive-before'])
 
-  <section class="section section-archive bg-primary bg-pattern bg-pattern-white">
-    <div class="container">
+  @if (have_posts())
+    <section class="section section-archive section-pagebuilder bg-primary bg-pattern bg-pattern-white">
+      @includeFirst(['partials.archive-subheading-' . get_post_type(), 'partials.archive-subheading'])
 
-      @if (have_posts())
+      <div class="container">
         <div class="grid grid-4 grid-left">
-
           @while(have_posts()) @php(the_post())
             @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
           @endwhile
-
         </div>
 
-        {!! get_the_posts_navigation() !!}
-      @endif
+        <div class="section section-footer align-centre knockout">
+          {!! get_the_posts_navigation() !!}
+        </div>
 
-    </div>
-  </section>
+      </div>
+    </section>
+  @endif
+
+  @if(!is_paged() && $isPagebuilder)
+    @include('partials.pagebuilder')
+  @endif
 
 @endsection
-
-@section('sidebar')
-  @include('sections.sidebar')
-@endsection
-
-    {{-- <x-alert type="warning">
-      {!! __('Sorry, no results were found.', 'sage') !!}
-    </x-alert>
-
-    {!! get_search_form(false) !!} --}}

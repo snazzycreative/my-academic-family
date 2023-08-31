@@ -13,6 +13,8 @@
 
   @media (min-width: $screen-md) {
     @include flex-width(calc(33.33% - 1.5em));
+
+    margin: 0.75em;
   }
 
   @media (min-width: $screen-lg) {

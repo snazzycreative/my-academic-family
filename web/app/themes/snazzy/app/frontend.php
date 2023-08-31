@@ -72,7 +72,7 @@ function img_srcset($args = [])
 
     <?php else: ?>
 
-        <div class="placeholder-img placeholder-<?= $name ?> bg-grey-darkest"></div>
+        <div class="feat-placeholder feat-<?= $name ?> bg-grey-darkest"></div>
 
     <?php endif;
 

@@ -25,7 +25,7 @@ add_action( 'init', function() {
                 'post_tag',
             ],
             'rewrite' => [
-                'slug' => 'student-resources/encyclopedia-of-university',
+                'slug' => 'encyclopedia-of-university',
             ],
             'has_archive' => true,
             'capability_type' => 'post',
