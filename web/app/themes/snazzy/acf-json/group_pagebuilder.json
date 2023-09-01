@@ -350,6 +350,13 @@
                 "operator": "==",
                 "value": "template-pagebuilder.blade.php"
             }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
         ]
     ],
     "menu_order": -1,
@@ -361,5 +368,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693146183
+    "modified": 1693597282
 }

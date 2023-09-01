@@ -13,6 +13,7 @@
     </div>
   </div>
   <div class="grid-post-button inner align-right">
-    <button class="block"><span>View {!! $singular !!}</span> <i class="fas fa-circle-right"></i></button>
+    <p class="grid-post-link"><a href="{{ get_permalink() }}"><span>View {!! $singular !!}</span> <i class="fas fa-circle-right"></i></a></p>
   </div>
+  <a class="grid-post-link-overlay" href="{{ get_permalink() }}"></a>
 </article>

@@ -4,6 +4,10 @@
   position: relative;
   margin: 0.5em;
 
+  .bg-white & {
+    @extend %bg-default;
+  }
+
   @media (min-width: $screen-sm) {
     @include flex-width(calc(50% - 1em));
 
@@ -90,6 +94,7 @@
     .mentor-content & {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
 
       .snazzycp-social {
         flex: 1;

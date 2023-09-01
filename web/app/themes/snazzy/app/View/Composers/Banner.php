@@ -36,8 +36,8 @@ class Banner extends Composer
 
         $image = get_post_meta($id, '_thumbnail_id', true);
         $style = get_field($prefix . '_style', $id);
-        $title = $post->post_title;
-        $excerpt = apply_filters('the_content', $post->post_excerpt);
+        $title = @$post->post_title;
+        $excerpt = apply_filters('the_content', @$post->post_excerpt);
 
         if($image && $style) $classes[] = 'has-image';
         if(!$excerpt) $classes[] = 'no-excerpt';

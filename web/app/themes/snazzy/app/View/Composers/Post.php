@@ -47,7 +47,7 @@ class Post extends Composer
             'image' => get_post_thumbnail_id(),
             'accent' => $this->accent($postType),
             'schedule' => $schedule,
-            'singular' => $postTypeObj->labels->singular_name,
+            'singular' => @$postTypeObj->labels->singular_name,
             'term' => [
                 'id' => $termID,
                 'icon' => $termIcon,
