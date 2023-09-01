@@ -1,6 +1,6 @@
 @if($id)
   @php
-    $image = wp_get_attachment_image_src($id, 'medium');
+    $image = wp_get_attachment_image_src($id, @$size ?: 'medium');
     $lazy = wp_get_attachment_image_src($id, 'lazy');
   @endphp
   <img

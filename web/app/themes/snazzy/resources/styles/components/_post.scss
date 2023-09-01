@@ -31,7 +31,7 @@
     }
 
     .feat-placeholder,
-    img {
+    .feat-image {
       @include position(absolute, 1, 0);
 
       display: block;
@@ -40,6 +40,35 @@
       object-fit: cover;
       mask: url("~/images/post-card-clip.svg");
       mask-repeat: no-repeat;
+    }
+
+    .portrait-image {
+      @include position(absolute, 3, auto, calc(50% - 0.5em), 0, auto);
+
+      display: block;
+      width: 1em;
+      height: 1em;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 0.25rem solid $white;
+      font-size: 50vw;
+      transform: translateY(10%);
+
+      @media (min-width: $screen-sm) {
+        font-size: 25vw;
+      }
+
+      @media (min-width: $screen-md) {
+        font-size: 16vw;
+      }
+
+      @media (min-width: $screen-lg) {
+        font-size: 12vw;
+      }
+
+      @media (min-width: $screen-xl) {
+        font-size: 11em;
+      }
     }
   }
 
@@ -52,24 +81,60 @@
   &-button {
     padding-top: 0;
 
-    span,
-    i {
-      transition: all 300ms ease;
+    a {
+      position: relative;
+      z-index: 5;
     }
 
-    span {
-      color: $grey;
-      font-weight: 700;
-    }
+    .team-content &,
+    .mentor-content & {
+      display: flex;
+      align-items: center;
 
-    i {
-      color: $secondary;
-      font-size: 1.25em;
+      .snazzycp-social {
+        flex: 1;
+      }
+
+      .section-buttons {
+        @include flex-width(7em);
+
+        margin: auto 0;
+      }
     }
   }
 
   &-link {
-    @include position(absolute, 2, 0);
+    line-height: 1;
+    margin: 0;
+
+    span,
+    i {
+      display: inline-block;
+      vertical-align: middle;
+      transition: all 300ms ease;
+    }
+
+    span {
+      color: $secondary;
+      font-weight: 700;
+    }
+
+    i {
+      color: $grey-light;
+      margin-left: 0.125em;
+      font-size: 1.25em;
+    }
+
+    &:hover {
+      i {
+        color: $secondary;
+        transform: translateX(25%);
+      }
+    }
+  }
+
+  &-link-overlay {
+    @include position(absolute, 4, 0);
 
     display: block;
   }
@@ -85,7 +150,7 @@
   }
 
   &-term {
-    @include position(absolute, 3, 1em, auto, auto, 0);
+    @include position(absolute, 5, 1em, auto, auto, 0);
 
     border-radius: 0 1.5em 1.5em 0;
 
@@ -109,17 +174,26 @@
     }
   }
 
-  &:hover {
-    .grid-post-button {
-      span {
-        color: $secondary;
-      }
+  hr {
+    border-color: $secondary;
+    max-width: 5em;
+    width: 25%;
+    margin: 1em auto;
+  }
 
-      i {
-        transform: translateX(25%);
+  /* stylelint-disable no-descending-specificity */
+  .snazzycp-social {
+    font-size: 1.25em;
+
+    a {
+      color: $grey-light;
+
+      &:hover {
+        color: $secondary;
       }
     }
   }
+  /* stylelint-enable no-descending-specificity */
 }
 
 .entry-meta {
