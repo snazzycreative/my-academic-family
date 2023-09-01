@@ -32,3 +32,7 @@ function rewrite_post_class( $classes, $class, $post_id ) {
 
     return $classes;
 }
+
+add_action('wp_head', function(){
+    echo view('partials.favicons')->render();
+});
