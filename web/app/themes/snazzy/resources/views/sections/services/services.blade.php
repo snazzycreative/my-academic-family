@@ -11,10 +11,15 @@
 @endphp
 
 @if($services->have_posts())
-  <div class="service-wrap">
-    @while($services->have_posts()) @php $services->the_post() @endphp
-      @includeFirst(['partials.content-service', 'partials.content'], $section)
-    @endwhile
-    @php(wp_reset_query())
-  </div>
+  @extends('sections.section.section', $section)
+
+  @section('pagebuilder-block-content')
+    <div class="service-wrap">
+      @while($services->have_posts()) @php $services->the_post() @endphp
+        @includeFirst(['partials.content-service', 'partials.content'], $section)
+      @endwhile
+    </div>
+  @overwrite
 @endif
+
+@php(wp_reset_query())

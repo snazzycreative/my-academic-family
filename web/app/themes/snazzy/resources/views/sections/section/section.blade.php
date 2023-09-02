@@ -23,7 +23,7 @@
     </div>
   @endif
 
-  @includeFirst(['sections.' . $section['acf_fc_layout'] . '.' . $section['acf_fc_layout'], 'sections.section.section-default'])
+  @yield('pagebuilder-block-content')
 
   @if(@$section['footer']['blurb'] || @$section['footer']['links'])
     @php

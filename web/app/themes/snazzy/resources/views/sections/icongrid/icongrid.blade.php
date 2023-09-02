@@ -1,21 +1,25 @@
-<div class="{!! implode(' ', \App\section_container_classes($section)) !!}">
-  @if(@$section['icons'])
-    <div class="icongrid grid grid-{!! $section['grid'] ?: 4 !!} grid-align-{!! $section['alignment'] ?: 'centre' !!}">
-      @foreach($section['icons'] as $icon)
-        <div class="icongrid-item grid-item">
-          <div class="icongrid-icon">
-            <i class="fas fa-{!! @$icon['icon']['fontawesome_solid'] ?: 'question-circle' !!} {!! @$icon['icon']['colour'] ?: 'black' !!}"></i>
-          </div>
-          <div class="icongrid-content wysiwyg">
-            @if(@$icon['text']['heading'])
-              <h3>{!! $icon['text']['heading'] !!}</h3>
-            @endif
+@if(@$section['icons'])
+  @extends('sections.section.section', $section)
 
-            {!! apply_filters('the_content', @$icon['text']['text']) !!}
+  @section('pagebuilder-block-content')
+    <div class="{!! implode(' ', \App\section_container_classes($section)) !!}">
+      <div class="icongrid grid grid-{!! $section['grid'] ?: 4 !!} grid-align-{!! $section['alignment'] ?: 'centre' !!}">
+        @foreach($section['icons'] as $icon)
+          <div class="icongrid-item grid-item">
+            <div class="icongrid-icon">
+              <i class="fas fa-{!! @$icon['icon']['fontawesome_solid'] ?: 'question-circle' !!} {!! @$icon['icon']['colour'] ?: 'black' !!}"></i>
+            </div>
+            <div class="icongrid-content wysiwyg">
+              @if(@$icon['text']['heading'])
+                <h3>{!! $icon['text']['heading'] !!}</h3>
+              @endif
 
+              {!! apply_filters('the_content', @$icon['text']['text']) !!}
+
+            </div>
           </div>
-        </div>
-      @endforeach
+        @endforeach
+      </div>
     </div>
-  @endif
-</div>
+  @overwrite
+@endif

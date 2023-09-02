@@ -13,7 +13,8 @@ class Pagebuilder extends Composer
     public function with()
     {
         if(is_archive()):
-            $post = utilities\archiveObject(get_post_type());
+            global $wp_query;
+            $post = utilities\archiveObject(@$wp_query->query['post_type']);
             setup_postdata($post);
         else:
             $post = get_post();

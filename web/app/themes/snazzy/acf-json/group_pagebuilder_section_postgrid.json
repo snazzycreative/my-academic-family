@@ -550,6 +550,26 @@
             ]
         },
         {
+            "key": "field_64f3a680eb31c",
+            "label": "Fallback Message",
+            "name": "fallback",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "This message will be displayed if there are no posts that match your settings.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_64c2e8271e92c",
             "label": "Footer",
             "name": "footer",
@@ -612,5 +632,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693347223
+    "modified": 1693689518
 }
