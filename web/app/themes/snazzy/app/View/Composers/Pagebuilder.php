@@ -7,11 +7,7 @@ use snazzycp\utilities;
 class PageBuilder extends Composer
 {
     protected static $views = [
-        'template-pagebuilder',
-        'page-student-resources',
-        'front-page',
-        'archive',
-        'archive-*',
+        'partials.pagebuilder',
     ];
 
     public function with()

@@ -1,7 +1,7 @@
 @php
   $heading = @$section['intro']['heading'];
   $classes = array_merge(\App\section_classes($section), \App\bgClasses(@$section['background'], @$section['knockout_content']));
-  $knockout = \App\is_knockout(\snazzycp\utilities\colour_name_to_hex(@$section['background']['colour'], @$section['background']['tint']), @$section['background']['contrast']);
+  $knockout = \snazzycp\utilities\is_knockout(\snazzycp\utilities\colour_name_to_hex(@$section['background']['colour'], @$section['background']['tint']), @$section['background']['contrast']);
 @endphp
 
 <section id="pagebuilder-{!! $section['acf_fc_layout'] !!}-{!! $section['row_number'] !!}" class="{!! implode(' ', $classes) !!}">

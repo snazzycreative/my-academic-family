@@ -30,19 +30,6 @@ function background_settings($prefix = null, $id = null)
     return $props;
 }
 
-function is_knockout($hex = '#FFFFFF', $contrast = 0)
-{
-    $knockout = utilities\high_contrast($hex);
-
-    if($contrast == 'light'):
-        return true;
-    elseif(!$contrast && $knockout):
-        return true;
-    else:
-        return false;
-    endif;
-}
-
 function bgClasses($args = [], $knockoutContent = false)
 {
     $defaultArgs = [
@@ -70,7 +57,7 @@ function bgClasses($args = [], $knockoutContent = false)
             $classes[] = 'bg-' . $colour;
         endif;
 
-        if($knockoutContent && is_knockout($hex, $contrast)):
+        if($knockoutContent && utilities\is_knockout($hex, $contrast)):
             $classes[] = 'knockout';
         endif;
 
@@ -78,7 +65,7 @@ function bgClasses($args = [], $knockoutContent = false)
         $classes[] = 'bg-default';
     endif;
 
-    if($pattern) $classes[] = (is_knockout(@$hex, $contrast)) ? 'bg-pattern bg-pattern-white' : 'bg-pattern bg-pattern-black';
+    if($pattern) $classes[] = (utilities\is_knockout(@$hex, $contrast)) ? 'bg-pattern bg-pattern-white' : 'bg-pattern bg-pattern-black';
 
     return $classes;
 }

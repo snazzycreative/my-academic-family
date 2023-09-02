@@ -5,7 +5,7 @@
     'contrast' => @$section['card_contrast'],
   ], true);
 
-  $knockoutNumber = \App\is_knockout(\snazzycp\utilities\colour_name_to_hex(@$section['colour']));
+  $knockoutNumber = \snazzycp\utilities\is_knockout(\snazzycp\utilities\colour_name_to_hex(@$section['colour']));
 @endphp
 
 <div class="{!! implode(' ', \App\section_container_classes($section)) !!}">
