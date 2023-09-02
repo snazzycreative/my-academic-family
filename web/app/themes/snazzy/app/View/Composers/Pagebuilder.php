@@ -4,7 +4,7 @@ namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 use snazzycp\utilities;
 
-class PageBuilder extends Composer
+class Pagebuilder extends Composer
 {
     protected static $views = [
         'partials.pagebuilder',
