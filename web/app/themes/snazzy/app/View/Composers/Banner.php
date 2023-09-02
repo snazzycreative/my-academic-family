@@ -32,7 +32,7 @@ class Banner extends Composer
         $bgClasses = App\bgClasses($props);
         $classes = array_merge($classes, $bgClasses);
 
-        $knockout = utilities\is_knockout(\utilities\colour_name_to_hex(@$props['colour'], @$props['tint']), @$props['contrast']);
+        $knockout = utilities\is_knockout(utilities\colour_name_to_hex(@$props['colour'], @$props['tint']), @$props['contrast']);
 
         $image = get_post_meta($id, '_thumbnail_id', true);
         $style = get_field($prefix . '_style', $id);
