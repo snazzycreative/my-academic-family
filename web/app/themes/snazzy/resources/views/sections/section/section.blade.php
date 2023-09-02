@@ -25,7 +25,7 @@
 
   @includeFirst(['sections.' . $section['acf_fc_layout'] . '.' . $section['acf_fc_layout'], 'sections.section.section-default'])
 
-  @if(@$section['footer']['blurb'] || @$sections['footer']['links'])
+  @if(@$section['footer']['blurb'] || @$section['footer']['links'])
     @php
       $footerClasses = \App\section_intro_footer_classes(@$section['footer_settings'], 'footer');
       if($knockout) $footerClasses[] = 'knockout';
