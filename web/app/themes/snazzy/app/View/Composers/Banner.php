@@ -30,7 +30,7 @@ class Banner extends Composer
         ];
 
         $props = App\background_settings($prefix, $id);
-        $bgClasses = App\bgClasses($props);
+        $bgClasses = App\bgClasses($props, true);
         $classes = array_merge($classes, $bgClasses);
 
         $knockout = utilities\is_knockout(utilities\colour_name_to_hex(@$props['colour'], @$props['tint']), @$props['contrast']);

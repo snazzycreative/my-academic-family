@@ -1,0 +1,45 @@
+{
+    "key": "group_background_video",
+    "title": "Background Video",
+    "fields": [
+        {
+            "key": "field_64f45d473cc2c",
+            "label": "",
+            "name": "snazzy_background_video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "File format must be MP4 and the size must be 15MB or less.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": 15,
+            "mime_types": "mp4"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "slide"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1693736603
+}

@@ -137,8 +137,14 @@
   }
 
   .bottombar {
+    transition: all 300ms ease;
+
     .brand {
       @include flex-width($brandWidth);
+
+      g {
+        transition: all 300ms ease;
+      }
 
       font-size: 0.5em;
 
@@ -156,6 +162,43 @@
     .nav-primary {
       @media (max-width: $screen-sm-max) {
         display: none;
+      }
+    }
+  }
+
+  .home & {
+    @media (min-width: $screen-md) {
+      @include position(fixed, 900, 0, 0, auto);
+    }
+  }
+
+  .home:not(.scrolled) & {
+    .bottombar {
+      background-color: transparent;
+    }
+
+    .brand {
+      .icon-primary {
+        fill: transparent;
+      }
+
+      .wordmark-primary {
+        fill: $white;
+      }
+    }
+
+    .nav-primary {
+      li {
+        a {
+          color: $white;
+        }
+
+        &:hover,
+        &.active {
+          a {
+            color: $secondary;
+          }
+        }
       }
     }
   }

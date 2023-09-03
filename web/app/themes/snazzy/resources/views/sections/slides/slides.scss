@@ -1,0 +1,21 @@
+.banner-slide {
+  @media (min-width: $screen-md) {
+    height: 100vh;
+  }
+
+  &.has-image {
+    .overlay {
+      @media (min-width: $screen-md) {
+        @include position(absolute, 2, 0);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .section {
+      flex: auto;
+    }
+  }
+}

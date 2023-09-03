@@ -10,10 +10,11 @@
 @import "common/loading";
 
 // Plugins
-@import "plugins/magnific-popup";
 @import "plugins/mce";
 @import "plugins/recaptcha";
-@import "plugins/slick-slider";
+@import "~@glidejs/glide/src/assets/sass/glide.core";
+// @import "plugins/magnific-popup";
+// @import "plugins/slick-slider";
 
 $fa-font-path: "~/fonts";
 
@@ -35,6 +36,7 @@ $fa-font-path: "~/fonts";
 @import "~views/sections/header/header";
 @import "~views/sections/menu-mobile/menu-mobile";
 @import "~views/sections/banner/banner";
+@import "~views/sections/slides/slides";
 @import "~views/sections/section/section";
 @import "~views/sections/form/form";
 @import "~views/sections/wysiwyg/wysiwyg";

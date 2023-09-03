@@ -32,9 +32,11 @@
     }
   }
 
+  &-video,
   &-image {
     @include position(absolute, 1, 0);
 
+    video,
     img {
       @include position(absolute, 1, 0);
 

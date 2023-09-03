@@ -35,6 +35,7 @@
     "jquery": "^3.7.0"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "vanilla-lazyload": "^17.8.4"
   }
 }

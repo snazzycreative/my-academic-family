@@ -1,9 +1,13 @@
-<section class="{!! $classes !!}">
-  @if($image && $style == 'image')
+<article @php(post_class($slide_classes))>
+  @if($video)
+    <div class="banner-video" style="opacity: {!! $opacity !!}">
+      @include('partials.background-video', $video)
+    </div>
+  @elseif($image)
     <div class="banner-image" style="opacity: {!! $opacity !!}">
       {!! \App\frontend\img_srcset([
         'image' => $image,
-        'name' => 'banner',
+        'name' => 'hero',
         'lazy' => false
       ]) !!}
     </div>
@@ -13,10 +17,12 @@
     <div class="section">
       <div class="container container-small align-centre">
         <div class="titlebar" style="font-size: {!! $heading_scale !!}em;">
-          <h1>{!! $title !!}</h1>
-          {!! $excerpt !!}
+          {{ the_title('<h1>','</h1>') }}
+          @php(the_excerpt())
+          @include('partials.buttons', ['links' => $buttons])
         </div>
       </div>
     </div>
   </div>
-</section>
+
+</article>

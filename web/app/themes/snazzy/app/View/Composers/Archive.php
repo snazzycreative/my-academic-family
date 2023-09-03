@@ -20,7 +20,7 @@ class Archive extends Composer
 
     public function with()
     {
-        $upcomingQuery = new \WP_Query($this->upcomingQuery(get_post_type()));
+        $upcomingQuery = new \WP_Query($this->upcomingQuery(@$wp_query->query['post_type']));
 
         return [
             'upcomingQuery' => $upcomingQuery,
