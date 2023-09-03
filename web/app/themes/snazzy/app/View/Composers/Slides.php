@@ -26,6 +26,7 @@ class Slides extends Composer
 
         return [
             'slides' => $slides,
+            'count' => @$slides->found_posts - 1 ?: 0,
         ];
     }
 }

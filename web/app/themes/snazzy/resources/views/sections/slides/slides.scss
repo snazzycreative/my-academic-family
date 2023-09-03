@@ -1,21 +1,22 @@
 .banner-slide {
+  height: auto;
+  min-height: calc(100vh - 8.375em);
+
   @media (min-width: $screen-md) {
     height: 100vh;
   }
 
-  &.has-image {
-    .overlay {
-      @media (min-width: $screen-md) {
-        @include position(absolute, 2, 0);
+  .overlay {
+    display: grid;
+    align-items: center;
+    height: 100%;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    @media (min-width: $screen-md) {
+      @include position(absolute, 2, 0);
     }
+  }
 
-    .section {
-      flex: auto;
-    }
+  .section {
+    place-self: center;
   }
 }

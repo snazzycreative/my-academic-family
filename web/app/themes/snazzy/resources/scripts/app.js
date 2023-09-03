@@ -14,6 +14,9 @@ domReady(async (err) => {
 
   const { Header } = await import('../views/sections/header/header.js');
   new Header();
+
+  const { Slides } = await import('../views/sections/slides/slides.js');
+  new Slides();
 });
 
 /**
