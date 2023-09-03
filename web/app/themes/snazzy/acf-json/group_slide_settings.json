@@ -50,6 +50,27 @@
             ]
         },
         {
+            "key": "field_64f4ea12b9755",
+            "label": "Heading Scale",
+            "name": "heading_scale",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "min": "0.5",
+            "max": 3,
+            "step": "0.125",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_64f46fb860fd6",
             "label": "Image Opacity",
             "name": "snazzy_background_opacity",
@@ -59,7 +80,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -111,5 +132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693741822
+    "modified": 1693772448
 }

@@ -1,9 +1,8 @@
 <video
   width="{!! $width !!}"
   height="{!! $height !!}"
-  autoplay
+  @if($autoplay) autoplay @endif
   muted
   loop
   src="{!! $url !!}"
-  poster={!! $poster !!}
 ></video>

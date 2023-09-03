@@ -21,7 +21,6 @@ class Slide extends Composer
         $slideClasses = [
             'banner',
             'banner-slide',
-            'glide__slide',
         ];
 
         $image = get_post_thumbnail_id();
@@ -37,7 +36,7 @@ class Slide extends Composer
 
         return [
             'slide_classes' => $slideClasses,
-            'heading_scale' => 1,
+            'heading_scale' => get_field('heading_scale') ?: 1,
             'buttons' => get_field('snazzy_links'),
             'image' => $image,
             'video' => $video,

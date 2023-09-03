@@ -1,13 +1,17 @@
 @if($slides->have_posts())
-  <section class="section-hero">
+  <section class="section-hero bg-black">
     @if($count)
       <div class="js-hero-slider glide">
         <div class="glide__track" data-glide-el="track">
           <div class="glide__slides">
         @endif
-
+            @php $x = 0 @endphp
             @while($slides->have_posts()) @php $slides->the_post() @endphp
-              @include('sections.slides.slide')
+              @include('sections.slides.slide', [
+                'x' => $x,
+                'glidejs' => ($count) ? true : false,
+              ])
+              @php($x++)
             @endwhile
 
         @if($count)
@@ -15,10 +19,12 @@
           </div>
         </div>
 
-        <div class="glide__bullets" data-glide-el="controls[nav]">
-          @foreach(range(0, $count) as $x)
-            <button class="glide__bullet" data-glide-dir="=<?= $x ?>"></button>
-          @endforeach
+        <div class="banner-slide-nav">
+          <ul class="glide__bullets nolist align-centre" data-glide-el="controls[nav]">
+            @foreach(range(0, $count) as $x)
+              <li class="glide__bullet" data-glide-dir="=<?= $x ?>"><i></i></li>
+            @endforeach
+          </ul>
         </div>
       @endif
 

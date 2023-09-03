@@ -14,6 +14,8 @@
       <div class="container container-small align-centre">
         <div class="titlebar" style="font-size: {!! $heading_scale !!}em;">
           <h1>{!! $title !!}</h1>
+        </div>
+        <div class="wysiwyg">
           {!! $excerpt !!}
         </div>
       </div>
