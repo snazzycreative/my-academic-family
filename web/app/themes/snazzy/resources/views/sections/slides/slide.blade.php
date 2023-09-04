@@ -3,11 +3,17 @@
 @endphp
 
 <article id="hero-slide-{!! $x !!}" @php(post_class($slide_classes))>
-  @if($video)
-    @php($video['autoplay'] = ($x > 0) ? false : true)
+  @if($video_smallest)
     <div class="banner-video" style="opacity: {!! $opacity !!}">
-      @include('partials.background-video', $video)
+      @include('partials.background-video', [
+        'srcset' => $video,
+        'smallest' => $video_smallest,
+        'sizes' => $video_sizes,
+        'poster' => $image,
+        'autoplay' => ($x > 0) ? false : true,
+      ])
     </div>
+
   @elseif($image)
     <div class="banner-image" style="opacity: {!! $opacity !!}">
       {!! \App\frontend\img_srcset([
@@ -27,7 +33,9 @@
         <div class="wysiwyg">
           @php(the_excerpt())
         </div>
-        @include('partials.buttons', ['links' => $buttons])
+        <div style="font-size: {!! $button_scale !!}em;">
+          @include('partials.buttons', ['links' => $buttons])
+        </div>
       </div>
     </div>
   </div>

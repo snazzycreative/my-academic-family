@@ -286,3 +286,36 @@ function isPagebuilder($id = null)
         return false;
     endif;
 }
+
+function video_srcset_smallest($video_srcset = [])
+{
+    if(empty($video_srcset)) return false;
+
+    $smallest = null;
+
+    foreach($video_srcset as $size => $video):
+        if($smallest) continue;
+        if($video) $smallest = $size;
+    endforeach;
+
+    return $smallest;
+}
+
+function video_srcset_sizes($video_srcset = [])
+{
+    if(empty($video_srcset)) return false;
+
+    $sizes = [];
+
+    foreach($video_srcset as $size => $video):
+        if($video):
+            $sizes[$size] = $video['width'];
+        endif;
+    endforeach;
+
+    if(!empty($sizes)):
+        return json_encode($sizes);
+    else:
+        return false;
+    endif;
+}
