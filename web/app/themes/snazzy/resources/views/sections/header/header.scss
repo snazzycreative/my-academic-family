@@ -148,10 +148,6 @@
         margin: 0;
       }
 
-      .home:not(.scrolled) & {
-        font-size: 0.75em;
-      }
-
       g {
         transition: all 300ms ease;
       }
@@ -164,8 +160,12 @@
 
       .home & {
         @media (min-width: $screen-lg) {
-          font-size: 1em;
+          font-size: 0.75em;
         }
+      }
+
+      .home:not(.scrolled) & {
+        font-size: 1em;
       }
     }
 
