@@ -46,6 +46,7 @@ export function Slides() {
       autoplay: 5000,
       animationDuration: 0,
       dragThreshold: false,
+      swipeThreshold: false,
     });
 
     glide.mount()
