@@ -27,6 +27,7 @@ class Slides extends Composer
         return [
             'slides' => $slides,
             'count' => @$slides->found_posts - 1 ?: 0,
+            'quicklinks' => get_field('snazzy_quicklinks'),
         ];
     }
 }

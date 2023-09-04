@@ -1,7 +1,7 @@
 @if($slides->have_posts())
-  <section class="section-hero bg-black">
+  <section class="section-hero">
     @if($count)
-      <div class="js-hero-slider glide">
+      <div class="js-hero-slider glide bg-black">
         <div class="glide__track" data-glide-el="track">
           <div class="glide__slides">
         @endif
@@ -24,12 +24,12 @@
             @foreach(range(0, $count) as $x)
               <li class="glide__bullet" data-glide-dir="=<?= $x ?>"><i></i></li>
             @endforeach
+            @php(wp_reset_query())
           </ul>
         </div>
-      @endif
+      </div>
+    @endif
 
-    </div>
+    @include('partials.quicklinks', ['quicklinks' => $quicklinks])
   </section>
-
-  @php(wp_reset_query())
 @endif
