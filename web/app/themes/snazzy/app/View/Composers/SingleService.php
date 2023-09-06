@@ -15,7 +15,7 @@ class Singleservice extends Composer
     {
         $facilitators = get_field('snazzy_service_team');
 
-        $args = $facilitators ? [
+        $args = ($facilitators) ? [
             'post_type' => 'team',
             'posts__in' => $facilitators,
             'orderby' => 'menu_order',
@@ -23,7 +23,7 @@ class Singleservice extends Composer
         ] : null;
 
         return [
-            'args' => $args,
+            'team_args' => $args,
         ];
     }
 }

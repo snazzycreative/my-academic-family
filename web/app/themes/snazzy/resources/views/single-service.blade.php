@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @php
-  $facilitators = new \WP_Query($args);
+  $facilitators = new \WP_Query($team_args);
 @endphp
 
 @section('content')
