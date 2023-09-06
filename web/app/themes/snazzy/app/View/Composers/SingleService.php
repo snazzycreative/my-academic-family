@@ -5,13 +5,9 @@ namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 use App;
 
-class Singleservice extends Composer
+class SingleService extends Composer
 {
-    protected static $views = [
-        'single-service',
-    ];
-
-    public function with()
+    public function override()
     {
         $facilitators = get_field('snazzy_service_team');
 
