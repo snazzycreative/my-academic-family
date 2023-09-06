@@ -225,6 +225,11 @@
 .simple {
   &-team {
     display: flex;
+    margin: 0 0 1em;
+
+    &:last-of-type {
+      margin: 0;
+    }
 
     h3 {
       margin: 0;

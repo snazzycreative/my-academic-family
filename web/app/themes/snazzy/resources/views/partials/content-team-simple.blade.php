@@ -12,7 +12,7 @@
       @if($personal_pronouns) <small>({!! $personal_pronouns !!})</small> @endif
     </h3>
     <p class="personal-education">{!! $personal_education !!}</p>
-    <p class="simple-team-link">
+    <p class="simple-team-link grid-post-link">
       <a href="{{ get_permalink() }}">
         <span>View Bio</span>
         <i class="fas fa-circle-right"></i>
