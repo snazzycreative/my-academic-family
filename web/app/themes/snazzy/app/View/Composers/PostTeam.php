@@ -5,7 +5,7 @@ namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 use App;
 
-class Postteam extends Composer
+class PostTeam extends Composer
 {
     /**
      * List of views served by this composer.
@@ -14,9 +14,9 @@ class Postteam extends Composer
      */
     protected static $views = [
         'partials.content-team',
-        'partials.content-team-*',
+        'partials.content-team-simple',
         'partials.content-mentor',
-        'partials.content-mentor-*',
+        'partials.content-mentor-simple',
     ];
 
     /**
