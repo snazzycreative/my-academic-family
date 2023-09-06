@@ -13,19 +13,17 @@ class Singleservice extends Composer
 
     public function with()
     {
-        $ID = get_the_ID();
-
         $facilitators = get_field('snazzy_service_team');
 
-        $team = new \WP_Query([
+        $args = $facilitators ? [
             'post_type' => 'team',
             'posts__in' => $facilitators,
             'orderby' => 'menu_order',
             'order' => 'ASC',
-        ]);
+        ] : null;
 
         return [
-            'facilitators' => $team,
+            'args' => $args,
         ];
     }
 }

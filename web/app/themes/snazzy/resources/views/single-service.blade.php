@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@php
+  $facilitators = new \WP_Query($args);
+@endphp
+
 @section('content')
   @includeFirst(['sections.banner.banner-' . get_post_type(), 'sections.banner.banner'])
 
