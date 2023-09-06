@@ -5,7 +5,7 @@ namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 use App;
 
-class SingleService extends Composer
+class Singleservice extends Composer
 {
     protected static $views = [
         'single-service',

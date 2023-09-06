@@ -4,7 +4,7 @@ namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class PostGrid extends Composer
+class Postgrid extends Composer
 {
     protected static $views = [
         'sections.postgrid.postgrid',

@@ -5,7 +5,7 @@ namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 use App;
 
-class PostTeam extends Composer
+class Postteam extends Composer
 {
     /**
      * List of views served by this composer.

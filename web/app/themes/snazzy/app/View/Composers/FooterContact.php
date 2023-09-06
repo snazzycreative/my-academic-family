@@ -2,7 +2,7 @@
 namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 
-class FooterContact extends Composer
+class Footercontact extends Composer
 {
     protected static $views = [
         'partials.footer-contact',
