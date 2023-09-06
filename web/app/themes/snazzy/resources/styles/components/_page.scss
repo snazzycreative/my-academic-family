@@ -1,0 +1,29 @@
+.single {
+  &-has-sidebar {
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-content {
+    @media (min-width: $screen-md) {
+      flex: 1 1 5em;
+    }
+  }
+
+  &-sidebar {
+    @media (min-width: $screen-md) {
+      @include flex-width(20em);
+
+      padding: 0;
+      margin: 0 0 0 3em;
+    }
+
+    @media (min-width: $screen-lg) {
+      @include flex-width(30em);
+
+      margin: 0 0 0 5em;
+    }
+  }
+}

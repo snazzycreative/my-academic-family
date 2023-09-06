@@ -221,3 +221,31 @@
     }
   }
 }
+
+.simple {
+  &-team {
+    display: flex;
+
+    h3 {
+      margin: 0;
+    }
+
+    .personal-education {
+      margin: 0 0 0.25em;
+    }
+
+    img {
+      @include flex-width(5em);
+
+      display: block;
+      height: 5em;
+      border-radius: 50%;
+      margin: 0 1em 0 0;
+    }
+
+    .entry-summary {
+      flex: 1 1 5em;
+      padding: 0.25em 0 0;
+    }
+  }
+}

@@ -13,8 +13,20 @@
         </div>
 
         <div class="service-footer">
+          @if($pricing)
+            <ul class="service-pricing nolist">
+              @foreach($pricing as $price)
+                <li>
+                  <small>{!! @$price['details']['prefix'] !!}</small>
+                  <strong>{!! @$price['details']['amount'] !!}</strong>
+                  <small>{!! @$price['details']['suffix'] !!}</small>
+                </li>
+              @endforeach
+            </ul>
+          @endif
           @include('partials.buttons', ['links' => @$links])
         </div>
+
       </div>
     </div>
   </div>

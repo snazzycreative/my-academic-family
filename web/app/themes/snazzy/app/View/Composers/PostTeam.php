@@ -14,7 +14,9 @@ class PostTeam extends Composer
      */
     protected static $views = [
         'partials.content-team',
+        'partials.content-team-*',
         'partials.content-mentor',
+        'partials.content-mentor-*',
     ];
 
     /**

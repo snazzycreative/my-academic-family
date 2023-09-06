@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('sections.banner.banner')
+  @includeFirst(['sections.banner.banner-' . get_post_type(), 'sections.banner.banner'])
 
   <section class="section bg-white">
     @while(have_posts()) @php(the_post())
