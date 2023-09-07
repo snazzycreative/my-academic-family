@@ -164,6 +164,13 @@
                 "operator": "==",
                 "value": "service"
             }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "template-service.blade.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -175,5 +182,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693253383
+    "modified": 1694113417
 }
