@@ -11,6 +11,7 @@ function img_srcset($args = [])
         'image' => null,
         'lazy' => true,
         'sizes' => 5,
+        'class' => null,
     ];
 
     $args = wp_parse_args($args, $default_args);
@@ -32,6 +33,9 @@ function img_srcset($args = [])
 
     if($args['sizes'] < 5) $sizes = array_slice($sizes, 0, $args['sizes']);
 
+    $class = $name . '-image';
+    if($args['class']) $class .= ' ' . $args['class'];
+
     ob_start();
 
     if($image):
@@ -46,7 +50,7 @@ function img_srcset($args = [])
       }
 
       $atts = [
-        'class' => $name . '-image',
+        'class' => $class,
         'src' => $full[0],
         'srcset' => implode(', ', $srcsets),
         'width' => $width,
@@ -72,7 +76,7 @@ function img_srcset($args = [])
 
     <?php else: ?>
 
-        <div class="feat-placeholder feat-<?= $name ?> bg-grey-darkest"></div>
+        <div class="feat-placeholder placeholder-<?= $class ?> bg-grey-darkest"></div>
 
     <?php endif;
 

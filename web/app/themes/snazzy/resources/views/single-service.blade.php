@@ -5,7 +5,7 @@
 @endphp
 
 @section('content')
-  @includeFirst(['sections.banner.banner-service', 'sections.banner.banner'])
+  @include('sections.banner.banner-service')
 
   @if(get_the_content())
     <section id="single-service-main" class="section bg-white">

@@ -75,4 +75,47 @@
       margin-bottom: 0;
     }
   }
+
+  .grid-post-image {
+    &::before {
+      @media (min-width: $screen-sm) {
+        padding-top: 40%;
+      }
+
+      @media (min-width: $screen-md) {
+        padding-top: 30%;
+      }
+
+      @media (min-width: $screen-lg) {
+        padding-top: 20em;
+      }
+    }
+
+    &-border {
+      bottom: -1.5vw;
+    }
+
+    .feat-image,
+    .feat-placeholder {
+      mask-size: 100% auto;
+      mask-position: bottom;
+    }
+
+    .feat-placeholder {
+      padding: 0;
+    }
+
+    .placeholder-portrait-image,
+    .portrait-image {
+      font-size: 50vw;
+      bottom: -1.5vw;
+      border-width: 0.5rem;
+      background: $black;
+
+      @media (min-width: $screen-sm) {
+        font-size: 20em;
+        bottom: -2rem;
+      }
+    }
+  }
 }

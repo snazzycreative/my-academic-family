@@ -6,7 +6,7 @@
       'size' => 'thumbnail'
     ])
     @include('partials.image', ['id' => $cover, 'class' => 'lazy feat-image'])
-    <div class="grid-post-image-border bg-{!! $accent !!}"></div>
+    <div class="grid-post-image-border bg-quaternary"></div>
   </div>
   <div class="entry-summary grid-post-content inner">
     @include('partials.term-primary', $term)

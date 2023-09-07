@@ -17,6 +17,8 @@ class PostTeam extends Composer
         'partials.content-team-simple',
         'partials.content-mentor',
         'partials.content-mentor-simple',
+        'sections.banner.banner-team',
+        'sections.banner.banner-mentor',
     ];
 
     /**

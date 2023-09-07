@@ -45,7 +45,6 @@ class Post extends Composer
             'title' => $this->title(),
             'card_classes' => $cardClasses,
             'image' => get_post_thumbnail_id(),
-            'accent' => $this->accent($postType),
             'schedule' => $schedule,
             'singular' => @$postTypeObj->labels->singular_name,
             'term' => [
@@ -95,17 +94,6 @@ class Post extends Composer
         }
 
         return get_the_title();
-    }
-
-    public function accent($postType)
-    {
-        switch($postType):
-            default:
-                $accent = 'quaternary';
-                break;
-        endswitch;
-
-        return $accent;
     }
 
     public function schedule_datetime($id = null)
