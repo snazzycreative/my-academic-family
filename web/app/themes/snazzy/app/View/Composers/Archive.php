@@ -20,10 +20,23 @@ class Archive extends Composer
 
     public function with()
     {
-        $upcomingQuery = new \WP_Query($this->upcomingQuery(@$wp_query->query['post_type']));
+        $postType = @get_queried_object()->name;
+        $upcomingQuery = new \WP_Query($this->upcomingQuery($postType));
+
+        $postTypeColours = [
+            'mentor' => 'default',
+        ];
+
+        $bgClasses = App\bgClasses([
+            'colour' => @$postTypeColours[$postType] ?: 'primary',
+            'tint' => null,
+            'pattern' => true,
+            'contrast' => false,
+        ]);
 
         return [
             'upcomingQuery' => $upcomingQuery,
+            'bgClasses' => $bgClasses,
         ];
     }
 
@@ -32,26 +45,6 @@ class Archive extends Composer
         if(is_null($postType)) return false;
         $now = wp_date('Y-m-d H:i:s');
 
-        return [
-            'post_type' => $postType,
-            'meta_key' => 'snazzy_timestamp_end',
-            'orderby' => 'meta_value',
-            'order' => 'ASC',
-            'meta_query' => [
-                'relation' => 'OR',
-                [
-                    'key'     => 'snazzy_timestamp_start',
-                    'value'   => $now,
-                    'compare' => '>=',
-                    'type'    => 'DATETIME',
-                ],
-                [
-                    'key'     => 'snazzy_timestamp_end',
-                    'value'   => $now,
-                    'compare' => '>=',
-                    'type'    => 'DATETIME',
-                ],
-            ],
-        ];
+        return App\upcomingArgs($postType);
     }
 }

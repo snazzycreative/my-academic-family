@@ -1,6 +1,5 @@
 @php
   $args = \App\postgrid_args($section);
-  $posts = get_posts($args);
   $postgrid = new WP_Query($args);
   $count = (@$section['count'] < 4) ? $section['count'] : 4;
   $gridAlign = (in_array(@$section['intro_location'], ['left', 'right'])) ? 'left' : 'centre';

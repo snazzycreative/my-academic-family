@@ -192,6 +192,13 @@ function postgrid_args($section = null)
     $count = @$section['count'];
     $taxonomy = post_taxonomy($postType);
 
+    $meta_keys = [
+        'meta_key',
+        'orderby',
+        'order',
+        'meta_query',
+    ];
+
     $args = [
         'post_type' => $postType,
         'post_status' => 'publish',
@@ -201,58 +208,30 @@ function postgrid_args($section = null)
     $now = wp_date('Y-m-d H:i:s');
 
     if(!$source && $type && @$taxonomy):
-    $args['tax_query'] = [
-        [
-            'taxonomy' => @$taxonomy,
-            'terms' => $type,
-            'field' => 'term_id',
-            'operator' => 'IN',
-        ],
-    ];
+        $args['tax_query'] = [
+            [
+                'taxonomy' => @$taxonomy,
+                'terms' => $type,
+                'field' => 'term_id',
+                'operator' => 'IN',
+            ],
+        ];
     endif;
 
     if(!$source && $status == 'upcoming' && $postType == 'event'):
-        $args['meta_key'] = 'snazzy_timestamp_end';
-        $args['orderby'] = 'meta_value';
-        $args['order'] = 'ASC';
+        $upcomingArgs = upcomingArgs($postType);
 
-        $args['meta_query'] = [
-            'relation' => 'OR',
-            [
-                'key'     => 'snazzy_timestamp_start',
-                'value'   => $now,
-                'compare' => '>=',
-                'type'    => 'DATETIME',
-            ],
-            [
-                'key'     => 'snazzy_timestamp_end',
-                'value'   => $now,
-                'compare' => '>=',
-                'type'    => 'DATETIME',
-            ],
-        ];
+        foreach($meta_keys as $key):
+            $args[$key] = $upcomingArgs[$key];
+        endforeach;
     endif;
 
     if(!$source && $status == 'past' && $postType == 'event'):
-        $args['meta_key'] = 'snazzy_timestamp_end';
-        $args['orderby'] = 'meta_value';
-        $args['order'] = 'DESC';
+        $pastArgs = pastArgs($postType);
 
-        $args['meta_query'] = [
-            'relation' => 'AND',
-            [
-                'key'     => 'snazzy_timestamp_start',
-                'value'   => $now,
-                'compare' => '<',
-                'type'    => 'DATETIME',
-            ],
-            [
-                'key'     => 'snazzy_timestamp_end',
-                'value'   => $now,
-                'compare' => '<',
-                'type'    => 'DATETIME',
-            ],
-        ];
+        foreach($meta_keys as $key):
+            $args[$key] = $pastArgs[$key];
+        endforeach;
     endif;
 
     if($IDs && $source == 'specific') $args['posts__in'] = $IDs;
@@ -305,4 +284,58 @@ function video_srcset_sizes($video_srcset = [])
     else:
         return false;
     endif;
+}
+
+function upcomingArgs($postType = 'event')
+{
+    $now = wp_date('Y-m-d H:i:s');
+
+    return [
+        'post_type' => $postType,
+        'meta_key' => 'snazzy_timestamp_end',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+        'meta_query' => [
+            'relation' => 'OR',
+            [
+                'key'     => 'snazzy_timestamp_start',
+                'value'   => $now,
+                'compare' => '>=',
+                'type'    => 'DATETIME',
+            ],
+            [
+                'key'     => 'snazzy_timestamp_end',
+                'value'   => $now,
+                'compare' => '>=',
+                'type'    => 'DATETIME',
+            ],
+        ],
+    ];
+}
+
+function pastArgs($postType = 'event')
+{
+    $now = wp_date('Y-m-d H:i:s');
+
+    return [
+        'post_type' => $postType,
+        'meta_key' => 'snazzy_timestamp_end',
+        'orderby' => 'meta_value',
+        'order' => 'DESC',
+        'meta_query' => [
+            'relation' => 'AND',
+            [
+                'key'     => 'snazzy_timestamp_start',
+                'value'   => $now,
+                'compare' => '<',
+                'type'    => 'DATETIME',
+            ],
+            [
+                'key'     => 'snazzy_timestamp_end',
+                'value'   => $now,
+                'compare' => '<',
+                'type'    => 'DATETIME',
+            ],
+        ],
+    ];
 }

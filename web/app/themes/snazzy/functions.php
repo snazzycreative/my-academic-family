@@ -60,6 +60,7 @@ collect([
         'utilities',
         'setup',
         'filters',
+        'archives',
         'post-types',
         'acf',
         'admin',

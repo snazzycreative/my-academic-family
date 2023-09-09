@@ -33,3 +33,5 @@
     @include('partials.quicklinks', ['quicklinks' => $quicklinks])
   </section>
 @endif
+
+@php(wp_reset_query())

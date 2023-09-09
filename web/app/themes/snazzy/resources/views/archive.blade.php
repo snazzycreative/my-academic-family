@@ -8,7 +8,7 @@
   @includeFirst(['partials.archive-before-' . get_post_type(), 'partials.archive-before'])
 
   @if (have_posts())
-    <section class="section section-archive section-pagebuilder bg-primary bg-pattern bg-pattern-white">
+    <section class="section section-archive section-pagebuilder {!! implode(' ', $bgClasses) !!}">
       @includeFirst(['partials.archive-subheading-' . get_post_type(), 'partials.archive-subheading'])
 
       <div class="container">
