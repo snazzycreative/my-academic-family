@@ -6,20 +6,12 @@
       'size' => 'thumbnail'
     ])
     @include('partials.image', ['id' => $cover, 'class' => 'lazy feat-image'])
-    <div class="grid-post-image-border bg-quaternary"></div>
+    <div class="grid-post-image-border bg-{{ $accent['colour'] }}"></div>
   </div>
   <div class="entry-summary grid-post-content inner">
     @include('partials.term-primary', $term)
     <div class="wysiwyg align-centre">
-      <div class="entry-title wysiwyg">
-        <h3>
-          {!! $personal_title !!}
-          {!! $title !!}
-          <small class="personal-credentials">{!! $personal_credentials !!}</small>
-          @if($personal_pronouns) <small>({!! $personal_pronouns !!})</small> @endif
-        </h3>
-        <p class="personal-education">{!! $personal_education !!}</p>
-      </div>
+      @include('partials.entry-meta-team')
       <hr/>
       @php(the_excerpt())
     </div>

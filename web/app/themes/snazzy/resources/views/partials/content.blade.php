@@ -1,7 +1,7 @@
 <article @php(post_class($card_classes))>
   <div class="grid-post-image">
     @include('partials.image', ['id' => $image, 'class' => 'lazy feat-image'])
-    <div class="grid-post-image-border bg-{!! $accent !!}"></div>
+    <div class="grid-post-image-border bg-quaternary"></div>
   </div>
   <div class="entry-summary grid-post-content inner">
     @include('partials.term-primary', $term)

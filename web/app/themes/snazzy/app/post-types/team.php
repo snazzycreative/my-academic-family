@@ -20,6 +20,7 @@ add_action( 'init', function() {
                 'excerpt',
                 'page-attributes',
                 'social-channels',
+                'color-controls',
             ],
             'menu_icon' => 'dashicons-admin-users',
             'rewrite' => [

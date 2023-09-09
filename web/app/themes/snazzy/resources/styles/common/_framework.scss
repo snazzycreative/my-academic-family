@@ -6,6 +6,12 @@
   backface-visibility: hidden; // removes jagged edges on rotated elements
 }
 
+body {
+  @media (min-width: $screen-xl) {
+    font-size: 1.1em;
+  }
+}
+
 @each $label, $value in $breakpoints {
   .min-#{$label} {
     @media (min-width: $value) {

@@ -27,3 +27,60 @@
     }
   }
 }
+
+.section-team {
+  &-details {
+    padding-top: 8vw;
+
+    h1 {
+      margin: 0;
+    }
+
+    @media (min-width: $screen-sm) {
+      padding-top: 5em;
+    }
+
+    .personal-education {
+      margin: 0.5em 0 0;
+
+      @media (min-width: $screen-sm) {
+        font-size: 1.25em;
+      }
+
+      @media (min-width: $screen-lg) {
+        font-size: 1.5em;
+      }
+    }
+
+    .snazzycp-social {
+      font-size: 1.25em;
+      margin: 1em 0 0;
+      text-align: center;
+
+      a {
+        color: $grey-light;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+
+      @media (min-width: $screen-lg) {
+        font-size: 2em;
+      }
+    }
+
+    hr {
+      width: 3.875em;
+      border-color: $secondary;
+    }
+  }
+
+  &-content {
+    p {
+      &:first-of-type {
+        font-size: 1.15em;
+      }
+    }
+  }
+}

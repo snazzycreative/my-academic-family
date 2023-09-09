@@ -21,6 +21,6 @@
         'class' => 'portrait-image',
       ]) !!}
     @endif
-    <div class="grid-post-image-border bg-quaternary"></div>
+    <div class="grid-post-image-border bg-{{ $accent['colour'] }}"></div>
   </div>
 </section>

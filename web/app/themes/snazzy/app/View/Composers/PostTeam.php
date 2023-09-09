@@ -3,6 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use snazzycp\utilities;
 use App;
 
 class PostTeam extends Composer
@@ -17,8 +18,8 @@ class PostTeam extends Composer
         'partials.content-team-simple',
         'partials.content-mentor',
         'partials.content-mentor-simple',
-        'sections.banner.banner-team',
-        'sections.banner.banner-mentor',
+        'single-team',
+        'single-mentor',
     ];
 
     /**
@@ -48,6 +49,7 @@ class PostTeam extends Composer
 
         $individual = [
             'cover' => get_post_meta($ID, $postType . '_cover_photo_thumbnail_id', true),
+            'accent' => utilities\colour_properties(),
         ];
 
         $return = array_merge($acf, $individual);
