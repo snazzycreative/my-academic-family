@@ -9,6 +9,7 @@ add_action( 'init', function() {
         'menu_position' => 23,
         'supports' => [
             'title',
+            'author',
             'editor',
             'excerpt',
             'thumbnail',

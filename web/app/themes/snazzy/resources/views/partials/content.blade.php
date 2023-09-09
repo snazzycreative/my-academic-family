@@ -7,7 +7,10 @@
     @include('partials.term-primary', $term)
     <div class="wysiwyg">
       <h3>{!! $title !!}</h3>
-      @includeFirst(['partials.entry-meta-' . get_post_type(), 'partials.entry-meta'], $schedule)
+      @includeFirst(['partials.entry-meta-' . get_post_type(), 'partials.entry-meta'], [
+        'schedule' => $schedule,
+        'profile' => $profile,
+      ])
       @php(the_excerpt())
       <a class="grid-post-link" href="{{ get_permalink() }}"><span class="visually-hidden">Read More</span></a>
     </div>

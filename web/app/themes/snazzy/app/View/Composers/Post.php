@@ -25,6 +25,8 @@ class Post extends Composer
      */
     public function override()
     {
+        $post = get_post();
+
         $cardClasses = App\bgClasses(['colour'   =>'white']);
         $cardClasses[] = 'grid-post';
 
@@ -39,6 +41,8 @@ class Post extends Composer
         $termObject = get_term_by('id', $termID, $tax);
         $termLink = get_term_link((int)$termID);
 
+        $userProfile = get_field('snazzy_team_user', 'user_' . $post->post_author);
+
         $schedule = ($postType == 'event') ? $this->schedule_datetime($id) : ['date' => null];
 
         return [
@@ -47,6 +51,7 @@ class Post extends Composer
             'image' => get_post_thumbnail_id(),
             'schedule' => $schedule,
             'singular' => @$postTypeObj->labels->singular_name,
+            'profile' => $userProfile,
             'term' => [
                 'id' => $termID,
                 'icon' => $termIcon,
