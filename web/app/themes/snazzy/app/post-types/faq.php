@@ -13,8 +13,10 @@ add_action( 'init', function() {
             'page-attributes',
         ],
         'menu_icon' => 'dashicons-admin-comments',
-        'rewrite' => false,
-        'has_archive' => false,
+        'rewrite' => [
+            'slug' => 'faqs',
+        ],
+        'has_archive' => true,
         'publicly_queryable' => false,
         'exclude_from_search' => true,
         'capability_type' => 'post',

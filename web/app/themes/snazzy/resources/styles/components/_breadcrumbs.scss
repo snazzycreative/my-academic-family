@@ -1,6 +1,8 @@
-.breadcrumbs {
+.breadcrumb-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 899;
   font-size: 0.8em;
-  padding: 1em 0;
 
   ul {
     li {
@@ -10,6 +12,14 @@
       text-overflow: ellipsis;
       max-width: 15em;
       color: $grey-lighter;
+
+      a {
+        color: $grey;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
 
       &::after {
         content: "/";
@@ -26,10 +36,10 @@
           content: none;
         }
       }
-    } // li
-  } // ul
+    }
+  }
 
   @media (min-width: $screen-md) {
     font-size: 1em;
   }
-} // breadcrumbs
+}

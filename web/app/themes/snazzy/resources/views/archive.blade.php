@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
-
+@section('banner')
   @include('sections.banner.banner')
+@endsection
+
+@section('content')
   @includeFirst(['partials.archive-before-' . get_post_type(), 'partials.archive-before'])
 
   @if (have_posts())

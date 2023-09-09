@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
-@section('content')
-  @if(@$banner != 'none')
+@if(@$banner != 'none')
+  @section('banner')
     @includeFirst(['sections.banner.banner-' . @$banner ?: get_post_type(), 'sections.banner.banner'])
-  @endif
+  @endsection
+@endif
 
+@section('content')
   @if(get_the_content())
     <section id="single-{!! get_post_type() !!}-main" class="section bg-white">
       <div class="container single-{!! get_post_type() !!}-main @hasSection('page-sidebar') single-has-sidebar @endif">

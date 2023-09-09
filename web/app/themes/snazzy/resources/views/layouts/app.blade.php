@@ -7,9 +7,19 @@
 <div class="wrapper">
   @include('sections.header.header')
 
-    <main id="main" class="main">
-      @yield('content')
-    </main>
+  @if(!is_front_page())
+    <nav class="breadcrumb-wrap bg-grey-lightest">
+      <div class="inner inner-small inner-zero-x container">
+        {{ \snazzycp\frontend\breadcrumbs() }}
+      </div>
+    </nav>
+  @endif
+
+  @yield('banner')
+
+  <main id="main" class="main">
+    @yield('content')
+  </main>
 
   @include('sections.footer.footer')
 </div>

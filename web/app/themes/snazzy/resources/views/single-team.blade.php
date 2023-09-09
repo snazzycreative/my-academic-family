@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('banner')
   @includeFirst(['sections.banner.banner-' . get_post_type(), 'sections.banner.banner'])
+@endsection
 
+@section('content')
   <section class="section section-team-details bg-white">
     <div class="container container-small">
       @include('partials.entry-meta-team', ['h' => 1])
