@@ -81,6 +81,34 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_64fc8b4e9b8a9",
+            "label": "Linked Account",
+            "name": "snazzy_team_user",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [
+                "contributor",
+                "subscriber",
+                "author",
+                "editor"
+            ],
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 1,
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_64c1859ae93f2"
+            ]
         }
     ],
     "location": [
@@ -108,5 +136,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690381813
+    "modified": 1694273222
 }

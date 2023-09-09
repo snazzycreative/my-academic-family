@@ -3,7 +3,6 @@
 namespace App;
 
 foreach([
-    'bidirectional',
     'json',
     'dynamic',
 ] as $item ):

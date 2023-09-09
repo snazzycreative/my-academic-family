@@ -154,7 +154,11 @@
             "return_format": "id",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_64ecfb6ed928c"
+            ]
         }
     ],
     "location": [
@@ -182,5 +186,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694113417
+    "modified": 1694272667
 }

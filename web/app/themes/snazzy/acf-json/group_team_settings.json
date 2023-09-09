@@ -30,7 +30,11 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_64ece6c1c567b"
+            ]
         }
     ],
     "location": [
@@ -51,5 +55,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693252619
+    "modified": 1694272709
 }
