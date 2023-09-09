@@ -1,15 +1,19 @@
 @extends('layouts.app')
 
 @section('banner')
-  @include('sections.banner.banner')
+  @if(is_front_page())
+    @include('sections.slides.slides')
+  @else
+    @include('sections.banner.banner')
+  @endif
 @endsection
 
 @section('content')
-  <section class="section bg-white">
-    @while(have_posts()) @php(the_post())
-      <div class="container container-medium">
+  @if(get_the_content())
+    <section class="section section-content bg-white">
+      <div class="container container-small">
         @includeFirst(['partials.content-page', 'partials.content'])
       </div>
-    @endwhile
-  </section>
+    </section>
+  @endif
 @endsection

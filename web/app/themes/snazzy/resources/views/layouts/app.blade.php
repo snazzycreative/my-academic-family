@@ -21,5 +21,9 @@
     @yield('content')
   </main>
 
+  @if(!is_paged())
+    @include('partials.pagebuilder')
+  @endif
+
   @include('sections.footer.footer')
 </div>

@@ -27,23 +27,6 @@ class Archive extends Composer
         ];
     }
 
-    /**
-     * Data to be passed to view before rendering, but after merging.
-     *
-     * @return array
-     */
-    public function override()
-    {
-        $archiveObject = utilities\archiveObject(get_post_type());
-
-
-
-        return [
-            'post' => $archiveObject,
-            'isPagebuilder' => App\isPagebuilder(@$archiveObject->ID),
-        ];
-    }
-
     public function upcomingQuery($postType = null)
     {
         if(is_null($postType)) return false;

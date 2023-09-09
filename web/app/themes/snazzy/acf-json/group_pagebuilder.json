@@ -346,9 +346,9 @@
     "location": [
         [
             {
-                "param": "post_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "template-pagebuilder.blade.php"
+                "value": "page"
             }
         ],
         [
@@ -357,9 +357,30 @@
                 "operator": "==",
                 "value": "front_page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
         ]
     ],
-    "menu_order": -1,
+    "menu_order": 10,
     "position": "normal",
     "style": "seamless",
     "label_placement": "top",
@@ -368,5 +389,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693597282
+    "modified": 1694280494
 }

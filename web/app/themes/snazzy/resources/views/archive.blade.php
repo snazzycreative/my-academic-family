@@ -25,9 +25,4 @@
       </div>
     </section>
   @endif
-
-  @if(!is_paged() && $isPagebuilder)
-    @include('partials.pagebuilder')
-  @endif
-
 @endsection
