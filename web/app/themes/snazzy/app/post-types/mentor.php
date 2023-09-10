@@ -14,6 +14,7 @@ add_action( 'init', function() {
             'supports' => [
                 'title',
                 'editor',
+                'author',
                 'thumbnail',
                 'excerpt',
                 'page-attributes',

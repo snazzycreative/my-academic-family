@@ -21,7 +21,7 @@ add_action( 'init', function() {
             'slug' => 'coaching-services',
         ],
         'has_archive' => false,
-        'capability_type' => 'post',
+        'capability_type' => 'page',
         'admin_cols' => [
             'service_tag' => [
                 'title' => __('Tags', $td),

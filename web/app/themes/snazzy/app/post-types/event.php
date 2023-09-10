@@ -23,7 +23,7 @@ add_action( 'init', function() {
             'slug' => 'events',
         ],
         'has_archive' => true,
-        'capability_type' => 'post',
+        'capability_type' => 'page',
         'admin_cols' => [
             'primary_type' => [
                 'title' => __('Primary Type', $td),

@@ -19,7 +19,7 @@ add_action( 'init', function() {
         'has_archive' => true,
         'publicly_queryable' => false,
         'exclude_from_search' => true,
-        'capability_type' => 'post',
+        'capability_type' => 'page',
         'show_in_nav_menus' => false,
         'taxonomies' => [
             'post_tag',

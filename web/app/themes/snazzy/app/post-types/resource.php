@@ -61,7 +61,7 @@ add_action( 'init', function() {
         [
             'singular' => __('Type', $td),
             'plural' => __('Types', $td),
-            'slug' => 'student-resources/types',
+            'slug' => 'student-resources-types',
         ]
     );
 } );

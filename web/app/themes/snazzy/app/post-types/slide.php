@@ -17,6 +17,7 @@ add_action( 'init', function() {
                 'thumbnail',
                 'page-attributes',
             ],
+            'capability_type' => 'page',
             'menu_icon' => 'dashicons-slides',
             'rewrite' => false,
             'has_archive' => false,

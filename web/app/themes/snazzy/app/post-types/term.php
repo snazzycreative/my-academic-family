@@ -28,7 +28,7 @@ add_action( 'init', function() {
                 'slug' => 'encyclopedia-of-university',
             ],
             'has_archive' => true,
-            'capability_type' => 'post',
+            'capability_type' => 'page',
             'admin_cols' => [
                 'term_tag' => [
                     'title' => __('Tags', $td),
