@@ -13,6 +13,7 @@ class Post extends Composer
      * @var array
      */
     protected static $views = [
+        'layouts.single',
         'partials.page-header',
         'partials.content',
         'partials.content-*',
@@ -59,6 +60,7 @@ class Post extends Composer
             'schedule' => $schedule,
             'singular' => @$postTypeObj->labels->singular_name,
             'profile' => $userProfile,
+            'related',
             'tags' => $tags,
             'terms' => $postTerms,
             'term' => [

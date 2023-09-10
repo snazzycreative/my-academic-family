@@ -1,4 +1,4 @@
-@extends('single', ['banner' => 'service'])
+@extends('layouts.single', ['banner' => 'service'])
 
 @php
   $facilitators = new \WP_Query($team_args);

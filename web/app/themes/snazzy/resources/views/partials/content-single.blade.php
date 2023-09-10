@@ -1,19 +1,19 @@
-<article @php(post_class('h-entry'))>
-  <header>
-    <h1 class="p-name">
-      {!! $title !!}
-    </h1>
+<div class="single-intro">
+  <h1>{!! $title !!}</h1>
+  @include('partials.entry-meta')
 
-    @include('partials.entry-meta')
-  </header>
+  @if($image)
+    {!! \App\frontend\img_srcset([
+      'image' => $image,
+      'name' => 'overview',
+      'lazy' => false,
+      'sizes' => 3,
+    ]) !!}
+  @endif
+</div>
 
-  <div class="e-content">
-    @php(the_content())
-  </div>
+<div class="wysiwyg">
+  @php(the_content())
+</div>
 
-  <footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-  </footer>
-
-  @php(comments_template())
-</article>
+{!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}

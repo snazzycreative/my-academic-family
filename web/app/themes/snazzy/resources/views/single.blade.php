@@ -1,38 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.single', ['banner' => 'none'])
 
-@if(@$banner != 'none')
-  @section('banner')
-    @includeFirst(['sections.banner.banner-' . @$banner ?: get_post_type(), 'sections.banner.banner'])
-  @endsection
+@section('page-content')
+  @includeFirst(['partials.content-single-' . get_post_type(), 'partials.content-single'])
+@endsection
+
+@if($related)
+  @section('page-sidebar')
+    <h2 class="section-title">{!! $related_heading !!}</h2>
+  @overwrite
 @endif
 
-@section('content')
-  @if(get_the_content())
-    <section id="single-{!! get_post_type() !!}-main" class="section bg-white">
-      <div class="container single-{!! get_post_type() !!}-main @hasSection('page-sidebar') single-has-sidebar @endif">
-
-        <div class="single-intro-terms">
-          @include('partials.term-primary', $term)
-          @include('partials.terms', $terms)
-        </div>
-
-        <div class="single-content wysiwyg">
-          @yield('page-content')
-          @include('partials.tags', $tags)
-        </div>
-
-        @hasSection('page-sidebar')
-          <div class="section section-zero-bottom single-sidebar">
-            @yield('page-sidebar')
-          </div>
-        @endif
-      </div>
-    </section>
-  @endif
-
-  @hasSection('page-content-after')
-    <div class="section-single-content-after">
-      @yield('page-content-after')
-    </div>
-  @endif
-@endsection
