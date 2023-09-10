@@ -11,10 +11,12 @@
     <section id="single-{!! get_post_type() !!}-main" class="section bg-white">
       <div class="container single-{!! get_post_type() !!}-main @hasSection('page-sidebar') single-has-sidebar @else container-small @endif">
 
-        <div class="single-intro-terms">
-          @include('partials.term-primary', $term)
-          @include('partials.terms', $terms)
-        </div>
+        @if($term || $terms)
+          <div class="single-intro-terms">
+            @include('partials.term-primary', $term)
+            @include('partials.terms', $terms)
+          </div>
+        @endif
 
         <div class="single-content wysiwyg">
           @yield('page-content')

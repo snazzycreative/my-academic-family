@@ -97,8 +97,10 @@
 
     .feat-image,
     .feat-placeholder {
-      mask-size: 100% auto;
-      mask-position: bottom;
+      @media (min-width: $screen-sm) {
+        mask-size: 100% auto;
+        mask-position: bottom;
+      }
     }
 
     .feat-placeholder {
@@ -108,7 +110,6 @@
     .placeholder-portrait-image,
     .portrait-image {
       font-size: 50vw;
-      bottom: -1.5vw;
       border-width: 0.5rem;
       background: $black;
 
