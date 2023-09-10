@@ -10,8 +10,15 @@
   @if(get_the_content())
     <section id="single-{!! get_post_type() !!}-main" class="section bg-white">
       <div class="container single-{!! get_post_type() !!}-main @hasSection('page-sidebar') single-has-sidebar @endif">
+
+        <div class="single-intro-terms">
+          @include('partials.term-primary', $term)
+          @include('partials.terms', $terms)
+        </div>
+
         <div class="single-content wysiwyg">
           @yield('page-content')
+          @include('partials.tags', $tags)
         </div>
 
         @hasSection('page-sidebar')

@@ -245,6 +245,9 @@ function post_taxonomy($postType)
         case 'event':
             $tax = 'event_type';
             break;
+        case 'resource':
+            $tax = 'resource_type';
+            break;
         default:
             $tax = null;
             break;

@@ -16,6 +16,7 @@ class Post extends Composer
         'partials.page-header',
         'partials.content',
         'partials.content-*',
+        'single',
     ];
 
     /**
@@ -36,10 +37,16 @@ class Post extends Composer
         $id = get_the_ID();
 
         $tax = App\post_taxonomy($postType);
-        $termID = get_post_meta(get_the_ID(), '_primary_term_' . $tax, true);
+        $termID = get_post_meta($id, '_primary_term_' . $tax, true);
         $termIcon = get_field('fontawesome_solid', $tax . '_' . $termID);
         $termObject = get_term_by('id', $termID, $tax);
         $termLink = get_term_link((int)$termID);
+
+        $postTerms = wp_get_post_terms($id, $tax, [
+            'exclude' => $termID,
+        ]);
+
+        $tags = wp_get_post_terms($id, 'post_tag');
 
         $userProfile = get_field('snazzy_team_user', 'user_' . $post->post_author);
 
@@ -52,6 +59,8 @@ class Post extends Composer
             'schedule' => $schedule,
             'singular' => @$postTypeObj->labels->singular_name,
             'profile' => $userProfile,
+            'tags' => $tags,
+            'terms' => $postTerms,
             'term' => [
                 'id' => $termID,
                 'icon' => $termIcon,

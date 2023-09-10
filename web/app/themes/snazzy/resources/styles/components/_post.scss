@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .grid-post {
   @include flex-width(calc(100% - 1em));
 
@@ -186,7 +188,6 @@
     margin: 1em auto;
   }
 
-  /* stylelint-disable no-descending-specificity */
   .snazzycp-social {
     font-size: 1.25em;
 
@@ -198,7 +199,6 @@
       }
     }
   }
-  /* stylelint-enable no-descending-specificity */
 }
 
 .entry-meta {
@@ -218,6 +218,10 @@
     li {
       margin: 0.125em 0.5em;
       display: inline-block;
+
+      a {
+        font-weight: 700;
+      }
     }
   }
 }

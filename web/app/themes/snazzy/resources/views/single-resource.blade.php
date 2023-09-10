@@ -1,7 +1,7 @@
 @extends('single', ['banner' => 'none'])
 
 @section('page-content')
-  @includeFirst(['partials.content-page', 'partials.content'])
+  @include('partials.content-single-resource')
 @endsection
 
 @section('page-sidebar')

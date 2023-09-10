@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .single {
   &-has-sidebar {
     @media (min-width: $screen-md) {
@@ -24,6 +26,51 @@
       @include flex-width(30em);
 
       margin: 0 0 0 5em;
+    }
+  }
+
+  &-intro {
+    margin: 0 0 1em;
+
+    @media (min-width: $screen-sm) {
+      margin: 0 0 2em;
+    }
+
+    &-terms {
+      margin: 0 0 1em;
+      flex: 0 0 100%;
+
+      @media (min-width: $screen-sm) {
+        margin: 0 0 2em;
+      }
+
+      .grid-post-term {
+        @include position(relative, 1, auto);
+
+        display: inline-block;
+        border-radius: 1.5em;
+        background-color: $grey-dark;
+
+        &:hover {
+          background-color: $black;
+        }
+
+        a {
+          &:hover {
+            padding-right: 1.5em;
+          }
+        }
+      }
+    }
+
+    .entry-meta {
+      border: none;
+      padding: 0;
+      margin: 0 0 1.5em;
+
+      @media (min-width: $screen-sm) {
+        font-size: 1.25em;
+      }
     }
   }
 }
@@ -80,6 +127,52 @@
     p {
       &:first-of-type {
         font-size: 1.15em;
+      }
+    }
+  }
+}
+
+.post-terms {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: inline-block;
+  }
+
+  li {
+    display: inline-block;
+    line-height: 1;
+
+    a {
+      display: block;
+      padding: 0.5em 1.5em;
+      color: $grey;
+      background: $grey-lightest;
+      border-radius: 1.5em;
+
+      &:hover {
+        background: $black;
+        color: $white;
+      }
+    }
+  }
+}
+
+.post-tags {
+  margin: 1.5em -0.25em -0.25em;
+  padding: 1em 0 0;
+  border: 0 solid $grey-lighter;
+  border-width: 1px 0 0;
+
+  li {
+    display: inline-block;
+    margin: 0.25em;
+
+    a {
+      font-weight: 700;
+
+      &::before {
+        content: "\0023";
       }
     }
   }
