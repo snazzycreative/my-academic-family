@@ -39,11 +39,11 @@
 
                     {!! apply_filters('the_content', @$card['content']['text']) !!}
                   </div>
-
-                  @include('partials.buttons', ['links' => @$card['content']['links']])
-
                 </div>
               </div>
+            </div>
+            <div class="cardgrid-buttons inner inner-large">
+              @include('partials.buttons', ['links' => @$card['content']['links']])
             </div>
           </div>
           @php($x++)

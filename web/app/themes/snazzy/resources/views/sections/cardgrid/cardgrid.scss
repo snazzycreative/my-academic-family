@@ -1,6 +1,8 @@
 .cardgrid {
   &-item {
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     @media (max-width: $screen-xs-max) {
       @include flex-width(calc(100% - 1em));
@@ -35,6 +37,10 @@
   &-content {
     position: relative;
     z-index: 2;
+
+    &-wrap {
+      flex: 1;
+    }
   }
 
   &-numbered {
@@ -43,10 +49,18 @@
 
       @media (min-width: $screen-md) {
         padding-left: 3.75em;
+      }
+    }
+  }
 
-        p {
-          font-size: 1.25em;
-        }
+  &-buttons {
+    padding-top: 0;
+
+    .section-buttons {
+      margin-top: -0.125em;
+
+      .cardgrid-numbered & {
+        padding-left: 3.75em;
       }
     }
   }
