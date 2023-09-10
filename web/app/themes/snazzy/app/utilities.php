@@ -11,6 +11,7 @@ function knockout_content($layout = null)
         'alternating',
         'form',
         'organisations',
+        'icongrid',
     ];
 
     if(in_array($layout, $layouts)):
