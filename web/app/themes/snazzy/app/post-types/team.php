@@ -25,7 +25,7 @@ add_action( 'init', function() {
             ],
             'menu_icon' => 'dashicons-admin-users',
             'rewrite' => [
-                'slug' => 'about/team',
+                'slug' => 'about',
             ],
             'has_archive' => false,
             'capability_type' => 'post',
