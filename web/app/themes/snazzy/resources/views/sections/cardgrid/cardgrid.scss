@@ -1,0 +1,90 @@
+.cardgrid {
+  &-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $screen-xs-max) {
+      @include flex-width(calc(100% - 1em));
+    }
+  }
+
+  &-image {
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 20%;
+
+      @media (min-width: $screen-xs) {
+        padding-top: 30%;
+      }
+
+      @media (min-width: $screen-md) {
+        padding-top: 56.25%;
+      }
+    }
+
+    img {
+      @include position(absolute, 1, 0);
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+
+    &-wrap {
+      flex: 1;
+    }
+  }
+
+  &-numbered {
+    .wysiwyg {
+      padding-left: 2em;
+
+      @media (min-width: $screen-md) {
+        padding-left: 3.75em;
+      }
+    }
+  }
+
+  &-buttons {
+    padding-top: 0;
+
+    .section-buttons {
+      margin-top: -0.125em;
+
+      .cardgrid-numbered & {
+        padding-left: 3.75em;
+      }
+    }
+  }
+
+  &-number {
+    @include position(absolute, 1, 0, auto, auto, 0);
+
+    display: flex;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @media (min-width: $screen-md) {
+      top: -0.25em;
+      font-size: 2em;
+    }
+
+    p {
+      flex: 1;
+      margin: auto;
+      font-weight: 700;
+    }
+  }
+}

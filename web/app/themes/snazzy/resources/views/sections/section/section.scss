@@ -1,0 +1,37 @@
+.section {
+  &-intro,
+  &-footer {
+    @media (min-width: $screen-md) {
+      padding: $sectionSmall 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: $sectionMedium 0;
+    }
+  }
+
+  &-intro {
+    padding-top: 0;
+  }
+
+  &-footer {
+    padding-bottom: 0;
+  }
+
+  &-buttons {
+    margin: 1em -0.125em -0.125em;
+
+    .button {
+      margin: 0.125em;
+    }
+  }
+
+  &-pagebuilder {
+    border: 0 solid $white;
+    border-width: 0.25em 0 0;
+
+    &:last-of-type {
+      border-width: 0.25em 0;
+    }
+  }
+}

@@ -16,14 +16,16 @@ add_action( 'init', function() {
             'supports' => [
                 'title',
                 'editor',
+                'author',
                 'thumbnail',
                 'excerpt',
                 'page-attributes',
                 'social-channels',
+                'color-controls',
             ],
             'menu_icon' => 'dashicons-admin-users',
             'rewrite' => [
-                'slug' => 'about/team',
+                'slug' => 'about',
             ],
             'has_archive' => false,
             'capability_type' => 'post',

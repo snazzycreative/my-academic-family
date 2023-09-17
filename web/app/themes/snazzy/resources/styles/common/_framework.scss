@@ -6,6 +6,12 @@
   backface-visibility: hidden; // removes jagged edges on rotated elements
 }
 
+body {
+  @media (min-width: $screen-xl) {
+    font-size: 1.1em;
+  }
+}
+
 @each $label, $value in $breakpoints {
   .min-#{$label} {
     @media (min-width: $value) {
@@ -112,6 +118,16 @@ iframe {
 
   &-small { padding: $innerSmall; }
   &-large { padding: $innerLarge; }
+
+  &-zero-x {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &-zero-y {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .rounded {
@@ -173,5 +189,112 @@ iframe {
 
   &.brand-icon {
     width: 5em;
+  }
+}
+
+.bg-pattern {
+  position: relative;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    @include position(absolute, 0);
+
+    content: "";
+    background-attachment: fixed;
+    background-size: 11.875em;
+    background-position: center;
+  }
+
+  &-white {
+    &::before {
+      background-image: url("~/images/pattern-book-white.png");
+      opacity: 0.05;
+    }
+  }
+
+  &-black {
+    &::before {
+      background-image: url("~/images/pattern-book-black.png");
+      opacity: 0.02;
+    }
+  }
+}
+
+.align {
+  &-centre {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+%bg-default,
+.bg-default {
+  background-color: $grey-lightest;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5em;
+
+  &-align-left {
+    justify-content: flex-start;
+  }
+
+  &-align-centre {
+    justify-content: center;
+  }
+
+  &-align-right {
+    justify-content: flex-end;
+  }
+
+  &-item {
+    position: relative;
+    flex: 0 0 100%;
+    margin: 0.5em;
+
+    @media (min-width: $screen-xs) {
+      @include flex-width(calc(50% - 1em));
+    }
+
+    @media (min-width: $screen-sm) {
+      .grid-3 &,
+      .grid-6 & {
+        @include flex-width(calc(33.33% - 1em));
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin: 0.75em;
+
+      .grid-2 & {
+        @include flex-width(calc(50% - 1.5em));
+      }
+
+      .grid-3 &,
+      .grid-6 & {
+        @include flex-width(calc(33.33% - 1.5em));
+      }
+
+      .grid-4 & {
+        @include flex-width(calc(25% - 1.5em));
+      }
+
+      .grid-5 & {
+        @include flex-width(calc(20% - 1.5em));
+      }
+
+      .grid-6 & {
+        @include flex-width(calc(16.667% - 1.5em));
+      }
+    }
   }
 }

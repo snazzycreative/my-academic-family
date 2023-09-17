@@ -9,6 +9,7 @@ add_action( 'init', function() {
         'menu_position' => 23,
         'supports' => [
             'title',
+            'author',
             'editor',
             'excerpt',
             'thumbnail',
@@ -18,7 +19,7 @@ add_action( 'init', function() {
             'post_tag',
         ],
         'rewrite' => [
-            'slug' => 'student-resources/resources',
+            'slug' => 'student-resources',
         ],
         'has_archive' => true,
         'capability_type' => 'post',
@@ -60,7 +61,7 @@ add_action( 'init', function() {
         [
             'singular' => __('Type', $td),
             'plural' => __('Types', $td),
-            'slug' => 'student-resources/types',
+            'slug' => 'student-resources-types',
         ]
     );
 } );

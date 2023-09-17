@@ -1,0 +1,56 @@
+.section-alternating {
+  &-col {
+    position: relative;
+
+    @media (min-width: $screen-sm) {
+      @include flex-width(50%);
+    }
+  }
+
+  &-image {
+    min-height: 56.25vw;
+
+    @media (min-width: $screen-sm) {
+      min-height: 28.125vw;
+    }
+
+    img {
+      @include position(absolute);
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    @media (min-width: $screen-sm) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .content-position {
+        flex: 1;
+      }
+    }
+  }
+
+  &-row {
+    @media (min-width: $screen-sm) {
+      display: flex;
+    }
+
+    .container {
+      @media (min-width: $screen-sm) {
+        width: 80%;
+      }
+    }
+
+    &:nth-child(even) {
+      .section-alternating-content {
+        order: -1;
+      }
+    }
+  }
+}

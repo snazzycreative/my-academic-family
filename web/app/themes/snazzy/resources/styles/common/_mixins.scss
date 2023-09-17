@@ -102,10 +102,10 @@ works well with percentages and specific em values
         background: color.adjust($hex, $lightness: 10%);
         border-color: color.adjust($hex, $lightness: 10%);
       }
-    } // default (solid)
+    }
 
-    %button-#{$name}%inverted,
-    #{$button}.#{$name}.inverted {
+    %button-#{$name}%outline,
+    #{$button}.#{$name}.outline {
       color: $hex;
       background: transparent;
       border-color: $hex;
@@ -116,37 +116,37 @@ works well with percentages and specific em values
         background: #{$hex};
         border-color: #{$hex};
       }
-    } // inverted
+    }
 
-    @media screen {
-      *:not(.bg-#{$name}) #{$button}.#{$name} {
-        color: white;
-        background-color: $hex;
-        border-color: $hex;
+    // @media screen {
+    //   *:not(.bg-#{$name}) #{$button}.#{$name} {
+    //     color: white;
+    //     background-color: $hex;
+    //     border-color: $hex;
 
-        &:hover,
-        &:focus {
-          color: white;
-          background-color: color.adjust($hex, $lightness: 10%);
-          border-color: color.adjust($hex, $lightness: 10%);
-        }
-      }
+    //     &:hover,
+    //     &:focus {
+    //       color: white;
+    //       background-color: color.adjust($hex, $lightness: 10%);
+    //       border-color: color.adjust($hex, $lightness: 10%);
+    //     }
+    //   }
 
-      .bg-#{$name} #{$button}.#{$name} {
-        color: $hex;
-        background: white;
-        border-color: white;
+    //   .bg-#{$name} #{$button}.#{$name} {
+    //     color: $hex;
+    //     background: white;
+    //     border-color: white;
 
-        &:hover,
-        &:focus {
-          color: white;
-          background: transparent;
-          border-color: white;
-        }
-      }
-    } // @media screen
-  } // each button
-} // mixin generate_button_colors
+    //     &:hover,
+    //     &:focus {
+    //       color: white;
+    //       background: transparent;
+    //       border-color: white;
+    //     }
+    //   }
+    // }
+  }
+}
 
 /*
   $position: string (absolute/fixed/sticky)

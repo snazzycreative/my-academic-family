@@ -24,13 +24,14 @@ blockquote {
   }
 
   p {
-    color: $primary;
+    color: $secondary;
     line-height: 1.35em;
     line-height: 1em;
     font-size: 1.5em;
 
     a {
       color: $primary;
+      text-decoration: underline;
     }
   }
 }

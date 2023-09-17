@@ -1,0 +1,98 @@
+.tooltip {
+  &-tile {
+    position: relative;
+
+    h3 {
+      text-transform: uppercase;
+    }
+
+    .tooltip {
+      position: relative;
+      padding: 0 0 0 1.5em;
+
+      i {
+        @include position(absolute, 1, 0.25em, auto, auto, 0);
+
+        display: block;
+        opacity: 0.5;
+        color: $white;
+        cursor: pointer;
+        transition: all 300ms ease;
+      }
+
+      p {
+        text-align: left;
+        line-height: 1.2;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      text-align: center;
+      display: flex;
+      align-items: center;
+
+      .inner {
+        flex: 1;
+      }
+
+      h3 {
+        margin: 0;
+      }
+
+      .tooltip {
+        @include position(absolute, 1, 0.5em, auto, auto, 0.5em);
+
+        padding: 0;
+
+        i {
+          position: static;
+        }
+
+        p {
+          @include position(absolute, 2, auto, auto, 1.75em, -0.75em);
+
+          background: $black;
+          width: 13em;
+          padding: 0.5em 1em;
+          border-radius: 0.25em;
+          display: none;
+
+          &::before {
+            @include position(absolute, 1, auto, auto, -0.5em, 1em);
+
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            transform: rotate(45deg);
+            background: $black;
+            font-size: 0.75em;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          p {
+            display: block;
+          }
+
+          i {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      h3 {
+        font-size: 2em;
+      }
+
+      .tooltip {
+        p {
+          width: 17.25em;
+        }
+      }
+    }
+  }
+}

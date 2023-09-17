@@ -57,12 +57,15 @@ if (! function_exists('\Roots\bootloader')) {
 */
 
 collect([
+        'utilities',
         'setup',
         'filters',
+        'archives',
         'post-types',
         'acf',
         'admin',
         'menus',
+        'frontend',
     ])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {

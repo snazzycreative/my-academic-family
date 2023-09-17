@@ -12,20 +12,16 @@ add_action( 'init', function() {
             'excerpt',
             'thumbnail',
             'page-attributes',
-            'color-controls',
         ],
         'menu_icon' => 'dashicons-editor-table',
         'taxonomies' => [
             'post_tag',
         ],
-        'labels' => [
-            'featured_image' => __('Social Preview', $td),
-        ],
         'rewrite' => [
             'slug' => 'coaching-services',
         ],
         'has_archive' => false,
-        'capability_type' => 'post',
+        'capability_type' => 'page',
         'admin_cols' => [
             'service_tag' => [
                 'title' => __('Tags', $td),

@@ -1,0 +1,260 @@
+/* stylelint-disable no-descending-specificity */
+
+.grid-post {
+  @include flex-width(calc(100% - 1em));
+
+  position: relative;
+  margin: 0.5em;
+
+  .bg-white & {
+    @extend %bg-default;
+  }
+
+  @media (min-width: $screen-sm) {
+    @include flex-width(calc(50% - 1em));
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: $screen-md) {
+    @include flex-width(calc(33.33% - 1.5em));
+
+    margin: 0.75em;
+  }
+
+  @media (min-width: $screen-lg) {
+    @include flex-width(calc(25% - 1.5em));
+  }
+
+  &-image {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    .feat-placeholder,
+    .feat-image {
+      @include position(absolute, 1, 0);
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mask: url("~/images/post-card-clip.svg");
+      mask-repeat: no-repeat;
+    }
+
+    .portrait-image {
+      @include position(absolute, 3, auto, calc(50% - 0.5em), 0, auto);
+
+      display: block;
+      width: 1em;
+      height: 1em;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 0.25rem solid $white;
+      font-size: 50vw;
+      transform: translateY(10%);
+
+      @media (min-width: $screen-sm) {
+        font-size: 25vw;
+      }
+
+      @media (min-width: $screen-md) {
+        font-size: 16vw;
+      }
+
+      @media (min-width: $screen-lg) {
+        font-size: 12vw;
+      }
+
+      @media (min-width: $screen-xl) {
+        font-size: 11em;
+      }
+    }
+  }
+
+  &-content {
+    @media (min-width: $screen-sm) {
+      flex: 1;
+    }
+  }
+
+  &-button {
+    padding-top: 0;
+
+    a {
+      position: relative;
+      z-index: 5;
+    }
+
+    .team-content &,
+    .mentor-content & {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .snazzycp-social {
+        flex: 1;
+      }
+
+      .section-buttons {
+        @include flex-width(7em);
+
+        margin: auto 0;
+      }
+    }
+  }
+
+  &-link {
+    line-height: 1;
+    margin: 0;
+
+    span,
+    i {
+      display: inline-block;
+      vertical-align: middle;
+      transition: all 300ms ease;
+    }
+
+    span {
+      color: $secondary;
+      font-weight: 700;
+    }
+
+    i {
+      color: $grey-light;
+      margin-left: 0.125em;
+      font-size: 1.25em;
+    }
+
+    &:hover {
+      i {
+        color: $secondary;
+        transform: translateX(25%);
+      }
+    }
+  }
+
+  &-link-overlay {
+    @include position(absolute, 4, 0);
+
+    display: block;
+  }
+
+  &-image-border {
+    @include position(absolute, 2, auto, 0, 0);
+
+    content: "";
+    display: block;
+    padding-top: 11.355%;
+    mask: url("~/images/post-card-border.svg");
+    mask-repeat: no-repeat;
+  }
+
+  &-term {
+    @include position(absolute, 5, 1em, auto, auto, 0);
+
+    border-radius: 0 1.5em 1.5em 0;
+
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+
+    a {
+      display: block;
+      padding: 0.5em 1.5em 0.5em 1em;
+      user-select: none;
+
+      &:hover {
+        padding-right: 2em;
+
+        i {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  hr {
+    border-color: $secondary;
+    max-width: 5em;
+    width: 25%;
+    margin: 1em auto;
+  }
+
+  .snazzycp-social {
+    font-size: 1.25em;
+
+    a {
+      color: $grey-light;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+.entry-meta {
+  border: 0 solid $grey-lighter;
+  border-width: 1px 0;
+  padding: 0.5em 0;
+  margin: 0 0 0.5em;
+
+  .p-author {
+    position: relative;
+    z-index: 5;
+  }
+
+  ul {
+    margin: -0.125em -0.5em;
+
+    li {
+      margin: 0.125em 0.5em;
+      display: inline-block;
+
+      a {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.simple {
+  &-team {
+    display: flex;
+    margin: 0 0 1em;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    .personal-education {
+      margin: 0 0 0.25em;
+    }
+
+    img {
+      @include flex-width(5em);
+
+      display: block;
+      height: 5em;
+      border-radius: 50%;
+      margin: 0 1em 0 0;
+    }
+
+    .entry-summary {
+      flex: 1 1 5em;
+      padding: 0.25em 0 0;
+    }
+  }
+}

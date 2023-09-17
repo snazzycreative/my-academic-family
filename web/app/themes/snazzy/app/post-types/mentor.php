@@ -14,10 +14,12 @@ add_action( 'init', function() {
             'supports' => [
                 'title',
                 'editor',
+                'author',
                 'thumbnail',
                 'excerpt',
                 'page-attributes',
                 'social-channels',
+                'color-controls',
             ],
             'menu_icon' => 'dashicons-groups',
             'rewrite' => [

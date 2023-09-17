@@ -1,0 +1,222 @@
+.service {
+  &-banner {
+    @media (min-width: $screen-lg) {
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &-text,
+    &-purchase {
+      text-align: center;
+    }
+
+    &-text {
+      margin: auto;
+
+      @media (min-width: $screen-sm) {
+        h1 {
+          font-size: 3em;
+        }
+      }
+
+      @media (min-width: $screen-lg) {
+        flex: 1 1 5em;
+        padding: 0;
+        text-align: left;
+        margin: 0 1.5em 0 0;
+
+        .titlebar {
+          margin: auto;
+        }
+      }
+    }
+
+    &-purchase {
+      margin: -0.5em;
+
+      @media (min-width: $screen-lg) {
+        text-align: right;
+
+        &-1 {
+          @include flex-width(20em);
+        }
+
+        &-2 {
+          @include flex-width(40em);
+        }
+      }
+
+      li {
+        display: inline-block;
+        margin: 0.5em;
+      }
+    }
+  }
+
+  &-image,
+  &-details {
+    flex: 1 1 100%;
+
+    @media (min-width: $screen-sm) {
+      flex: 1;
+    }
+  }
+
+  &-details {
+    &::before {
+      content: none;
+    }
+
+    .inner {
+      flex: 1;
+
+      @media (min-width: $screen-md) {
+        padding: 3em;
+      }
+    }
+
+    @media (min-width: $screen-sm) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-image {
+    position: relative;
+    flex: 1;
+
+    @media (min-width: $screen-md) {
+      @include flex-width(33.33%);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+
+      @media (min-width: $screen-sm) {
+        padding-top: 75%;
+      }
+
+      @media (min-width: $screen-md) {
+        padding-top: 100%;
+      }
+    }
+
+    .feat-placeholder,
+    img {
+      @include position(absolute, 1, 0);
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feat-placeholder {
+      padding-top: 0;
+    }
+  }
+
+  &-content {
+    margin: 0 0 1em;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .wysiwyg {
+      @media (min-width: $screen-md) {
+        font-size: 1.25em;
+      }
+    }
+
+    &:nth-child(even) {
+      .service-details {
+        @media (min-width: $screen-sm) {
+          order: -1;
+        }
+      }
+    }
+
+    hr {
+      width: 3em;
+      border-color: rgba($white, 0.5);
+      margin: 0 0 1em;
+    }
+  }
+
+  &-footer {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 1.5em 0 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin: 3em 0 0;
+    }
+
+    .section-buttons {
+      @include flex-width(15em);
+
+      @media (min-width: $screen-lg) {
+        margin: 0;
+        font-size: 1.5em;
+        text-align: right;
+      }
+    }
+  }
+
+  &-pricing {
+    margin: 1em 0;
+
+    @media (min-width: $screen-lg) {
+      flex: 1 1 5em;
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      border: 0 solid rgba($white, 0.5);
+      border-width: 0 0.0625rem 0 0;
+      line-height: 1;
+      text-align: right;
+      font-size: 0.75em;
+      margin: 0 1.5em 0 0;
+      padding: 0 2em 0 0;
+
+      @media (min-width: $screen-md) {
+        font-size: 1em;
+      }
+
+      &:last-of-type {
+        border-width: 0;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    small,
+    strong {
+      display: block;
+    }
+
+    strong {
+      font-size: 3em;
+    }
+
+    small {
+      font-size: 1.25em;
+    }
+  }
+}

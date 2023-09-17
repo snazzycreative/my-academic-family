@@ -10,11 +10,12 @@
 @import "common/loading";
 
 // Plugins
-@import "plugins/contact-form-7";
-@import "plugins/magnific-popup";
 @import "plugins/mce";
 @import "plugins/recaptcha";
-@import "plugins/slick-slider";
+@import "~@glidejs/glide/src/assets/sass/glide.core";
+// @import "~@glidejs/glide/src/assets/sass/glide.theme";
+// @import "plugins/magnific-popup";
+// @import "plugins/slick-slider";
 
 $fa-font-path: "~/fonts";
 
@@ -29,8 +30,24 @@ $fa-font-path: "~/fonts";
 @import "components/contact-info";
 @import "components/hours";
 @import "components/pagination";
+@import "components/forms";
+@import "components/page";
+@import "components/post";
 
 // Sections
-@import "~views/sections/footer/footer";
 @import "~views/sections/header/header";
 @import "~views/sections/menu-mobile/menu-mobile";
+@import "~views/sections/banner/banner";
+@import "~views/sections/slides/slides";
+@import "~views/sections/section/section";
+@import "~views/sections/form/form";
+@import "~views/sections/wysiwyg/wysiwyg";
+@import "~views/sections/alternating/alternating";
+@import "~views/sections/organisations/organisations";
+@import "~views/sections/services/services";
+@import "~views/sections/toggle/toggle";
+@import "~views/sections/tooltips/tooltips";
+@import "~views/sections/postgrid/postgrid";
+@import "~views/sections/icongrid/icongrid";
+@import "~views/sections/cardgrid/cardgrid";
+@import "~views/sections/footer/footer";

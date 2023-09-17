@@ -1,8 +1,20 @@
-.breadcrumbs {
-  font-size: 0.8em;
-  padding: 1em 0;
+.breadcrumb-wrap {
+  position: sticky;
+  top: 8.3519em;
+  z-index: 899;
+  transition: all 300ms ease;
+
+  @media (min-width: $screen-md) {
+    top: 12.6531em;
+  }
+
+  .scrolled.going-down & {
+    top: 0;
+  }
 
   ul {
+    font-size: 0.8em;
+
     li {
       display: inline-block;
       overflow: hidden;
@@ -10,6 +22,14 @@
       text-overflow: ellipsis;
       max-width: 15em;
       color: $grey-lighter;
+
+      a {
+        color: $grey;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
 
       &::after {
         content: "/";
@@ -26,10 +46,10 @@
           content: none;
         }
       }
-    } // li
-  } // ul
+    }
+  }
 
   @media (min-width: $screen-md) {
     font-size: 1em;
   }
-} // breadcrumbs
+}

@@ -8,7 +8,7 @@ h6 {
   font-weight: 700;
   font-family: $font;
   line-height: 1.1em;
-  margin: 1.5em 0 0.25em;
+  margin: 1.5em 0 0.5em;
   padding: 0;
 
   &.section-title {
@@ -48,7 +48,7 @@ p,
 li,
 td,
 label {
-  color: $grey;
+  color: $grey-dark;
   font-family: $font;
   font-weight: 400;
   line-height: 1.5em;
